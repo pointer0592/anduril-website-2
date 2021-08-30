@@ -134,10 +134,11 @@ export default {
     }
   },
 
+
   cloudinary: {
-    cloudName: process.env.CLOUDINARY_CLOUDNAME,
-    apiKey: process.env.CLOUDINARY_API_KEY,
-    apiSecret: process.env.CLOUDINARY_API_SECRET,
+    cloudName: 'www-andurilpartners-ai',
+    apiKey: 'tznDwFGJ59UPFhtVzRR80TtiG9g',
+    apiSecret: '594873127926649',
     useComponent: true,
   },
 
