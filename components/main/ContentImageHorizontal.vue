@@ -1,0 +1,168 @@
+<template>
+    <div class='mt-24'>
+      <div class='lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:grid-flow-col-dense lg:gap-24'>
+        <div class='px-4 max-w-xl mx-auto sm:px-6 lg:max-w-none lg:mx-0 lg:px-0' :class='contentPlacement'>
+          <div>
+            <div>
+              <span v-if='mainContent.icon' class='h-12 w-12 rounded-md flex items-center justify-center bg-orange-500'>
+                <v-icon :name="mainContent.icon" class='h-6 w-6 text-white' aria-hidden='true' />
+              </span>
+            </div>
+            <div class='mt-6'>
+              <h2 data-aos='fade-up' class='text-3xl font-extrabold tracking-tight text-gray-900 dark:text-gray-200'>
+                {{ mainContent.title }}
+              </h2>
+              <p data-aos='fade-up' class='mt-4 text-lg text-gray-500 dark:text-gray-400'>
+                {{ mainContent.text }}
+              </p>
+              <p data-aos='fade-up' class='mt-4 text-lg font-semibold text-gray-500 dark:text-gray-400'>
+                {{ mainContent.text2 }}
+              </p>
+              <div v-if='mainContent.btnCopy' data-aos='fade-up' class='mt-6'>
+                <nuxt-link :to="'/' + mainContent.btnLink"
+                           class='inline-flex px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-orange-500 hover:bg-orange-600'>
+                  {{ mainContent.btnCopy }}
+                </nuxt-link>
+              </div>
+            </div>
+          </div>
+          <div v-if='mainContent.quote' data-aos='fade-up'
+               class='mt-8 border-t border-gray-200 dark:border-gray-800 pt-6'>
+            <blockquote>
+              <div>
+                <p class='text-base text-gray-500 dark:text-gray-400'>
+                  "{{ mainContent.quote }}"
+                </p>
+              </div>
+              <footer class='mt-3'>
+                <div class='flex items-center space-x-3'>
+                  <div class='text-base font-medium text-gray-700 dark:text-gray-300'>
+                    {{ mainContent.quoteNameTitle }}
+                  </div>
+                </div>
+              </footer>
+            </blockquote>
+          </div>
+        </div>
+        <div :data-aos='imageFade' class='mt-12 sm:mt-16 lg:mt-0' :class='imageOrder'>
+          <div :class='[ imagePlacement ]'>
+            <mockup v-if='isMockup&&imageLeft' class='lg:absolute left-0 w-full lg:h-full lg:w-auto lg:max-w-none'
+                    :img-src='bigImage'
+                    :mobile-img-src='smallImg'
+                    :class='withRing'
+                    :alt='mainContent.imgSrc'
+            />
+            <mockup v-else-if='isMockup&&!imageLeft' class='lg:absolute right-0 w-full lg:h-full lg:w-auto lg:max-w-none'
+                    :img-src='bigImage'
+                    :mobile-img-src='smallImg'
+                    :class='withRing'
+                    :alt='mainContent.imgSrc'
+            />
+            <cld-image
+              v-else-if='!imageLeft&&offScreen'
+              :public-id='mainContent.imgSrc'
+              :alt='mainContent.imgSrc'
+              quality='auto'
+              fetch-format='auto'
+              class='lg:absolute left-0 w-full lg:h-full lg:w-auto lg:max-w-none'
+              loading='lazy'
+                    :class='withRing'
+            />
+            <cld-image
+              v-else-if='imageLeft&&offScreen'
+              :public-id='mainContent.imgSrc'
+              :alt='mainContent.imgSrc'
+              quality='auto'
+              fetch-format='auto'
+              class='lg:absolute right-0 w-full lg:h-full lg:w-auto lg:max-w-none'
+              loading='lazy'
+                    :class='withRing'
+            />
+            <cld-image
+              v-else-if='imageLeft&&!offScreen'
+              :public-id='mainContent.imgSrc'
+              :alt='mainContent.imgSrc'
+              quality='auto'
+              fetch-format='auto'
+              class='lg:relative right-0 w-full lg:h-full lg:w-auto lg:max-w-none'
+              loading='lazy'
+                    :class='withRing'
+            />
+            <cld-image
+              v-else
+              :public-id='mainContent.imgSrc'
+              :alt='mainContent.imgSrc'
+              quality='auto'
+              fetch-format='80'
+              class='lg:absolute left-0 w-full lg:h-full lg:w-auto lg:max-w-none'
+              loading='lazy'
+                    :class='withRing'
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+</template>
+
+<script>
+import aosMixin from '~/mixins/aos'
+
+export default {
+  name: 'ContentImageHorizontal',
+  mixins: [aosMixin],
+  props: {
+    mainContent: {
+      type: Object,
+      default: () => {
+      }
+    },
+    imageLeft: {
+      type: Boolean,
+      default: false
+    },
+    hasRing: {
+      type: Boolean,
+      default: false
+    },
+    isMockup: {
+      type: Boolean,
+      default: false
+    },
+    offScreen: {
+      type: Boolean,
+      default: true
+    }
+  },
+  computed: {
+    contentPlacement() {
+      return this.imageLeft ? 'lg:py-32 lg:col-start-2' : 'lg:py-16'
+    },
+    imagePlacement() {
+      return this.imageLeft ? 'pr-4 -ml-48 sm:pr-6 md:-ml-16 lg:px-0 lg:m-0 lg:h-full lg:relative' : 'pl-4 -mr-48 sm:pl-6 md:-mr-16 lg:px-0 lg:m-0 lg:h-full lg:relative'
+    },
+    imageOrder() {
+      return this.imageLeft ? 'lg:start-col-1' : ''
+    },
+    withRing() {
+      return this.hasRing ? 'rounded-xl shadow-xl ring-1 ring-black dark:ring-white ring-opacity-5' : ''
+    },
+    imageFade() {
+      return this.imageLeft ? 'fade-right' : 'fade-left'
+    },
+    bigImage() {
+      try {
+        return require(`~/static/images/${this.mainContent.imgSrc}.jpg`)
+      } catch (error) {
+        return ''
+      }
+    },
+    smallImg() {
+      try {
+        return require(`~/static/images/${this.mainContent.mobileImgSrc}.jpg`)
+      } catch (error) {
+        return ''
+      }
+    }
+  }
+}
+</script>

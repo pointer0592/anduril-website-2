@@ -1,0 +1,77 @@
+<template>
+  <div :class="{ 'text-center': center }">
+    <a
+      v-if="external"
+      :href="path"
+      :class="[bgStyle, verticalSpacing]"
+      class="article-button btn md:btn-lg"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      {{ text }}
+    </a>
+    <nuxt-link
+      v-else
+      :to="path"
+      :class="[bgStyle, verticalSpacing]"
+      class="article-button btn md:btn-lg"
+    >
+      {{ text }}
+    </nuxt-link>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'MarkdownButton',
+  props: {
+    text: {
+      type: String,
+      required: true,
+    },
+    path: {
+      type: String,
+      default: '',
+    },
+    external: {
+      type: Boolean,
+      default: false,
+    },
+    outline: {
+      type: Boolean,
+      default: false,
+    },
+    margin: {
+      type: String,
+      default: '',
+    },
+    center: {
+      type: Boolean,
+      default: false,
+    },
+  },
+  computed: {
+    bgStyle() {
+      return this.outline ? 'btn-orange-outline' : 'btn-orange';
+    },
+    verticalSpacing() {
+      const side = this.margin;
+      const marginClasses = `m${side}-6 md:m${side}-8`;
+      const options = ['t', 'b', 'y'];
+      return options.includes(side) ? marginClasses : 'my-0';
+    },
+  },
+};
+</script>
+
+<style scoped>
+.article-button {
+  @apply inline-block text-sm;
+}
+
+@screen xs {
+  .article-button {
+    @apply text-base;
+  }
+}
+</style>
