@@ -20,7 +20,7 @@
                 {{ text2 }}
               </p>
               <div data-aos="fade-up" class='mt-6'>
-                <nuxt-link to='/solutions'
+                <nuxt-link to='/services'
                            class='inline-flex px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-orange-500 hover:bg-orange-600'>
                   Learn More
                 </nuxt-link>

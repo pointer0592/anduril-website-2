@@ -3,6 +3,7 @@ name: Scott Stanley
 intro: Before returning to his entrepreneurial roots in 2020, Scott most recently spent seven years in Big Four consulting, primarily with KPMG covering large global banks. At KPMG, he drove innovation and technology initiatives and led engagements within the firm's risk practices. He established and led FinTech initiatives and partnered with best-in-class technology software companies to create joint go-to-market opportunities. He also developed an AI/NLP software solution that accelerated and improved the quality of the audit/review of large volumes of technical documents.
 level: 2 
 role: Partner 
+link: scott-stanley
 linkedinProfileLink: https://www.linkedin.com/in/stanleysd/
 image: scott-stanley-bw
 tags:

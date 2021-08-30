@@ -34,28 +34,8 @@
 </template>
 
 <script>
-import IconServer from '~/assets/svg/server.svg?inline'
-import IconVariable from '~/assets/svg/variable.svg?inline'
-import IconLighteningBolt from '~/assets/svg/lightning-bolt.svg?inline'
-import IconTruck from '~/assets/svg/truck.svg?inline'
-import IconSupport from '~/assets/svg/support.svg?inline'
-import IconLightBulb from '~/assets/svg/light-bulb.svg?inline'
 
 export default {
-  components: {
-    // eslint-disable-next-line vue/no-unused-components
-    IconServer,
-    // eslint-disable-next-line vue/no-unused-components
-    IconVariable,
-    // eslint-disable-next-line vue/no-unused-components
-    IconLighteningBolt,
-    // eslint-disable-next-line vue/no-unused-components
-    IconTruck,
-    // eslint-disable-next-line vue/no-unused-components
-    IconSupport,
-    // eslint-disable-next-line vue/no-unused-components
-    IconLightBulb
-  },
   transition: {
     name: 'fade',
     mode: 'out-in'
@@ -70,47 +50,32 @@ export default {
       discoverCards: [
         {
           area: 'Approach',
-          link: '/approach-page',
+          link: '/approach',
           title: 'Time-test methodology',
-          preview: 'Do you OODA? Observe, Orient, Decide, Act with our KPI driven approach-page.',
+          preview: 'Do you OODA? Observe, Orient, Decide, Act with our KPI driven approach.',
           src: ''
         },
         {
-          area: 'Solutions',
-          link: '/solutions',
+          area: 'Services',
+          link: '/services',
           title: 'From data solutions to KPIs',
           preview: 'Engage with us in KPI Strategy, Design, and Workflow to establish feedback loops and continuous defined improvement.',
           src: ''
         },
         {
           area: 'Insights',
-          link: '/insights',
+          link: '/posts',
           title: 'Sharing our discoveries and insights',
           preview: 'Knowledge is noisy unless converted to insight and applied to decisions. Lets discuss use cases.',
           src: ''
         },
         {
           area: 'About us',
-          link: '/story',
+          link: '/about',
           title: 'Our team',
           preview: 'The Anduril team and advisors have roots in building tech infrastructure and applied data science, with demonstrated success.',
           src: ''
         }
-      ],
-      logoCloud: [
-        { name: 'EDS', src: 'eds', ext: 'svg' },
-        { name: 'Arbor Advisors', src: 'arbor', ext: 'svg' },
-        { name: 'Connacht Asset Managment', src: 'connacht', ext: 'svg' },
-        { name: 'SESAMm', src: 'sesamm', ext: 'svg' },
-        { name: 'Refined Technolgies', src: 'RTI', ext: 'svg' },
-        { name: 'aiera', src: 'aiera', ext: 'svg' },
-        { name: 'CRUX', src: 'crux', ext: 'svg' },
-        { name: 'aptiviti', src: 'aptiviti', ext: 'svg' }
-      ],
-      logoCloudIpo: [
-        { name: 'Datavore', src: 'datavore', ext: 'svg' },
-        { name: 'Kensho', src: 'kensho', ext: 'svg' },
-        { name: 'Prattle', src: 'prattle', ext: 'svg' }
       ],
       features: [
         {
@@ -158,26 +123,26 @@ export default {
         {
           cardTitle1: 'Anduril',
           cardTitle2: 'Approach',
-          cardIcon: 'approach-page',
-          cardBody: ' Do you OODA? Observe, Orient, Decide, Act with our KPI driven approach-page.',
+          cardIcon: 'approach',
+          cardBody: ' Do you OODA? Observe, Orient, Decide, Act with our KPI driven approach.',
           buttonText: 'Approach',
-          buttonSrc: 'approach-page'
+          buttonSrc: 'approach'
         },
         {
           cardTitle1: 'Anduril',
-          cardTitle2: 'Solutions',
+          cardTitle2: 'Services',
           cardIcon: 'solutions',
           cardBody: 'Engage with us in KPI Strategy, Design, and Workflow to establish feedback loops and continuous defined improvement.',
           buttonText: 'Solutions',
-          buttonSrc: 'solutions'
+          buttonSrc: 'services'
         },
         {
           cardTitle1: 'Anduril',
           cardTitle2: 'Insights',
-          cardIcon: 'insights',
+          cardIcon: 'posts',
           cardBody: 'Knowledge is noisy unless converted to insight and applied to decisions. Lets discuss use cases.',
           buttonText: 'Insights',
-          buttonSrc: 'insights'
+          buttonSrc: 'posts'
         }
       ]
     }

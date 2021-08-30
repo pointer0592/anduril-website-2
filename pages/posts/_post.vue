@@ -6,15 +6,19 @@
       :hero-lead='post.description'
       :person-name='post.author.name'
       :person-two-name='post.authorTwo.name'
+      :person-image='post.author.image'
+      :person-two-image='post.authorTwo.image'
       :published='post.published'
       :reading-time='post.readingTime'
+      :is-anduril='post.author.anduril'
+      :is-anduril2='post.authorTwo.anduril'
       center
     >
       <div class='flex flex-wrap items-start content-around justify-start text-xs font-medium mt-2 space-x-1'>
         <tags :tags='post.tags' />
       </div>
     </primary-hero>
-    <post :page='post'>
+    <post :post='post'>
 
       <div v-if='post.pdf' class='mt-12 flex justify-center'>
 

@@ -67,10 +67,20 @@
                 Legal
               </h3>
               <ul role='list' class='mt-4 space-y-4'>
-                <li v-for='item in legal' :key='item.name' data-aos='fade-up'>
-                  <nuxt-link :to='item.to'
+                <li data-aos='fade-up'>
+                  <nuxt-link to="/policies/terms-of-use"
                              class='text-base text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white'>
-                    {{ item.name }}
+                    Term
+                  </nuxt-link>
+                <li data-aos='fade-up'>
+                  <nuxt-link to="/policies/cookie-policy"
+                             class='text-base text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white'>
+                    Cookies
+                  </nuxt-link>
+                <li data-aos='fade-up'>
+                  <nuxt-link to="/policies/privacy-policy"
+                             class='text-base text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white'>
+                    Privacy
                   </nuxt-link>
                 </li>
               </ul>
@@ -97,16 +107,11 @@ export default {
     return {
       sectionNames: process.env.navItems,
       company: [
-        { name: 'Team', to: '/team' },
+        { name: 'About Us', to: '/about' },
+        { name: 'Our Services', to: '/services' },
+        { name: 'Our Approach', to: '/approach' },
         { name: 'Posts', to: '/posts' },
-        { name: 'Approach', to: '/approach' },
-        { name: 'Testimonials', to: '/testimonials' },
         { name: 'Contact', to: '/contact' }
-      ],
-      legal: [
-        { name: 'Cookies', to: '/policies/cookie-policy' },
-        { name: 'Privacy', to: '/policies/privacy-policy' },
-        { name: 'Terms', to: '/policies/terms-of-use' }
       ],
       socials: [
         {

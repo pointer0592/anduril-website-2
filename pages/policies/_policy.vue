@@ -21,7 +21,7 @@
       <div class='relative py-6 text-gray-600 dark:text-gray-200 bg-white dark:bg-GunMetal overflow-hidden'>
         <div data-aos='fade-up' class='mx-auto py-6 px-4 sm:px-6 lg:px-8 px-4 nuxt-content' aria-hidden='true'>
           <nuxt-link to='/' class='text-orange-500 underline hover:text-orange-600'>
-            home
+            Home
           </nuxt-link>
         </div>
         <div data-aos='fade-up' class='mx-auto py-12 px-4 sm:px-6 lg:py-30 lg:px-8 px-4 nuxt-content'

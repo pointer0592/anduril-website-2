@@ -4,6 +4,7 @@
       <!-- Hero card -->
       <div class='max-w-full mx-auto'>
         <div class='absolute inset-0'>
+          <client-only>
           <cld-image
             v-if='heroImg&&!isMockup'
             :public-id='heroImg'
@@ -15,7 +16,8 @@
             responsive
             loading='lazy'
           />
-          <div class='absolute inset-0 bg-gray-500 mix-blend-multiply' />
+          </client-only>>
+          <span class='absolute inset-0 bg-gray-500 mix-blend-multiply' />
         </div>
 
       </div>
@@ -43,16 +45,18 @@
                :class='divPlacement' />
           <div v-if='personName' class='text-base font-bold text-gray-200 hover:text-gray-300'
                :class='divPlacement'>
-            <span v-if='personTwoName'>Authors:</span><span v-else>Author:</span>
-            <nuxt-link :to="'/bios/' + personNameSlug"
+            <span v-if='personName&&isAnduril'>Authors:</span><span v-else>Author:</span>
+            <nuxt-link v-if='personName&&isAnduril' :to="'/about/' + personImage"
                        class='hover:underline text-gray-200 hover:text-gray-300'>
               {{ personName }}
             </nuxt-link>
+            <span v-if='personName&&!isAnduril'>{{ personName }}</span>
             <span v-if='personTwoName'>&</span>
-            <nuxt-link v-if='personTwoName' :to="'/bios/' + personTwoNameSlug"
+            <nuxt-link v-if='personTwoName&&isAnduril2' :to="'/about/' + personTwoImage"
                        class='hover:underline text-gray-200 hover:text-gray-300'>
               {{ personTwoName }}
             </nuxt-link>
+            <span v-if='personTwoName&&!isAnduril'>{{ personTwoName }}</span>
           </div>
           <slot />
           <p v-if='personName'
@@ -111,6 +115,14 @@ export default {
       default: ''
     },
     personTwoName: {
+      type: String,
+      default: ''
+    },
+    personImage: {
+      type: String,
+      default: ''
+    },
+    personTwoImage: {
       type: String,
       default: ''
     },
@@ -178,6 +190,14 @@ export default {
       type: String,
       default: 'text-gray-200'
     },
+    isAnduril: {
+      type: Boolean,
+      default: true
+    },
+    isAnduril2: {
+      type: Boolean,
+      default: true
+    },
     isMockup: { type: Boolean, default: false }
   },
   data() {
@@ -207,12 +227,6 @@ export default {
     },
     heroSize() {
       return this.full ? { 'height': '100vh' } : { 'height': '80vh' }
-    },
-    personNameSlug() {
-      return slugify(this.personName).toLowerCase()
-    },
-    personTwoNameSlug() {
-      return slugify(this.personTwoName).toLowerCase()
     },
     heroCopyClasses() {
       const { copyCase, copyWeight } = this

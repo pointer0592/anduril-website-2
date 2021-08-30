@@ -23,12 +23,14 @@ author:
   linkedin: https://www.linkedin.com/in/jon-neitzell-1ba3172/
   title: Founder, Managing Partner
   company: Anduril Partners
+  anduril: true
 authorTwo:
   name: ''
   image: ''
   linkedin: ''
   title: ''
   company: ''
+  anduril:
 tags: 
   - Data
   - Tech

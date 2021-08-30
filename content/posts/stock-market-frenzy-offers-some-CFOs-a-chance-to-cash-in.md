@@ -19,15 +19,18 @@ citation:
 includebottom: false
 author: 
   name: Nina Trentmann and others
-  linkedin: https://www.linkedin.com/company/andurilpartners/
-  title: Founder, Managing Partner
+  image:
+  linkedin: 
+  title: 
   company: Wall Street Journal
+  anduril: false
 authorTwo:
   name: ''
   image: ''
   linkedin: ''
   title: ''
   company: ''
+  anduril:
 tags: 
   - Data
   - Tech

@@ -24,12 +24,14 @@ author:
   linkedin: https://www.linkedin.com/in/jon-neitzell-1ba3172/
   title: Founder, Managing Partner
   company: Anduril Partners
+  anduril: true
 authorTwo:
   name: Bethany Schuttinga, PhD
   image: bethany-schuttinga
   linkedin: https://www.linkedin.com/in/bethany-j-schuttinga-54205716/
   title: Partner, ESG Team Lead
   company: Anduril Partners
+  anduril: true
 tags: 
   - ESG
   - KPIs

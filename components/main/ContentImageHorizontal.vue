@@ -52,14 +52,15 @@
                     :class='withRing'
                     :alt='mainContent.imgSrc'
             />
-            <mockup v-else-if='isMockup&&!imageLeft' class='lg:absolute right-0 w-full lg:h-full lg:w-auto lg:max-w-none'
+            <mockup v-if='isMockup&&!imageLeft' class='lg:absolute right-0 w-full lg:h-full lg:w-auto lg:max-w-none'
                     :img-src='bigImage'
                     :mobile-img-src='smallImg'
                     :class='withRing'
                     :alt='mainContent.imgSrc'
             />
+            <client-only>
             <cld-image
-              v-else-if='!imageLeft&&offScreen'
+              v-if='!imageLeft&&offScreen'
               :public-id='mainContent.imgSrc'
               :alt='mainContent.imgSrc'
               quality='auto'
@@ -68,8 +69,10 @@
               loading='lazy'
                     :class='withRing'
             />
+            </client-only>
+            <client-only>
             <cld-image
-              v-else-if='imageLeft&&offScreen'
+              v-if='imageLeft&&offScreen'
               :public-id='mainContent.imgSrc'
               :alt='mainContent.imgSrc'
               quality='auto'
@@ -78,8 +81,10 @@
               loading='lazy'
                     :class='withRing'
             />
+            </client-only>
+            <client-only>
             <cld-image
-              v-else-if='imageLeft&&!offScreen'
+              v-if='imageLeft&&!offScreen'
               :public-id='mainContent.imgSrc'
               :alt='mainContent.imgSrc'
               quality='auto'
@@ -88,8 +93,10 @@
               loading='lazy'
                     :class='withRing'
             />
+            </client-only>
+            <client-only>
             <cld-image
-              v-else
+              v-if='!imageLeft&&!offScreen'
               :public-id='mainContent.imgSrc'
               :alt='mainContent.imgSrc'
               quality='auto'
@@ -98,6 +105,7 @@
               loading='lazy'
                     :class='withRing'
             />
+            </client-only>
           </div>
         </div>
       </div>

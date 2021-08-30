@@ -5,7 +5,7 @@ export default {
     BASE_URL: 'https://www.andurilpartners.ai',
     siteTitle: 'Anduril Partners',
     topNavItems: [
-      { label: "News & Events", slug: "team" },
+      { label: "News & Events", slug: "about" },
       { label: "Contact", slug: "contact" }
     ],
     navItems: [

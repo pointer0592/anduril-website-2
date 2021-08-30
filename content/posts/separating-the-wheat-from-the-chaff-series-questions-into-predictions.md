@@ -24,12 +24,14 @@ author:
   linkedin: https://www.linkedin.com/in/jon-neitzell-1ba3172/
   title: Founder, Managing Partner
   company: Anduril Partners
+  anduril: true
 authorTwo:
   name: ''
   image: ''
   linkedin: ''
   title: ''
   company: ''
+  anduril:
 tags: 
   - Decision Science
   - KPIs
@@ -58,12 +60,12 @@ These discussions are often the same across corporate, private equity, and publi
 **Read another article in this 8 part series:**
 
 <ul>
-<li><span><strong>Part 1</strong></span>: <nuxt-link to="/articles/separating-the-wheat-from-the-chaff-series-introduction">Introduction</nuxt-link></li>
-<li><span><strong>Part 2</strong></span>: <nuxt-link to="/articles/separating-the-wheat-from-the-chaff-series-the-importance-of-storytelling">The Importance of Storytelling</nuxt-link></li>
-<li><span><strong>Part 3</strong></span>: <nuxt-link to="/articles/separating-the-wheat-from-the-chaff-series-financial-workflow">Applying Process in Financial Workflow</nuxt-link></li>
-<li><span><strong>Part 4</strong></span>: <nuxt-link to="/articles/separating-the-wheat-from-the-chaff-series-questions-into-predictions">Turning Questions into Predictions</nuxt-link></li>
-<li><span><strong>Part 5</strong></span>: <nuxt-link to="/articles/separating-the-wheat-from-the-chaff-series-ESG-making-good-intentions-real-through-great-process">ESG: Making Good Intentions Real Through Great Process</nuxt-link></li></li>
-<li><span><strong>Part 6</strong></span>: <nuxt-link to="/articles/separating-the-wheat-from-the-chaff-series-what-is-driving-the-stock">What is Driving the Stock?</nuxt-link></li></li>
-<li><span><strong>Part 7</strong></span>: <nuxt-link to="/articles/separating-the-wheat-from-the-chaff-series-blending-inputs-and-feedback-loops">Blending Inputs, Feedback Loops and Implementing Metrics the Matter</nuxt-link></li></li>
-<li><span><strong>Part 8</strong></span>: <nuxt-link to="/articles/separating-the-wheat-from-the-chaff-series-upgrading-your-roadmap">Bringing it Home and Upgrading your Roadmaps</nuxt-link></li></li>
+<li><span><strong>Part 1</strong></span>: <nuxt-link to="/posts/separating-the-wheat-from-the-chaff-series-introduction">Introduction</nuxt-link></li>
+<li><span><strong>Part 2</strong></span>: <nuxt-link to="/posts/separating-the-wheat-from-the-chaff-series-the-importance-of-storytelling">The Importance of Storytelling</nuxt-link></li>
+<li><span><strong>Part 3</strong></span>: <nuxt-link to="/posts/separating-the-wheat-from-the-chaff-series-financial-workflow">Applying Process in Financial Workflow</nuxt-link></li>
+<li><span><strong>Part 4</strong></span>: <nuxt-link to="/posts/separating-the-wheat-from-the-chaff-series-questions-into-predictions">Turning Questions into Predictions</nuxt-link></li>
+<li><span><strong>Part 5</strong></span>: <nuxt-link to="/posts/separating-the-wheat-from-the-chaff-series-ESG-making-good-intentions-real-through-great-process">ESG: Making Good Intentions Real Through Great Process</nuxt-link></li></li>
+<li><span><strong>Part 6</strong></span>: <nuxt-link to="/posts/separating-the-wheat-from-the-chaff-series-what-is-driving-the-stock">What is Driving the Stock?</nuxt-link></li></li>
+<li><span><strong>Part 7</strong></span>: <nuxt-link to="/posts/separating-the-wheat-from-the-chaff-series-blending-inputs-and-feedback-loops">Blending Inputs, Feedback Loops and Implementing Metrics the Matter</nuxt-link></li></li>
+<li><span><strong>Part 8</strong></span>: <nuxt-link to="/posts/separating-the-wheat-from-the-chaff-series-upgrading-your-roadmap">Bringing it Home and Upgrading your Roadmaps</nuxt-link></li></li>
 </ul>

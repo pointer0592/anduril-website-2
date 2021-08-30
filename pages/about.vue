@@ -22,9 +22,9 @@
         <ul
           class='space-y-12 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 sm:space-y-0 lg:grid-cols-3 lg:gap-x-8'
           data-aos='fade-up'>
-          <our-team
+          <Bio
             v-for='bio in bios'
-            :key='bio.name'
+            :key='bio.slug'
             :bio='bio'
           />
         </ul>

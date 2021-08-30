@@ -6,14 +6,14 @@
           class='hidden lg:block bg-gradient-to-b from-gray-50 dark:bg-gradient-to-b dark:from-GunMetalDarker dark:to-GunMetal absolute top-0 bottom-0 left-3/4 w-screen' />
         <div class='mx-auto text-base max-w-prose lg:grid lg:grid-cols-2 lg:gap-8 lg:max-w-none'>
           <div class='mt-4'>
-            <nuxt-link to='/team' class='font-semibold text-base text-orange-500 underline hover:text-orange-600'>
-              Anduril Team
+            <nuxt-link to='/about' class='text-lg font-bold text-GunMetal dark:text-white underline hover:text-gray-600 dark:hover:text-gray-200'>
+              Back to Team
             </nuxt-link>
-            <h2 class='mt-4 text-base text-orange-500 font-semibold tracking-wide uppercase'>
-              {{ bios.name }}
+            <h2 class='mt-8 text-base  text-orange-500 font-semibold tracking-wide uppercase'>
+              {{ bio.name }}
             </h2>
             <h3 class='mt-2 text-3xl leading-8 font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl'>
-              {{ bios.role }}
+              {{ bio.role }}
             </h3>
           </div>
         </div>
@@ -51,27 +51,29 @@
             <div class='relative text-base mx-auto max-w-prose lg:max-w-none'>
               <figure>
                 <div class='aspect-w-12 aspect-h-7 lg:aspect-none'>
+                  <client-only>
                   <cld-image
-                    :public-id="'/team-headshots/' + bios.image"
-                    :alt='bios.name'
+                    :public-id="'/team-headshots/' + bio.image"
+                    :alt='bio.name'
                     quality='auto'
                     fetch-format='jpg'
                     responsive
                     loading='lazy'
                     class='rounded-lg shadow-lg object-cover object-center'
                   />
+                  </client-only>
                 </div>
               </figure>
             </div>
           </div>
           <div class='mt-8 lg:mt-0'>
             <div class='nuxt-content text-base mx-auto lg:max-w-none text-gray-500 leading-6'>
-              <nuxt-content :document='bios' />
+              <nuxt-content :document='bio' />
               <div class='mt-4'>
-                <span class='mr-4'>Connect with {{ bios.name.substring(0, bios.name.indexOf(' ')) }}: </span>
-                <a :href='bios.linkedinProfileLink' target='_blank' class='cursor-pointer'>
+                <span class='mr-4'>Connect with {{ bio.name.substring(0, bio.name.indexOf(' ')) }}: </span>
+                <a :href='bio.linkedinProfileLink' target='_blank' class='cursor-pointer'>
                   <span class='sr-only'>LinkedIn</span>
-                  <icon-linkedin
+                  <v-icon name='linkedin'
                     class='mb-2 w-6 h-6 cursor-pointer rounded-md p-0 inline-flex items-center justify-center text-gray-600 dark:text-gray-200 dark:hover:text-Linkedin hover:text-Linkedin focus:outline-none focus:ring-2 focus:ring-inset focus:ring-orange-500' />
                 </a>
               </div>
@@ -85,20 +87,18 @@
 </template>
 
 <script>
-import IconLinkedin from '~/assets/svg/linkedin.svg?inline'
 
 export default {
   components: {
-    IconLinkedin
   },
   transition: {
     name: 'fade',
     mode: 'out-in'
   },
   async asyncData({ $content, params }) {
-    const bios = await $content('bios', params.slug).fetch()
+    const bio = await $content('bios', params.slug).fetch()
     return {
-      bios
+      bio
     }
   }
 }

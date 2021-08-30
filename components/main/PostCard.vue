@@ -4,6 +4,7 @@
                @click.native="track('blog', 'view blog post', `single post: ${post.slug}`)"
     >
       <div v-if='post.coverimg&&!post.isMockup' data-aos="fade-up" class='flex-1'>
+        <client-only>
         <cld-image
           :public-id="'/posts/' + post.coverimg"
           :alt='post.title'
@@ -16,6 +17,7 @@
         >
           <cld-placeholder type='blur' />
         </cld-image>
+        </client-only>
       </div>
       <div v-if='post.videoSrc' data-aos="fade-up" class='h-48 w-full object-cover lazyload'>
         <video loop autoplay muted>
@@ -52,8 +54,9 @@
 
       <div class='h-16 mt-6 flex items-center space-x-4'>
         <div v-if='post.author.image' data-aos="fade-up" class='flex overflow-hidden' :class='avatarSpace'>
+          <client-only>
           <cld-image
-            v-if='post.author.name'
+            v-if='post.author.image'
             :public-id="'/team-headshots/' + post.author.image"
             :alt='post.author.name'
             quality='auto'
@@ -62,8 +65,10 @@
             loading='lazy'
             class='h-10 w-10 rounded-full m-1 ring-2 ring-gray-400 dark:ring-gray-400 lazyload'
           />
+          </client-only>
+          <client-only>
           <cld-image
-            v-if='post.authorTwo.name'
+            v-if='post.authorTwo.image'
             :public-id="'/team-headshots/' + post.authorTwo.image"
             :alt='post.authorTwo.name'
             quality='auto'
@@ -72,19 +77,22 @@
             loading='lazy'
             class='h-10 w-10 rounded-full m-1 ring-2 ring-gray-400 dark:ring-gray-400 lazyload'
           />
+          </client-only>
         </div>
         <div>
           <div v-if='post.author.name' data-aos="fade-up"
                class='flex items-center flex-wrap text-sm font-medium text-GunMetal dark:text-white'>
-            <nuxt-link :to="'/team/' + post.author.image"
+            <nuxt-link v-if='post.author.name&&post.author.anduril' :to="'/about/' + post.author.image"
                        class='hover:underline hover:text-GunMetalLt dark:hover:text-gray-300'>
               {{ post.author.name }}
             </nuxt-link>
+            <span v-if='post.author.name&&!post.author.anduril'>{{ post.author.name }}</span>
             <span v-if='post.authorTwo.name'>&nbsp; & &nbsp;</span>
-            <nuxt-link v-if='post.authorTwo.image' :to="'/team/' + post.authorTwo.slug"
+            <nuxt-link v-if='post.authorTwo.anduril' :to="'/about/' + post.authorTwo.image"
                        class='hover:underline hover:text-GunMetalLt dark:hover:text-gray-300'>
               {{ post.authorTwo.name }}
             </nuxt-link>
+            <span v-if='post.authorTwo.name&&!post.authorTwo.anduril'>{{ post.author.name }}</span>
           </div>
           <div data-aos="fade-up" class='mt-2 text-xs font-medium text-GunMetal dark:text-white'>
             <span class='font-medium'>Published:</span> {{ post.published | formatdate }}

@@ -7,7 +7,7 @@
         </nuxt-link>
       </div>
       <div data-aos="fade-up" class='mx-auto py-12 px-4 sm:px-6 lg:py-30 lg:px-8 px-4 nuxt-content' aria-hidden='true'>
-        <nuxt-content :document='page' />
+        <nuxt-content :document='post' />
         <slot />
       </div>
     </div>
@@ -21,7 +21,7 @@ export default {
   name: 'Post',
   mixins: [aosMixin],
   props: {
-    page: {
+    post: {
       type: Object,
       required: true,
     }

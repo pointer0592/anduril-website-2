@@ -29,6 +29,7 @@
             </div>
             <div class='mt-12 -mb-16 sm:-mb-48 lg:m-0 lg:relative'>
               <div class='mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 lg:max-w-none lg:px-0'>
+                <client-only>
                 <cld-image
                   :public-id='heroImg'
                   :alt='heroTitle'
@@ -41,6 +42,7 @@
                 >
                   <cld-placeholder type='blur' />
                 </cld-image>
+                </client-only>
               </div>
             </div>
           </div>
