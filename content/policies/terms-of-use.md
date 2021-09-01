@@ -1,5 +1,6 @@
 ---
-title: Terms of Use 
+title: Terms of Use
+coverImg: terms-design
 effective: 2021-01-09
 ---
 # Terms of Use

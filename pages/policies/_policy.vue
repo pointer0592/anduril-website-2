@@ -1,18 +1,17 @@
 <template>
   <div>
     <primary-hero
-      hero-img='/hero-images/chess'
+      :hero-img="'/hero-images/' + page.coverImg"
       hero-title='Our Policies'
       :hero-lead='page.title'
       lead-color='orange'
       lead-weight='extrabold'
-      center
     >
       <div class='mt-2 pb-20'>
-        <p class='text-center text-sm leading-loose text-gray-200'>
+        <p class='text-sm leading-loose text-gray-200'>
           Effective Date: {{ page.effective | formatdate }}
         </p>
-        <p class='text-center text-sm leading-loose text-gray-200'>
+        <p class='text-sm leading-loose text-gray-200'>
           Reading time approx: {{ page.readingTime | formattime }} min read
         </p>
       </div>

@@ -15,20 +15,23 @@
       lead='This is the lead'
       :stats='stats'
     />
-    <project
-      section-title="HomeLead"
-      title="Data is everywhere."
-      subtitle="Are you using it to drive better decisions?"
-      text="Data, like water, is an abundant resource but it must be prepared and utilized for specific purposes. Our focus on modeling KPIs will equip your teams to execute with decisive data-driven decisions."
-      text2="We help you leverage your data into actionable insights and increase your probability of success through real-time Key Performance Indicators (KPIs)."
-      is-mockup
-      :mobile-img-src="smallTechImg"
-      :img-src="techImg"
-      :avatar="avatarImg"
-    />
-    <why-anduril :features="features" />
+    <why-anduril :features="whyAnduril" />
     <esg-cta />
-    <discover-cards :discover-cards="discoverCards" />
+    <main class='bg-white dark:bg-GunMetal'>
+      <div class='mx-auto py-12 px-4 max-w-7xl sm:px-6 lg:px-8 lg:py-24'>
+        <div class='space-y-12'>
+          <div class='space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-3xl xl:max-w-none'>
+            <h2 class='text-3xl font-extrabold tracking-tight sm:text-4xl text-GunMetalDk dark:text-white'
+                data-aos='fade-up'>Explore our Site</h2>
+            <p class='text-xl text-GunMetal dark:text-gray-300' data-aos='fade-up'>We represent a growing culmination of
+              experience, focus on business improvement, and a consistent quest for applied excellence. From technology and data science deployments,
+              to measuring daily portfolio performance in the most competitive fields of industry, we seek to blend
+              disciplines with a focus on outcomes. We look forward to including you in the discussion.</p>
+          </div>
+          </div>
+        </div>
+    </main>
+    <discover-cards :discover-cards="discoverCards" is-three />
     <contact-form />
   </div>
 </template>
@@ -53,31 +56,31 @@ export default {
           link: '/approach',
           title: 'Time-test methodology',
           preview: 'Do you OODA? Observe, Orient, Decide, Act with our KPI driven approach.',
-          src: ''
+          linkLabel: 'Read about our Approach'
         },
         {
           area: 'Services',
           link: '/services',
           title: 'From data solutions to KPIs',
           preview: 'Engage with us in KPI Strategy, Design, and Workflow to establish feedback loops and continuous defined improvement.',
-          src: ''
+          linkLabel: 'Check out our Services'
         },
         {
           area: 'Insights',
-          link: '/posts',
+          link: '/insights',
           title: 'Sharing our discoveries and insights',
           preview: 'Knowledge is noisy unless converted to insight and applied to decisions. Lets discuss use cases.',
-          src: ''
+          linkLabel: 'Read our Insights'
         },
         {
           area: 'About us',
           link: '/about',
           title: 'Our team',
           preview: 'The Anduril team and advisors have roots in building tech infrastructure and applied data science, with demonstrated success.',
-          src: ''
+          linkLabel: 'Read our Bios'
         }
       ],
-      features: [
+      whyAnduril: [
         {
           name: 'We understand data',
           icon: 'server',
@@ -109,42 +112,6 @@ export default {
           description: 'Our leadership team has deep industry experience and building their own companies'
         }
       ],
-      cardRowTitle1: 'Discover',
-      cardRowTitle2: 'Anduril',
-      cards: [
-        {
-          cardTitle1: 'Our',
-          cardTitle2: 'Story',
-          cardIcon: 'story',
-          cardBody: 'The Anduril team and advisors have roots in building tech infrastructure and applied data science, with demonstrated success.',
-          buttonText: 'Background',
-          buttonSrc: 'about'
-        },
-        {
-          cardTitle1: 'Anduril',
-          cardTitle2: 'Approach',
-          cardIcon: 'approach',
-          cardBody: ' Do you OODA? Observe, Orient, Decide, Act with our KPI driven approach.',
-          buttonText: 'Approach',
-          buttonSrc: 'approach'
-        },
-        {
-          cardTitle1: 'Anduril',
-          cardTitle2: 'Services',
-          cardIcon: 'solutions',
-          cardBody: 'Engage with us in KPI Strategy, Design, and Workflow to establish feedback loops and continuous defined improvement.',
-          buttonText: 'Solutions',
-          buttonSrc: 'services'
-        },
-        {
-          cardTitle1: 'Anduril',
-          cardTitle2: 'Insights',
-          cardIcon: 'posts',
-          cardBody: 'Knowledge is noisy unless converted to insight and applied to decisions. Lets discuss use cases.',
-          buttonText: 'Insights',
-          buttonSrc: 'posts'
-        }
-      ]
     }
   },
   computed: {

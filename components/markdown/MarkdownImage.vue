@@ -4,7 +4,7 @@
       <figcaption v-if='title' class='text-lg font-bold text-GunMetal dark:text-white pb-4'>{{ title }}</figcaption>
       <client-only>
       <cld-image
-        :public-id="'/posts/inserts/'+src"
+        :public-id="'/insights/inserts/'+src"
         :alt='caption'
         quality='auto'
         crop='fill'

@@ -89,7 +89,11 @@ nav {
 }
 
 .nuxt-content h4 {
-  @apply block text-xl text-GunMetal dark:text-gray-300 font-bold italic;
+  @apply block text-xl text-GunMetal dark:text-gray-300 font-bold;
+}
+
+.nuxt-content h5 {
+  @apply block text-xl text-orange-500 font-extrabold uppercase;
 }
 
 .nuxt-content p {

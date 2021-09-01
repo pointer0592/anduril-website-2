@@ -5,19 +5,20 @@
       <div class='max-w-full mx-auto'>
         <div class='absolute inset-0'>
           <client-only>
-          <cld-image
-            v-if='heroImg&&!isMockup'
-            :public-id='heroImg'
-            :alt='heroTitle'
-            quality='auto'
-            crop='fill'
-            fetch-format='auto'
-            class='h-full w-full object-cover z-1'
-            responsive
-            loading='lazy'
-          />
-          </client-only>>
-          <span class='absolute inset-0 bg-gray-500 mix-blend-multiply' />
+            <cld-image
+              v-if='heroImg&&!isMockup'
+              :public-id='heroImg'
+              :alt='heroTitle'
+              quality='auto'
+              crop='fill'
+              fetch-format='auto'
+              class='h-full w-full object-cover z-1'
+              responsive
+              loading='lazy'
+            />
+          </client-only>
+          >
+          <span class='absolute inset-0 bg-gray-200 mix-blend-multiply' />
         </div>
 
       </div>
@@ -26,20 +27,24 @@
           class='relative xl:px-32 lg:px-24 px-4 max-w-full flex flex-col justify-end bg-GunMetal dark:bg-white bg-transparent dark:bg-transparent h-full'
           :class='sectionAlignment'
         >
-          <h1 class='font-extrabold'
-              :class='[ textPlacement, primaryTextSize ]'>
-            <span class='block text-white'>{{ heroTitle }}</span>
-          </h1>
-          <p v-if='heroLead'
-             class='mt-4 text-orange-500 font-bold'
-             :class='[ heroLeadClasses, textPlacement, leadTextSize ]'>
-            {{ heroLead }}
-          </p>
-          <p v-if='heroCopy'
-             class='mt-6 max-w-md text-gray-200 font-medium text-sm lg:text-base'
-             :class='[ heroCopyClasses, textPlacement ]'>
-            {{ heroCopy }}
-          </p>
+          <div class='max-w-5xl'>
+            <h1 class='font-extrabold'
+                :class='[ textPlacement, primaryTextSize ]'>
+              <span class='block text-white'>{{ heroTitle }}</span>
+            </h1>
+          </div>
+          <div class='max-w-2xl'>
+            <p v-if='heroLead'
+               class='mt-4 text-gray-200 font-bold'
+               :class='[ heroLeadClasses, textPlacement, leadTextSize ]'>
+              {{ heroLead }}
+            </p>
+            <p v-if='heroCopy'
+               class='mt-4 max-w-md text-gray-200 font-medium text-base lg:text-lg'
+               :class='[ heroCopyClasses, textPlacement ]'>
+              {{ heroCopy }}
+            </p>
+          </div>
           <div v-if='personName'
                class='border border-t border-1 border-gray-300 w-20 my-6'
                :class='divPlacement' />
@@ -58,7 +63,6 @@
             </nuxt-link>
             <span v-if='personTwoName&&!isAnduril'>{{ personTwoName }}</span>
           </div>
-          <slot />
           <p v-if='personName'
              class='mt-2 text-base font-bold text-gray-200'
              :class='textPlacement'>
@@ -80,6 +84,7 @@
               {{ heroLinkCopy }}
             </a>
           </div>
+          <slot />
         </div>
       </div>
     </div>
@@ -87,7 +92,6 @@
 </template>
 
 <script>
-import slugify from 'slugify'
 import aosMixin from '~/mixins/aos'
 
 export default {
@@ -172,7 +176,7 @@ export default {
     },
     leadWeight: {
       type: String,
-      default: 'sm'
+      default: 'font-medium'
     },
     leadColors: {
       type: String,
@@ -229,7 +233,44 @@ export default {
       return this.full ? { 'height': '100vh' } : { 'height': '80vh' }
     },
     heroCopyClasses() {
-      const { copyCase, copyWeight } = this
+      const { copyCase, copyWeight, copySize } = this
+      const heroCopyClasses = []
+
+      switch (copyCase) {
+        case 'uppercase':
+          heroCopyClasses.push(`uppercase`)
+          break
+        case 'base':
+        default:
+          heroCopyClasses.push(``)
+      }
+
+      switch (copyWeight) {
+        case 'light':
+          heroCopyClasses.push(`font-light`)
+          break
+        case 'medium':
+          heroCopyClasses.push(`font-medium`)
+          break
+        case 'semibold':
+          heroCopyClasses.push(`font-semibold`)
+          break
+        case 'bold':
+          heroCopyClasses.push(`font-bold`)
+          break
+        case 'extrabold':
+          heroCopyClasses.push(`font-extrabold`)
+          break
+        case 'base':
+        default:
+          heroCopyClasses.push(`font-medium`)
+      }
+
+      return heroCopyClasses
+
+    },
+    heroCopyClasses() {
+      const { copyCase, copyWeight, copySize } = this
       const heroCopyClasses = []
 
       switch (copyCase) {

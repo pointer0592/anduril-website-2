@@ -1,5 +1,6 @@
 ---
 title: Privacy Policy
+coverImg: privacy-design
 effective: 2021-01-09
 ---
 # Privacy Policy

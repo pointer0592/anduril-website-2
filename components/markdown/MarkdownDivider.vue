@@ -14,10 +14,14 @@ export default {
       type: String,
       default: '8',
     },
+    mx: {
+      type: String,
+      default: '0',
+    },
   },
   computed: {
     marginClasses() {
-      return `mt-${this.mt} mb-${this.mb}`;
+      return `mt-${this.mt} mb-${this.mb} mx-${this.mx}`;
     },
   },
 };

@@ -1,5 +1,5 @@
 <template>
-    <div class='mt-24'>
+    <div :id='mainContent.title' class='mt-24'>
       <div class='lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:grid-flow-col-dense lg:gap-24'>
         <div class='px-4 max-w-xl mx-auto sm:px-6 lg:max-w-none lg:mx-0 lg:px-0' :class='contentPlacement'>
           <div>
@@ -15,9 +15,17 @@
               <p data-aos='fade-up' class='mt-4 text-lg text-gray-500 dark:text-gray-400'>
                 {{ mainContent.text }}
               </p>
-              <p data-aos='fade-up' class='mt-4 text-lg font-semibold text-gray-500 dark:text-gray-400'>
+              <ul v-if="mainContent.tag==='li'">
+              <component :is='mainContent.tag' v-if='mainContent.text2' data-aos='fade-up' :class='listClasses' class='mt-4 text-lg text-gray-500 dark:text-gray-400'>
                 {{ mainContent.text2 }}
-              </p>
+              </component>
+              <component :is='mainContent.tag' v-if='mainContent.text3' data-aos='fade-up' :class='listClasses' class='mt-4 text-lg text-gray-500 dark:text-gray-400'>
+                {{ mainContent.text3 }}
+              </component>
+              <component :is='mainContent.tag' v-if='mainContent.text4' data-aos='fade-up' :class='listClasses' class='mt-4 text-lg text-gray-500 dark:text-gray-400'>
+                {{ mainContent.text4 }}
+              </component>
+              </ul>
               <div v-if='mainContent.btnCopy' data-aos='fade-up' class='mt-6'>
                 <nuxt-link :to="'/' + mainContent.btnLink"
                            class='inline-flex px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-orange-500 hover:bg-orange-600'>
@@ -27,7 +35,7 @@
             </div>
           </div>
           <div v-if='mainContent.quote' data-aos='fade-up'
-               class='mt-8 border-t border-gray-200 dark:border-gray-800 pt-6'>
+               class='mt-8 border-t border-GunMetal dark:border-gray-200 pt-6'>
             <blockquote>
               <div>
                 <p class='text-base text-gray-500 dark:text-gray-400'>
@@ -113,6 +121,7 @@
 </template>
 
 <script>
+import slugify from 'slugify'
 import aosMixin from '~/mixins/aos'
 
 export default {
@@ -142,6 +151,9 @@ export default {
     }
   },
   computed: {
+    listClasses() {
+      return this.mainContent.tag === 'li' ? 'list-inside list-disc' : ''
+    },
     contentPlacement() {
       return this.imageLeft ? 'lg:py-32 lg:col-start-2' : 'lg:py-16'
     },
@@ -170,6 +182,9 @@ export default {
       } catch (error) {
         return ''
       }
+    },
+    slug () {
+      return slugify(this.mainContent.title, { lower: true })
     }
   }
 }

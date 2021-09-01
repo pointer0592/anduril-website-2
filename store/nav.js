@@ -1,17 +1,19 @@
-// States
 export const state = () => ({
-  drawer: false,
+  currentTab: 'home'
 })
-// mutations
+
 export const mutations = {
-  toggle(state) {
-    state.drawer = !state.drawer
-  },
+  changeTab(state, tab) {
+    state.currentTab = tab
+  }
 }
 
-// Getters
 export const getters = {
-  getDrawerState(state) {
-    return state.drawer
-  },
+  tab: state => state.currentTab
+}
+
+export const actions = {
+  changeTab({ commit }, tab) {
+    commit('changeTab', tab)
+  }
 }

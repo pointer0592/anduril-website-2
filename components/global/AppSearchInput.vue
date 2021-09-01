@@ -8,7 +8,7 @@
         v-model='searchQuery'
         type='search'
         autocomplete='off'
-        placeholder='Search Content'
+        placeholder='Search'
         class='block w-80 pl-10 pr-3 py-2 truncate leading-5 placeholder-gray-300 border border-1 border-GunMetal dark:border-white dark:bg-GunMetal dark:text-white text-GunMetal focus:border-gray-300 rounded-md focus:outline-none focus:bg-white bg-white'
       />
     </div>
@@ -21,15 +21,15 @@
       leave-to-class='transform opacity-0 scale-95'
     >
       <ul
-        v-if='posts.length'
+        v-if='insights.length'
         class='z-10 absolute w-80 flex-1 bg-white dark:bg-GunMetal rounded-md border border-gray-300 overflow-hidden'
       >
-        <li v-for='post of posts' :key='post.slug'>
+        <li v-for='insight of insights' :key='insight.slug'>
           <NuxtLink
-            :to="'posts/' + post.slug"
+            :to="'/insights/' + insight.slug"
             class='flex px-4 py-2 items-center leading-5 transition ease-in-out duration-150 text-GunMetal hover:bg-gray-50 dark:text-white dark:hover:bg-GunMetalLighter'
           >
-            {{ post.title }}
+            {{ insight.title }}
           </NuxtLink>
             <div class='border-t border-gray-200 dark:border-gray-200'></div>
         </li>
@@ -44,7 +44,7 @@ export default {
   data() {
     return {
       searchQuery: '',
-      posts: []
+      insights: []
     }
   },
   methods: {
@@ -55,10 +55,10 @@ export default {
   watch: {
     async searchQuery(searchQuery) {
       if (!searchQuery) {
-        this.posts = []
+        this.insights = []
         return
       }
-      this.posts = await this.$content('posts')
+      this.insights = await this.$content('insights')
         .limit(6)
         .search(searchQuery)
         .fetch()

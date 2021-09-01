@@ -5,17 +5,17 @@ export default {
     BASE_URL: 'https://www.andurilpartners.ai',
     siteTitle: 'Anduril Partners',
     topNavItems: [
-      { label: "News & Events", slug: "about" },
-      { label: "Contact", slug: "contact" }
+      { label: 'News & Events', slug: 'about' },
+      { label: 'Contact', slug: 'contact' }
     ],
     navItems: [
-      { label: "Home", slug: "" },
-      { label: "About Us", slug: "about" },
-      { label: "Our Services", slug: "services" },
-      { label: "Our Approach", slug: "approach" },
-      { label: "Insights", slug: "posts" }
+      { label: 'Home', slug: '' },
+      { label: 'About Us', slug: 'about' },
+      { label: 'Our Services', slug: 'services' },
+      { label: 'Our Approach', slug: 'approach' },
+      { label: 'Insights', slug: 'insights' }
     ],
-    baseUrl: process.env.BASE_URL || 'http://localhost:3000',
+    baseUrl: process.env.BASE_URL || 'http://localhost:3000'
   },
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
@@ -29,17 +29,17 @@ export default {
         intro:
           'We help companies discover their ground truth, build KPIs and make data-driven decisions',
         image: 'https://www.andurilpartners.ai/images/og/default.jpg',
-        url: process.env.HOST_NAME,
+        url: process.env.HOST_NAME
       }),
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' }
     ],
     link: [
       {
         rel: 'icon',
         type: 'image/x-icon',
         href:
-          'https://res.cloudinary.com/www-andurilpartners-ai/image/upload/v1628882073/anduril-logos/logo-white-on-orange_syfekv.svg',
+          'https://res.cloudinary.com/www-andurilpartners-ai/image/upload/v1628882073/anduril-logos/logo-white-on-orange_syfekv.svg'
       }
     ]
   },
@@ -52,6 +52,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    '~/plugins/axios.js',
     '~/plugins/clickaway',
     { src: '~/plugins/disqus' },
     { src: '~/plugins/format-date' },
@@ -70,8 +71,8 @@ export default {
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: {
     dirs: [
-      '~/components/', '~/components/main/', '~/components/global/', '~/components/layout/', '~/components/markdown/'
-    ],
+      '~/components/', '~/components/main/', '~/components/global/', '~/components/ui/', '~/components/markdown/'
+    ]
   },
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
@@ -83,28 +84,29 @@ export default {
     '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
-    '@nuxt/components',
+    '@nuxt/components'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    '@nuxtjs/axios',
     '@nuxtjs/cloudinary',
     '@nuxtjs/dotenv',
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
     // https://go.nuxtjs.dev/content
-    '@nuxt/content',
+    '@nuxt/content'
   ],
 
 
   robots: {
     UserAgent: '*',
     Disallow: process.env.NODE_ENV === 'production' ? '' : '/',
-    Sitemap: 'https://andurilpartners.ai/sitemap.xml',
+    Sitemap: 'https://andurilpartners.ai/sitemap.xml'
   },
 
   colorMode: {
-    classSuffix: '',
+    classSuffix: ''
   },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -139,7 +141,7 @@ export default {
     cloudName: 'www-andurilpartners-ai',
     apiKey: 'tznDwFGJ59UPFhtVzRR80TtiG9g',
     apiSecret: '594873127926649',
-    useComponent: true,
+    useComponent: true
   },
 
   publicRuntimeConfig: {
@@ -150,13 +152,25 @@ export default {
   content: {
     markdown: {
       prism: {
-        theme: 'prism-themes/themes/prism-material-oceanic.css',
-      },
+        theme: 'prism-themes/themes/prism-material-oceanic.css'
+      }
     },
-    nestedProperties: ['author.name', 'author.image', 'author.linkedin', 'author.title', 'author.company', 'authorTwo.name', 'authorTwo.image', 'authorTwo.linkedin', 'authorTwo.title', 'authorTwo.company'],
+    nestedProperties: ['author.name', 'author.image', 'author.linkedin', 'author.title', 'author.company', 'authorTwo.name', 'authorTwo.image', 'authorTwo.linkedin', 'authorTwo.title', 'authorTwo.company']
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {
+  build: {},
+
+  generate: {
+    // subfolders would create redirects on netlify
+    subFolders: false,
+    // generates a 404 page
+    fallback: true,
+    // site generation for all insights
+    async routes() {
+      const { $content } = require('@nuxt/content')
+      const files = await $content('insights').where({ isLive: true }).fetch()
+      return files.map(file => file.path === '/index' ? '/' : file.path)
+    }
   }
 }

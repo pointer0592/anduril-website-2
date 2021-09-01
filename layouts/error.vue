@@ -7,7 +7,6 @@
           <div class="flex-shrink-0 my-auto py-16 sm:py-32">
             <p class="text-sm font-semibold text-orange-500 uppercase tracking-wide">404 error</p>
             <h1 class="mt-2 text-4xl font-extrabold text-gray-900 tracking-tight sm:text-5xl">Page not found</h1>
-            <p class="mt-2 text-base text-gray-500">{{ errorMsg }}</p>
             <div class="mt-6">
               <nuxt-link to="/" class="text-base font-medium text-orange-500 hover:text-orange-700">Go back home<span aria-hidden="true">
                  &rarr;</span></nuxt-link>
@@ -30,27 +29,3 @@
     </div>
   </div>
 </template>
-
-<script>
-export default {
-  name: 'Error',
-  props: {
-    error: {
-      type: Object,
-      default: () => ({})
-    }
-  },
-  computed: {
-    errorMsg() {
-      switch (this.error.statusCode) {
-        case 404: {
-          return this.$t('error.codes.404')
-        }
-        default: {
-          return this.$t('error.codes.default')
-        }
-      }
-    }
-  }
-}
-</script>

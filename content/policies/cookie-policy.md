@@ -1,5 +1,6 @@
 ---
 title: Cookie policy
+coverImg: cookie-design
 effective: 2021-01-09
 ---
 # Cookie Policy
