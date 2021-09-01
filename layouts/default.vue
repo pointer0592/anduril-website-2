@@ -113,7 +113,7 @@ nav {
 }
 
 .nuxt-content .nuxt-link-active {
-  @apply text-orange-500 dark:text-orange-500 underline font-bold hover:text-orange-600 dark:hover:text-orange-600;
+  @apply text-orange-500 dark:text-orange-500 underline font-bold hover:text-orange-600 dark-hover:text-orange-600;
 }
 
 .nuxt-content p a {

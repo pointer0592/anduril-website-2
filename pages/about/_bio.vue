@@ -6,7 +6,7 @@
           class='hidden lg:block bg-gradient-to-b from-gray-50 dark:bg-gradient-to-b dark:from-GunMetalDarker dark:to-GunMetal absolute top-0 bottom-0 left-3/4 w-screen' />
         <div class='mx-auto text-base max-w-prose lg:grid lg:grid-cols-2 lg:gap-8 lg:max-w-none'>
           <div class='mt-4'>
-            <nuxt-link to='/about' class='text-lg font-bold text-GunMetal dark:text-white underline hover:text-gray-600 dark:hover:text-gray-200'>
+            <nuxt-link to='/about' class='text-lg font-bold text-GunMetal dark:text-white underline hover:text-gray-600 dark-hover:text-gray-200'>
               Back to Team
             </nuxt-link>
             <h2 class='mt-8 text-base  text-orange-500 font-semibold tracking-wide uppercase'>
@@ -74,7 +74,7 @@
                 <a :href='bio.linkedinProfileLink' target='_blank' class='cursor-pointer'>
                   <span class='sr-only'>LinkedIn</span>
                   <v-icon name='linkedin'
-                    class='mb-2 w-6 h-6 cursor-pointer rounded-md p-0 inline-flex items-center justify-center text-gray-600 dark:text-gray-200 dark:hover:text-Linkedin hover:text-Linkedin focus:outline-none focus:ring-2 focus:ring-inset focus:ring-orange-500' />
+                    class='mb-2 w-6 h-6 cursor-pointer rounded-md p-0 inline-flex items-center justify-center text-gray-600 dark:text-gray-200 dark-hover:text-Linkedin hover:text-Linkedin focus:outline-none focus:ring-2 focus:ring-inset focus:ring-orange-500' />
                 </a>
               </div>
             </div>

@@ -40,7 +40,7 @@
                 </p>
                 <form
                   data-aos="fade-up"
-                  method="POST"
+                  method="post"
                   class="mt-9 grid grid-cols-1"
                   enctype="multipart/form-data"
                   name="contact-us-form"
@@ -89,13 +89,15 @@
                     </div>
                   </div>
                   <div data-aos="fade-up" class="text-right sm:col-span-2">
-                    <button type="submit" class="ml-auto flex justify-center items-center text-orange-500 hover:text-orange-600 pt-6">
-                      <span class="text-2xl font-bold">Ship it</span><svg class="h-7 w-7 ml-2 mb-1 pt-1 text-orange-500" fill="currentColor" width="100%" height="100%" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg"
-     xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/"
-     style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"><g><rect x="7.28" y="45.637" width="76.651" height="8.333"/><path
-  d="M86.81,44.047l-27.998,27.998l5.893,5.892l27.997,-27.998l-5.892,-5.892Z"/><path
-  d="M86.827,55.971l-28.015,-28.016l5.893,-5.892l28.015,28.015l-5.893,5.893Z"/></g></svg>
-                    </button>
+                <button
+                  id="submit_button"
+                  role='button'
+                  class="ml-auto flex justify-center items-center text-orange-500 hover:text-orange-600 pt-6"
+                  type="submit"
+                  value="Ship it"
+                ><span class='text-2xl font-bold'>Ship it</span>
+                  <v-icon name='arrow-right' class='h-8 w-8 ml-2' />
+                </button>
                   </div>
                 </form>
               </div>

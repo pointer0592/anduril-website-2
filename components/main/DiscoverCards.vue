@@ -28,7 +28,7 @@
                 <nuxt-link :to='card.link'
                            class='inline-flex items-center justify-center border border-transparent text-base font-bold uppercase rounded-0 text-orange-500 hover:text-orange-700 bg-transparent'>
                   <span>{{ card.linkLabel }}</span>
-                  <icon-arrow-right class='h-6 w-6 ml-2' />
+                  <v-icon name='arrow-right' class='h-6 w-6 ml-2' />
                 </nuxt-link>
               </div>
             </div>
@@ -38,13 +38,9 @@
 
 <script>
 import aosMixin from '~/mixins/aos'
-import IconArrowRight from '~/assets/svg/arrow-right.svg?inline'
 
 export default {
   name: 'DiscoverCards',
-  components: {
-    IconArrowRight
-  },
   mixins: [aosMixin],
   props: {
     discoverCards: {

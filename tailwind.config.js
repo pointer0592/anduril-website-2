@@ -1,11 +1,9 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
-  mode: 'jit',
   purge: {
-    enabled: process.env.NODE_ENV === 'production',
     content: ['./index.html', './src/**/*.{vue,ts}'],
-    whitelist: ['dark-mode','bg-GunMetal']
+    whitelist: ['dark-mode', 'bg-GunMetal']
   },
   theme: {
     screens: {
@@ -13,7 +11,7 @@ module.exports = {
       sm: '640px',
       md: '768px',
       lg: '1024px',
-      xl: '1280px',
+      xl: '1280px'
     },
     darkSelector: '.dark-mode',
     extend: {
@@ -61,14 +59,13 @@ module.exports = {
         LinkedinDK: '#054f73'
       },
       fontFamily: {
-        sans: ["futura-pt", ...defaultTheme.fontFamily.sans]
+        sans: ['futura-pt', ...defaultTheme.fontFamily.sans]
       }
     }
   },
   variants: {
     display: ['responsive'],
     gradient: [
-      'selected',
       'dark',
       'dark-hover',
       'dark-group-hover',
@@ -79,7 +76,6 @@ module.exports = {
       'responsive'
     ],
     backgroundColor: [
-      'selected',
       'dark',
       'dark-hover',
       'dark-group-hover',
@@ -90,8 +86,8 @@ module.exports = {
       'responsive'
     ],
     borderColor: [
-      'selected',
       'dark',
+      'dark-hover',
       'dark-focus',
       'dark-focus-within',
       'hover',
@@ -99,10 +95,19 @@ module.exports = {
       'responsive'
     ],
     textColor: [
-      'selected',
       'dark',
       'dark-hover',
-      'dark-active',
+      'dark-focus',
+      'dark-focus-within',
+      'hover',
+      'focus',
+      'responsive'
+    ],
+    opacity: [
+      'dark',
+      'dark-hover',
+      'dark-focus',
+      'dark-focus-within',
       'hover',
       'focus',
       'responsive'

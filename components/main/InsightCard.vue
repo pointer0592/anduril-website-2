@@ -46,7 +46,7 @@
       </nuxt-link>
       <div data-aos="fade-up" class='h-8'>
         <nuxt-link :to="insight.path">
-          <p data-aos="fade-up" class='text-base text-gray-500 dark:text-gray-200 underline hover:text-gray-600 dark:hover:text-gray-300'>
+          <p data-aos="fade-up" class='text-base text-gray-500 dark:text-gray-200 underline hover:text-gray-600 dark-hover:text-gray-300'>
             more...</p>
         </nuxt-link>
       </div>
@@ -82,13 +82,13 @@
           <div v-if='insight.author.name' data-aos="fade-up"
                class='flex items-center flex-wrap text-sm font-medium text-GunMetal dark:text-white'>
             <nuxt-link v-if='insight.author.name&&insight.author.anduril' :to="'/about/' + insight.author.image"
-                       class='hover:underline hover:text-GunMetalLt dark:hover:text-gray-300'>
+                       class='hover:underline hover:text-GunMetalLt dark-hover:text-gray-300'>
               {{ insight.author.name }}
             </nuxt-link>
             <span v-if='insight.author.name&&!insight.author.anduril'>{{ insight.author.name }}</span>
             <span v-if='insight.authorTwo.name'>&nbsp; & &nbsp;</span>
             <nuxt-link v-if='insight.authorTwo.anduril' :to="'/about/' + insight.authorTwo.image"
-                       class='hover:underline hover:text-GunMetalLt dark:hover:text-gray-300'>
+                       class='hover:underline hover:text-GunMetalLt dark-hover:text-gray-300'>
               {{ insight.authorTwo.name }}
             </nuxt-link>
             <span v-if='insight.authorTwo.name&&!insight.authorTwo.anduril'>{{ insight.author.name }}</span>

@@ -28,7 +28,7 @@
             {{ bio.intro | truncate(200)}}
           </p>
         <nuxt-link :to="`/about/${bio.slug}`">
-          <p class='text-base text-gray-500 dark:text-gray-200 underline hover:text-gray-600 dark:hover:text-gray-300' data-aos="fade-up">
+          <p class='text-base text-gray-500 dark:text-gray-200 underline hover:text-gray-600 dark-hover:text-gray-300' data-aos="fade-up">
             more...</p>
         </nuxt-link>
         </div>
@@ -37,14 +37,14 @@
             <a :href='bio.linkedinProfileLink' class='cursor-pointer' data-aos="fade-up">
               <span class='sr-only'>LinkedIn</span>
              <v-icon name='linkedin'
-                class='w-6 h-6 cursor-pointer rounded-md p-0 inline-flex items-center justify-center text-gray-600 dark:text-gray-200 dark:hover:text-Linkedin hover:text-Linkedin focus:outline-none focus:ring-2 focus:ring-inset focus:ring-orange-500' />
+                class='w-6 h-6 cursor-pointer rounded-md p-0 inline-flex items-center justify-center text-gray-600 dark:text-gray-200 dark-hover:text-Linkedin hover:text-Linkedin focus:outline-none focus:ring-2 focus:ring-inset focus:ring-orange-500' />
             </a>
           </li>
           <li>
             <nuxt-link :to="`/about/${bio.slug}`" class='cursor-pointer' data-aos="fade-up">
               <span class='sr-only'>Member Bio</span>
               <v-icon name='book-open'
-                class='w-6 h-6 cursor-pointer rounded-md p-0 inline-flex items-center justify-center text-gray-600 dark:text-gray-200 dark:hover:text-orange-500 hover:text-orange-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-orange-500' />
+                class='w-6 h-6 cursor-pointer rounded-md p-0 inline-flex items-center justify-center text-gray-600 dark:text-gray-200 dark-hover:text-orange-500 hover:text-orange-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-orange-500' />
             </nuxt-link>
           </li>
         </ul>

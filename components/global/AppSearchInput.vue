@@ -27,7 +27,7 @@
         <li v-for='insight of insights' :key='insight.slug'>
           <NuxtLink
             :to="'/insights/' + insight.slug"
-            class='flex px-4 py-2 items-center leading-5 transition ease-in-out duration-150 text-GunMetal hover:bg-gray-50 dark:text-white dark:hover:bg-GunMetalLighter'
+            class='flex px-4 py-2 items-center leading-5 transition ease-in-out duration-150 text-GunMetal hover:bg-gray-50 dark:text-white dark-hover:bg-GunMetalLighter'
           >
             {{ insight.title }}
           </NuxtLink>

@@ -9,7 +9,7 @@
           <div class='px-5 pt-4 flex items-center justify-between'>
             <div>
               <nuxt-link to='/'>
-                <IconLogo class='h-10 w-10 text-orange-500 hover:text-GunMetalDk dark:hover:text-white'
+                <IconLogo class='h-10 w-10 text-orange-500 hover:text-GunMetalDk dark-hover:text-white'
                           aria-hidden='true' />
               </nuxt-link>
             </div>
@@ -20,7 +20,7 @@
           </div>
           <div class='px-2 pt-2 pb-3'>
             <nuxt-link v-for='item in sectionNames' :key='item.slug' :to="'/' + item.slug"
-                       class='block px-3 py-2 rounded-md text-base font-bold text-GunMetal dark:text-white dark:text-gray-200 hover:text-orange-500 dark:hover:bg-GunMetal hover:bg-gray-50'>
+                       class='block px-3 py-2 rounded-md text-base font-bold text-GunMetal dark:text-white dark:text-gray-200 hover:text-orange-500 dark-hover:bg-GunMetal hover:bg-gray-50'>
               {{ item.label }}
             </nuxt-link>
           </div>

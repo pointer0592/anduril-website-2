@@ -84,7 +84,8 @@ export default {
     '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
-    '@nuxt/components'
+    '@nuxt/components',
+    '@nuxtjs/pwa'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -98,13 +99,6 @@ export default {
     '@nuxt/content'
   ],
 
-
-  robots: {
-    UserAgent: '*',
-    Disallow: process.env.NODE_ENV === 'production' ? '' : '/',
-    Sitemap: 'https://andurilpartners.ai/sitemap.xml'
-  },
-
   colorMode: {
     classSuffix: ''
   },
@@ -114,13 +108,19 @@ export default {
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
+    meta: {
+      name: 'Anduril Partners | Data to KPI solutions',
+      description: 'We help companies discover their ground truth, build KPIs and make data-driven decisions',
+      ogImage:
+        'https://res.cloudinary.com/www-andurilpartners-ai/image/upload/v1628882073/anduril-logos/logo-white-on-orange_syfekv.svg',
+      ogHost: 'https://andurilpartners.ai',
+    },
     manifest: {
       lang: 'en',
-      name: 'Anduril Partners | Data-driven Decisions, KPIs, Ground Truth Discovery',
-      short_name: 'Anduril',
+      name: 'Anduril Partners | Data to KPI solutions',
+      short_name: 'Anduril Partners | Data | KPIs',
       start_url: '/index.html',
       display: 'standalone',
-      background_color: '#fefefe',
       theme_color: '#FF8400'
     }
   },
@@ -136,7 +136,6 @@ export default {
     }
   },
 
-
   cloudinary: {
     cloudName: 'www-andurilpartners-ai',
     apiKey: 'tznDwFGJ59UPFhtVzRR80TtiG9g',
@@ -150,7 +149,15 @@ export default {
 
   // Content module configuration: https://go.nuxtjs.dev/config-content
   content: {
+    dir: 'content',
+    liveEdit: false,
+    // Only search in title and description
+    fullTextSearchFields: ['title', 'description'],
     markdown: {
+      remarkExternalLinks: {
+        target: '_blank',
+        rel: 'noopener noreferrer'
+      },
       prism: {
         theme: 'prism-themes/themes/prism-material-oceanic.css'
       }
@@ -159,18 +166,47 @@ export default {
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
 
-  generate: {
-    // subfolders would create redirects on netlify
-    subFolders: false,
-    // generates a 404 page
-    fallback: true,
-    // site generation for all insights
-    async routes() {
-      const { $content } = require('@nuxt/content')
-      const files = await $content('insights').where({ isLive: true }).fetch()
-      return files.map(file => file.path === '/index' ? '/' : file.path)
-    }
+  feed: async () => {
+    const { $content } = require('@nuxt/content')
+    const { tags } = await $content('insights/tags').fetch()
+    const insights = await $content('insights', { deep: true, text: true })
+      .where({
+        extension: '.md'
+      })
+      .fetch()
+
+    return tags.map(tag => {
+      const relevantInsights = insights.filter(insight => insight.tags.includes(tag))
+
+      return {
+        path: `/${tag}.xml`,
+        create(feed) {
+          feed.options = {
+            title: `Category: ${tag} - Anduril Partners`,
+            link: `https://andurilpartners.ai/${tag}.xml`,
+            description: `All posts related to ${tag} of the Anduril Partners Blog`
+          }
+
+          relevantInsights.forEach(insight => {
+            feed.addItem({
+              title: insight.title,
+              id: insight.slug,
+              link: `https://andurilpartners.ai/insights/${insight.slug}`,
+              description: insight.description,
+              content: insight.text
+            })
+          })
+        },
+        cacheTime: 1000 * 60 * 15,
+        type: 'rss2'
+      }
+    })
+  },
+  sitemap: {
+    hostname: 'https://andurilpartners.ai'
+  },
+
+  build: {
   }
 }

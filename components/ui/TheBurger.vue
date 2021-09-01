@@ -30,7 +30,7 @@ export default {
       return this.drawer ? 'icon-x' : 'icon-menu'
     },
     burgerClasses() {
-      return this.drawer ? 'text-GunMetal dark:text-white hover:text-GunMetalLt dark:hover:bg-white dark:hover:bg-opacity-20' : 'text-white hover:bg-white hover:bg-opacity-20'
+      return this.drawer ? 'text-GunMetal dark:text-white hover:text-GunMetalLt dark-hover:bg-white dark-hover:bg-opacity-20' : 'text-white hover:bg-white hover:bg-opacity-20'
     },
     srOnlyText() {
       return this.drawer ? 'Close main menu' : 'Open main menu'

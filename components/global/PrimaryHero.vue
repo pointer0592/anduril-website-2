@@ -24,7 +24,7 @@
       </div>
       <div class='pb-36 my-auto h-full'>
         <div
-          class='relative xl:px-32 lg:px-24 px-4 max-w-full flex flex-col justify-end bg-GunMetal dark:bg-white bg-transparent dark:bg-transparent h-full'
+          class='relative xl:px-32 lg:px-24 px-4 max-w-full flex flex-col justify-end bg-transparent dark:bg-transparent h-full'
           :class='sectionAlignment'
         >
           <div class='max-w-5xl'>

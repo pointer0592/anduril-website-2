@@ -37,7 +37,7 @@
                 <li>
                 <li v-for='service in services' :key='service.name' data-aos='fade-up'>
                   <nuxt-link :to="`${service.link}`"
-                             class='text-base text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white'>
+                             class='text-base text-gray-600 hover:text-gray-900 dark:text-gray-300 dark-hover:text-white'>
                     {{ service.name }}
                   </nuxt-link>
                 </li>
@@ -53,7 +53,7 @@
               <ul role='list' class='mt-4 space-y-4'>
                 <li v-for='item in company' :key='item.name' data-aos='fade-up'>
                   <nuxt-link :to='item.link'
-                             class='text-base text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white'>
+                             class='text-base text-gray-600 hover:text-gray-900 dark:text-gray-300 dark-hover:text-white'>
                     {{ item.name }}
                   </nuxt-link>
                 </li>
@@ -69,17 +69,17 @@
               <ul role='list' class='mt-4 space-y-4'>
                 <li data-aos='fade-up'>
                   <nuxt-link to="/policies/terms-of-use"
-                             class='text-base text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white'>
+                             class='text-base text-gray-600 hover:text-gray-900 dark:text-gray-300 dark-hover:text-white'>
                     Terms
                   </nuxt-link>
                 <li data-aos='fade-up'>
                   <nuxt-link to="/policies/cookie-policy"
-                             class='text-base text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white'>
+                             class='text-base text-gray-600 hover:text-gray-900 dark:text-gray-300 dark-hover:text-white'>
                     Cookies
                   </nuxt-link>
                 <li data-aos='fade-up'>
                   <nuxt-link to="/policies/privacy-policy"
-                             class='text-base text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white'>
+                             class='text-base text-gray-600 hover:text-gray-900 dark:text-gray-300 dark-hover:text-white'>
                     Privacy
                   </nuxt-link>
                 </li>
@@ -123,13 +123,13 @@ export default {
           name: 'LinkedIn',
           icon: 'linkedin',
           href: 'https://www.linkedin.com/company/andurilpartners/',
-          hoverColor: 'hover:text-Linkedin dark:hover:text-Linkedin'
+          hoverColor: 'hover:text-Linkedin dark-hover:text-Linkedin'
         },
         {
           name: 'Medium',
           icon: 'medium-logo',
           href: 'https://medium.com/anduril-partners',
-          hoverColor: 'hover:text-GunMetalDk dark:hover:text-white'
+          hoverColor: 'hover:text-GunMetalDk dark-hover:text-white'
         }
       ]
     }
