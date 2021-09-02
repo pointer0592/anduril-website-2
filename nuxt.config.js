@@ -5,6 +5,10 @@ import getRoutes from './utils/get-routes'
 const meta = getSiteMeta()
 
 export default {
+  // Target: https://go.nuxtjs.dev/config-target
+  mode: 'universal',
+  target: 'static',
+
   env: {
     siteTitle: 'Anduril Partners',
     topNavItems: [
@@ -17,11 +21,8 @@ export default {
       { label: 'Our Services', slug: 'services' },
       { label: 'Our Approach', slug: 'approach' },
       { label: 'Insights', slug: 'insights' }
-    ],
-    baseUrl: process.env.BASE_URL || 'http://localhost:3000'
+    ]
   },
-  // Target: https://go.nuxtjs.dev/config-target
-  target: 'static',
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
@@ -184,7 +185,7 @@ export default {
   },
 
   purgeCSS: {
-    whitelist: ['dark-mode', 'bg-mayas-green-dark']
+    whitelist: ['dark-mode', 'dark', 'dark-hover', 'aos-init', 'aos-animate', 'GunMetal', 'GunMetalLt', 'GunMetalDk', 'GunMetalDarker', 'GunMetalLighter']
   },
   hooks: {
     'content:file:beforeInsert': (document) => {
