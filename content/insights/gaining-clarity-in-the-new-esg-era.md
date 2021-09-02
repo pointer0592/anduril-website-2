@@ -36,7 +36,7 @@ tags:
   - KPIs
   - Governance
 category: Anduril Post
-pdf: Anduril Partners - ESG - Gaining Clarity in the New ESG Era-updated
+pdf: 
 ---
 
 # A New Era Beckons

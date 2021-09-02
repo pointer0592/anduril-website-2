@@ -30,13 +30,13 @@ authorTwo:
   bio: ''
   title: ''
   company: ''
-  anduril:
+  anduril: 
 tags: 
   - Data
   - Tech
   - KPIs
 category: Anduril Post
-pdf: 'Using the Right Answers'
+pdf: ''
 ---
 
 The growth in available data and potential from analytics and artificial intelligence (AI) technology increases both the opportunity and the challenge for asset managers, investor relations professionals, and corporate management teams. Analytics can influence corporate decisions in product management, capital allocation, and how equity shareholders impact share pricing. The size and scope strains comprehension:

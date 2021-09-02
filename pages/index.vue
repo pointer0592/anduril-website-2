@@ -113,17 +113,6 @@ export default {
         }
       ],
     }
-  },
-  computed: {
-    techImg() {
-      return require('~/static/images/home/kpi-mac-pic.jpg')
-    },
-    smallTechImg() {
-      return require('~/static/images/home/kpi-mac-pic-mobile.jpg')
-    },
-    avatarImg() {
-      return require('~/static/images/clients/headshots/sam_levinson.svg')
-    }
   }
 }
 </script>

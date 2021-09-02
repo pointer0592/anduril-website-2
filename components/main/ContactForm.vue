@@ -133,7 +133,7 @@
               </svg>
             </div>
             <div data-aos="fade-up-left" class="relative pl-4 -mr-40 sm:mx-auto sm:max-w-3xl sm:px-0 lg:max-w-none lg:h-full lg:pl-12">
-              <img class="w-full rounded-md shadow-xl ring-1 ring-black ring-opacity-5 lg:h-full lg:w-auto lg:max-w-none" :src="contactImgSrc" alt="contact_img">
+              <img class="w-full rounded-md shadow-xl ring-1 ring-black ring-opacity-5 lg:h-full lg:w-auto lg:max-w-none" src="https://res.cloudinary.com/www-andurilpartners-ai/image/upload/v1630611256/contact-section/contact.jpg" alt="contact_img">
             </div>
           </div>
         </div>
@@ -199,11 +199,6 @@ export default {
           visibility: ''
         }
       ]
-    }
-  },
-  computed: {
-    contactImgSrc () {
-      return require('~/static/images/contact-section/contact.jpg')
     }
   }
 }

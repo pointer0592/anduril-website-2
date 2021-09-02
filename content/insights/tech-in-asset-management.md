@@ -36,7 +36,7 @@ tags:
   - Tech
   - KPIs
 category: Anduril Post
-pdf: Tech in Asset Management NIRI
+pdf: 
 ---
 
 Artificial intelligence generates reams of data, but generating results means you need to separate wheat from chaff and focus on metrics that matter.

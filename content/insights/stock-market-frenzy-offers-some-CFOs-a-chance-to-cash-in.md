@@ -36,7 +36,7 @@ tags:
   - Tech
   - KPIs
 category: News
-pdf: WSJ-EquityOfferings
+pdf: ''
 ---
 
 *Cited in: WSJ CFO Journal*

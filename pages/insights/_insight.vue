@@ -41,21 +41,21 @@
       </div>
     </div>
 
-    <div v-if='insight.pdf' class='mt-12 flex justify-center'>
+<!--    <div v-if='insight.pdf' class='mt-12 flex justify-center'>-->
 
-      <nuxt-link type='button'
-                 class='mx-auto'
-                 :to='file'
-                 target='_blank'
-                 rel='nofollow'>
+<!--      <nuxt-link type='button'-->
+<!--                 class='mx-auto'-->
+<!--                 :to='file'-->
+<!--                 target='_blank'-->
+<!--                 rel='nofollow'>-->
 
-        <button type='button'
-                class='inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-base font-medium rounded-0 text-white bg-orange-500 hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500'>
-          Download pdf
-          <v-icon name='icon-download' class='ml-3 -mr-1 h-5 w-5 text-white' aria-hidden='true' />
-        </button>
-      </nuxt-link>
-    </div>
+<!--        <button type='button'-->
+<!--                class='inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-base font-medium rounded-0 text-white bg-orange-500 hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500'>-->
+<!--          Download pdf-->
+<!--          <v-icon name='icon-download' class='ml-3 -mr-1 h-5 w-5 text-white' aria-hidden='true' />-->
+<!--        </button>-->
+<!--      </nuxt-link>-->
+<!--    </div>-->
   </div>
 </template>
 
@@ -76,8 +76,8 @@ export default {
       return this.insight.coverImg
     }
   },
-  file() {
-    return '/pdfs/' + this.insight.pdf + '.pdf'
-  }
+  // file() {
+  //   return '/pdfs/' + this.insight.pdf + '.pdf'
+  // }
 }
 </script>
