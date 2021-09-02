@@ -1,7 +1,12 @@
 <template>
   <div>
+    <SocialHead
+      :title='insight.title'
+      :description='insight.description'
+      :image="`https://res.cloudinary.com/www-andurilpartners-ai/image/upload/v1630589031/insights/${insight.coverImg}.jpg`"
+    />
     <primary-hero
-      :hero-img="'insights/' + insight.coverimg"
+      :hero-img="'insights/' + insight.coverImg"
       :hero-title='insight.title'
       :hero-lead='insight.description'
       :person-name='insight.author.name'
@@ -12,6 +17,9 @@
       :reading-time='insight.readingTime'
       :is-anduril='insight.author.anduril'
       :is-anduril2='insight.authorTwo.anduril'
+      :bio='insight.author.bio'
+      :title='insight.author.title'
+      :company='insight.author.company'
       center
     >
       <div class='mt-4'>
@@ -61,67 +69,15 @@ export default {
       insight
     }
   },
-  head() {
-    return {
-      title: this.insight.title,
-      description: this.insight.description,
-      meta: [
-        // Twitter Card
-        {
-          hid: 'description',
-          name: 'description',
-          content: this.insight.description
-        },
-        {
-          hid: 'twitter:title',
-          name: 'twitter:title',
-          content: this.insight.title
-        },
-        {
-          hid: 'twitter:description',
-          name: 'twitter:description',
-          content: this.insight.description
-        },
-        // Facebook OpenGraph
-        {
-          hid: 'og:title',
-          property: 'og:title',
-          content: this.insight.title
-        },
-        {
-          hid: 'twitter:image',
-          name: 'twitter:image',
-          content: `https://res.cloudinary.com/www-andurilpartners-ai/image/upload/c_scale,q_auto,h_300/${this.insight.coverimg}.jpg`
-        },
-        {
-          hid: 'og:site_name',
-          property: 'og:site_name',
-          content: this.insight.title
-        },
-        {
-          hid: 'og:description',
-          property: 'og:description',
-          content: this.insight.description
-        },
-        {
-          hid: 'og:image',
-          property: 'og:image',
-          content: `https://res.cloudinary.com/www-andurilpartners-ai/image/upload/c_scale,q_auto,h_300/${this.insight.coverimg}.jpg`
-        }
-      ]
+  mockupMobileSrc() {
+    try {
+      return this.insight.mobileImage
+    } catch (error) {
+      return this.insight.coverImg
     }
   },
-  computed: {
-    mockupMobileSrc() {
-      try {
-        return this.insight.mobileImage
-      } catch (error) {
-        return this.insight.coverimg
-      }
-    },
-    file() {
-      return '/pdfs/' + this.insight.pdf + '.pdf'
-    }
+  file() {
+    return '/pdfs/' + this.insight.pdf + '.pdf'
   }
 }
 </script>

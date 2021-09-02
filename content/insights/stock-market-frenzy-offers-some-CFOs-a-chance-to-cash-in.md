@@ -6,7 +6,7 @@ published: 2021-01-27
 description: Stock-Market Frenzy Offers Some CFOs a Chance to Cash In 
 lead:
 isMockup: false
-coverimg: monitors 
+coverImg: monitors 
 smallimg: monitors
 imginsert: ''
 insertheader: ''
@@ -20,14 +20,14 @@ includebottom: false
 author: 
   name: Nina Trentmann and others
   image:
-  linkedin: 
+  bio: 
   title: 
   company: Wall Street Journal
   anduril: false
 authorTwo:
   name: ''
   image: ''
-  linkedin: ''
+  bio: ''
   title: ''
   company: ''
   anduril:
@@ -35,7 +35,7 @@ tags:
   - Data
   - Tech
   - KPIs
-category: In the News
+category: News
 pdf: WSJ-EquityOfferings
 ---
 

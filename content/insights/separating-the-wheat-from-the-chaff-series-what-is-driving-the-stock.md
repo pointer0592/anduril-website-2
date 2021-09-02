@@ -6,7 +6,7 @@ published: 2021-04-29
 description: What is Driving the Stock? 
 lead: One of the holy grail interest points across communities — why a stock is trading where it is. For particularly Fundamental and Corporate users - do you find use in Factor models? Are they - over or under - valued?
 isMockup: false
-coverimg: part-6-what-is-driving-stock
+coverImg: part-6-what-is-driving-stock
 smallimg: part-6-what-is-driving-stock
 imginsert: ''
 insertheader: ''
@@ -21,14 +21,14 @@ includebottom: false
 author: 
   name: Jonathan Neitzell
   image: jonathan-neitzell
-  linkedin: https://www.linkedin.com/in/jon-neitzell-1ba3172/
+  bio: https://www.linkedin.com/in/jon-neitzell-1ba3172/
   title: Founder, Managing Partner
   company: Anduril Partners
   anduril: true
 authorTwo:
   name: ''
   image: ''
-  linkedin: ''
+  bio: ''
   title: ''
   company: ''
   anduril:
@@ -38,7 +38,7 @@ tags:
   - Factors
   - Fundamental Investing
   - Corporate Finance
-category: Blog Series
+category: Anduril Post
 pdf: ''
 ---
 

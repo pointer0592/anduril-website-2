@@ -6,7 +6,7 @@ published: 2021-03-31
 description: Outlaw Blind Bias - Invest in Process
 lead:  Exploring the risks of blind bias from the noise of inputs and/or lack of transparent feedback loops. Utilizing decision inputs in a sustainable journey requires both consistent process and integration into our daily workflow.
 isMockup: false
-coverimg: wheat-chaff
+coverImg: wheat-chaff
 smallimg: wheat-chaff
 imginsert: storytelling
 alt: story telling
@@ -19,14 +19,14 @@ includebottom: false
 author: 
   name: Jonathan Neitzell
   image: jonathan-neitzell
-  linkedin: https://www.linkedin.com/in/jon-neitzell-1ba3172/
+  bio: https://www.linkedin.com/in/jon-neitzell-1ba3172/
   title: Founder, Managing Partner
   company: Anduril Partners
   anduril: true
 authorTwo:
   name: ''
   image: ''
-  linkedin: ''
+  bio: ''
   title: ''
   company: ''
   anduril:
@@ -37,7 +37,7 @@ tags:
   - Fundamental Investing
   - Consistent Process
   - Feedback Loops
-category: Blog Series
+category: Anduril Post
 pdf: ''
 ---
 

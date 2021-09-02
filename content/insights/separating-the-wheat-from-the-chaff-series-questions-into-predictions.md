@@ -6,7 +6,7 @@ published: 2021-04-14
 description: Turning Questions Into Predictions
 lead: For those humble, confident, and willing to be held accountable-the tailwinds of technology can harness this tremendous potential in transparency, scale, and continued improvement on behalf of your stakeholders.
 isMockup: false
-coverimg: part4-wheat-chaff
+coverImg: part4-wheat-chaff
 smallimg: part4-wheat-chaff
 imginsert: 
 insertheader: ''
@@ -21,14 +21,14 @@ includebottom: false
 author: 
   name: Jonathan Neitzell
   image: jonathan-neitzell
-  linkedin: https://www.linkedin.com/in/jon-neitzell-1ba3172/
+  bio: https://www.linkedin.com/in/jon-neitzell-1ba3172/
   title: Founder, Managing Partner
   company: Anduril Partners
   anduril: true
 authorTwo:
   name: ''
   image: ''
-  linkedin: ''
+  bio: ''
   title: ''
   company: ''
   anduril:
@@ -38,7 +38,7 @@ tags:
   - Investment Technology
   - Hypothesis Formation
   - Questions-Predictions
-category: Blog Series
+category: Anduril Post
 pdf: ''
 ---
 

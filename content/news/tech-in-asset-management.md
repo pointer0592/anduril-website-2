@@ -6,7 +6,7 @@ published: 2021-01-05
 description: How to effectively use tech in asset management
 lead:
 isMockup: false
-coverimg: cloud-data
+coverImg: cloud-data
 smallimg: cloud-data
 imginsert: ''
 insertheader: ''
@@ -20,14 +20,14 @@ includebottom: false
 author: 
   name: Jonathan Neitzell
   image: jonathan-neitzell
-  linkedin: https://www.linkedin.com/in/jon-neitzell-1ba3172/
+  bio: https://www.linkedin.com/in/jon-neitzell-1ba3172/
   title: Founder, Managing Partner
   company: Anduril Partners
   anduril: true
 authorTwo:
   name: ''
   image: ''
-  linkedin: ''
+  bio: ''
   title: ''
   company: ''
   anduril:
@@ -35,7 +35,7 @@ tags:
   - Data
   - Tech
   - KPIs
-category: Blog Post
+category: Anduril Post
 pdf: Tech in Asset Management NIRI
 ---
 

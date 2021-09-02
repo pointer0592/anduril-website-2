@@ -7,7 +7,7 @@
     />
     <div class='relative bg-white dark:bg-GunMetal py-8 overflow-hidden'>
       <content-image-horizontal :main-content='mainContent' />
-      <content-image-horizontal :main-content='mainContent2' image-left is-mockup />
+      <content-image-horizontal :main-content='mainContent2' left  />
     </div>
     <expandable-list
       :faqs='faqs'

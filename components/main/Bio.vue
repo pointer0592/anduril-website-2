@@ -4,7 +4,7 @@
       <div class='aspect-w-3 aspect-h-2' data-aos="fade-up">
         <client-only>
         <cld-image
-          :public-id="'/team-headshots/' + bio.image"
+          :public-id="'/headshots/' + bio.image"
           :alt='bio.name'
           quality='auto'
           fetch-format='png'

@@ -6,7 +6,7 @@ published: 2021-05-12
 description:  Blending Inputs Into a System with Feedback Loops in designing and implementing metrics that matter
 lead: Blending Inputs Into a System with Feedback Loops in designing and implementing metrics that matter. We discuss the challenges of blending disparate inputs into a common decision workflow.
 isMockup: false
-coverimg: part-7-blending-inputs
+coverImg: part-7-blending-inputs
 smallimg: part-7-blending-inputs
 imginsert: ''
 insertheader: ''
@@ -21,14 +21,14 @@ includebottom: false
 author:
   name: Jonathan Neitzell
   image: jonathan-neitzell
-  linkedin: https://www.linkedin.com/in/jon-neitzell-1ba3172/
+  bio: https://www.linkedin.com/in/jon-neitzell-1ba3172/
   title: Founder, Managing Partner
   company: Anduril Partners
   anduril: true
 authorTwo:
   name: ''
   image: ''
-  linkedin: ''
+  bio: ''
   title: ''
   company: ''
   anduril:
@@ -37,7 +37,7 @@ tags:
   - Feedback Loops
   - Continuous Learning
   - KPIs
-category: Blog Series
+category: Anduril Post
 pdf: ''
 ---
 

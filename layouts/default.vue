@@ -21,6 +21,9 @@ export default {
       progressWidth: 0
     }
   },
+  head: {
+    titleTemplate: '%s | Anduril Partners'
+  },
   beforeCreate() {
     this.showHideSpinner = true
   },

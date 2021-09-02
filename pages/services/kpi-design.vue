@@ -14,11 +14,11 @@
             <span v-if='solutionLead2' class='text-2xl font-medium text-GunMetal dark:text-gray-300' data-aos='fade-up'>{{ solutionLead2 }}</span>
             </p>
           </div>
-          <content-image-horizontal :main-content='kpiDesignOne' has-ring />
-          <content-image-horizontal :main-content='kpiDesignTwo' image-left is-mockup />
-          <content-image-horizontal :main-content='kpiDesignThree' is-mockup />
         </div>
       </div>
+          <content-image-horizontal :main-content='kpiDesignOne' ring />
+          <content-image-horizontal :main-content='kpiDesignTwo' left off-screen />
+          <content-image-horizontal :main-content='kpiDesignThree' ring rounded />
     </main>
     <contact-form />
 
@@ -44,7 +44,7 @@ export default {
           text2: 'Layer 1 - Hypothesis Formation: What fundamental questions will accurately achieve my business objectives?',
           text3: 'Layer 2 - KPI Development: How should data be formulated to produce optimal KPIs? What can and cannot be measured?',
           text4: 'Layer 3 - Data Validation: Are KPIs reliably supported and do they provide ground-truth perspective?',
-          imgSrc: '/general-content/kpi-design',
+          imgSrc: '/general-content/inbox-app-screenshot-1',
           tag: 'li'
         },
       kpiDesignTwo:
@@ -53,10 +53,7 @@ export default {
           title: 'Dashboard Design',
           text: 'A canvas upon which KPI’s and signals are placed to represent current state while providing monitors & alerts, and initiating workflow activities.',
           text2: 'We pair graphic design experts with industry practitioners to generate maximum value in dashboard design.',
-          quote: 'Anduril has helped us source all of our data, on board it into our environment, and has helped us build powerful API\'s',
-          quoteNameTitle: 'Sam Levinson, CEO, The Arbor Group',
-          imgSrc: 'home/kpi-mac-pic',
-          mobileImgSrc: 'home/kpi-mac-pic-mobile',
+          imgSrc: '/general-content/inbox-app-screenshot-2',
           tag: 'p'
         },
       kpiDesignThree:
@@ -65,9 +62,8 @@ export default {
           title: 'Signal Development',
           text: 'Signals can be critically important in providing early warnings.',
           text2: 'As a complement to KPIs, they act as “scouts” that provide early indicators of changes that may impact KPIs. ',
-          quote: 'Anduril has helped us source all of our data, on board it into our environment, and has helped us build powerful API\'s',
-          quoteNameTitle: 'Sam Levinson, CEO, The Arbor Group',
-          imgSrc: '/general-content/kpi-mac-pic',
+          imgSrc: 'https://res.cloudinary.com/www-andurilpartners-ai/image/upload/v1630251520/general-content/kpi-mac-pic.jpg',
+          mobileImgSrc: 'https://res.cloudinary.com/www-andurilpartners-ai/image/upload/v1630251520/general-content/kpi-mac-pic-mobile.jpg',
           tag: 'p'
         }
     }

@@ -6,7 +6,7 @@ published: 2019-03-06
 description: Lessons from industry leaders 
 lead:
 isMockup: false
-coverimg: cpu-chips
+coverImg: cpu-chips
 smallimg: ''
 imginsert: ''
 insertheader: ''
@@ -20,14 +20,14 @@ includebottom: false
 author: 
   name: Jonathan Neitzell
   image: jonathan-neitzell
-  linkedin: https://www.linkedin.com/in/jon-neitzell-1ba3172/
+  bio: https://www.linkedin.com/in/jon-neitzell-1ba3172/
   title: Founder, Managing Partner
   company: Anduril Partners
   anduril: true
 authorTwo:
   name: ''
   image: ''
-  linkedin: ''
+  bio: ''
   title: ''
   company: ''
   anduril:
@@ -35,7 +35,7 @@ tags:
   - Data
   - Tech
   - KPIs
-category: Blog Post
+category: News
 pdf: ''
 ---
 

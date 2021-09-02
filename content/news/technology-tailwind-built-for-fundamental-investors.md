@@ -6,7 +6,7 @@ published: 2021-01-05
 description: Leveraging data as investors
 lead: ''
 isMockup: false
-coverimg: glasses-w-screens
+coverImg: glasses-w-screens
 smallimg: glasses-w-screens
 imginsert: ''
 insertheader: ''
@@ -18,14 +18,14 @@ includebottom: false
 author:
   name: Jonathan Neitzell
   image: jonathan-neitzell
-  linkedin: https://www.linkedin.com/in/jon-neitzell-1ba3172/
+  bio: https://www.linkedin.com/in/jon-neitzell-1ba3172/
   title: Founder, Managing Partner
   company: Anduril Partners
   anduril: true
 authorTwo:
   name: ''
   image: ''
-  linkedin: ''
+  bio: ''
   title: ''
   company: ''
   anduril:

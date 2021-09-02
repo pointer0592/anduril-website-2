@@ -54,64 +54,52 @@
         </div>
         <div :data-aos='imageFade' class='mt-12 sm:mt-16 lg:mt-0' :class='imageOrder'>
           <div :class='[ imagePlacement ]'>
-            <mockup v-if='isMockup&&imageLeft' class='lg:absolute left-0 w-full lg:h-full lg:w-auto lg:max-w-none'
-                    :img-src='bigImage'
-                    :mobile-img-src='smallImg'
-                    :class='withRing'
-                    :alt='mainContent.imgSrc'
-            />
-            <mockup v-if='isMockup&&!imageLeft' class='lg:absolute right-0 w-full lg:h-full lg:w-auto lg:max-w-none'
-                    :img-src='bigImage'
-                    :mobile-img-src='smallImg'
-                    :class='withRing'
-                    :alt='mainContent.imgSrc'
-            />
             <client-only>
             <cld-image
-              v-if='!imageLeft&&offScreen'
+              v-if='!left&&offScreen'
               :public-id='mainContent.imgSrc'
               :alt='mainContent.imgSrc'
               quality='auto'
               fetch-format='auto'
-              class='lg:absolute left-0 w-full lg:h-full lg:w-auto lg:max-w-none'
+              class='lg:absolute lg:left-0 w-full lg:h-full lg:w-auto lg:max-w-none'
               loading='lazy'
-                    :class='withRing'
+                    :class='[ isRounded, hasRing ]'
             />
             </client-only>
             <client-only>
             <cld-image
-              v-if='imageLeft&&offScreen'
+              v-if='left&&offScreen'
               :public-id='mainContent.imgSrc'
               :alt='mainContent.imgSrc'
               quality='auto'
               fetch-format='auto'
-              class='lg:absolute right-0 w-full lg:h-full lg:w-auto lg:max-w-none'
+              class='lg:absolute lg:right-0 w-full lg:h-full lg:w-auto lg:max-w-none'
               loading='lazy'
-                    :class='withRing'
+                    :class='[ isRounded, hasRing ]'
             />
             </client-only>
             <client-only>
             <cld-image
-              v-if='imageLeft&&!offScreen'
+              v-if='left&&!offScreen'
               :public-id='mainContent.imgSrc'
               :alt='mainContent.imgSrc'
               quality='auto'
               fetch-format='auto'
-              class='lg:relative right-0 w-full lg:h-full lg:w-auto lg:max-w-none'
+              class='lg:relative w-full lg:h-full lg:w-auto lg:max-w-none'
               loading='lazy'
-                    :class='withRing'
+                    :class='[ isRounded, hasRing ]'
             />
             </client-only>
             <client-only>
             <cld-image
-              v-if='!imageLeft&&!offScreen'
+              v-if='!left&&!offScreen'
               :public-id='mainContent.imgSrc'
               :alt='mainContent.imgSrc'
               quality='auto'
               fetch-format='80'
-              class='lg:absolute left-0 w-full lg:h-full lg:w-auto lg:max-w-none'
+              class='lg:relative w-full lg:h-full lg:w-auto lg:max-w-none'
               loading='lazy'
-                    :class='withRing'
+                    :class='[ isRounded, hasRing ]'
             />
             </client-only>
           </div>
@@ -133,17 +121,17 @@ export default {
       default: () => {
       }
     },
-    imageLeft: {
+    left: {
       type: Boolean,
       default: false
     },
-    hasRing: {
+    ring: {
       type: Boolean,
       default: false
     },
-    isMockup: {
+    rounded: {
       type: Boolean,
-      default: false
+      default: true
     },
     offScreen: {
       type: Boolean,
@@ -155,33 +143,22 @@ export default {
       return this.mainContent.tag === 'li' ? 'list-inside list-disc' : ''
     },
     contentPlacement() {
-      return this.imageLeft ? 'lg:py-32 lg:col-start-2' : 'lg:py-16'
+      return this.left ? 'lg:py-32 lg:col-start-2' : 'lg:py-16'
     },
     imagePlacement() {
-      return this.imageLeft ? 'pr-4 -ml-48 sm:pr-6 md:-ml-16 lg:px-0 lg:m-0 lg:h-full lg:relative' : 'pl-4 -mr-48 sm:pl-6 md:-mr-16 lg:px-0 lg:m-0 lg:h-full lg:relative'
+      return this.left ? 'pr-4 -ml-48 sm:pr-6 md:-ml-16 lg:px-0 lg:m-0 lg:h-full lg:relative' : 'pl-4 -mr-48 sm:pl-6 md:-mr-16 lg:px-0 lg:m-0 lg:h-full lg:relative'
     },
     imageOrder() {
-      return this.imageLeft ? 'lg:start-col-1' : ''
+      return this.left ? 'lg:start-col-1' : ''
     },
-    withRing() {
-      return this.hasRing ? 'rounded-xl shadow-xl ring-1 ring-black dark:ring-white ring-opacity-5' : ''
+    hasRing() {
+      return this.ring ? 'shadow-xl ring-1 ring-black dark:ring-white ring-opacity-5' : ''
+    },
+    isRounded() {
+      return this.rounded ? 'rounded-xl shadow-xl' : ''
     },
     imageFade() {
-      return this.imageLeft ? 'fade-right' : 'fade-left'
-    },
-    bigImage() {
-      try {
-        return require(`~/static/images/${this.mainContent.imgSrc}.jpg`)
-      } catch (error) {
-        return ''
-      }
-    },
-    smallImg() {
-      try {
-        return require(`~/static/images/${this.mainContent.mobileImgSrc}.jpg`)
-      } catch (error) {
-        return ''
-      }
+      return this.left ? 'fade-right' : 'fade-left'
     },
     slug () {
       return slugify(this.mainContent.title, { lower: true })

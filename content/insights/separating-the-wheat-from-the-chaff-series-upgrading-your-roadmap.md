@@ -6,7 +6,7 @@ published: 2021-05-19
 description: Bringing it Home and Upgrading Your Road Map
 lead: Bringing it home and upgrading roadmaps to leverage both technology and qualitative-seasoned business acumen within process-driven software.
 isMockup: false
-coverimg: part-8-journey
+coverImg: part-8-journey
 smallimg: part-8-journey
 imginsert: ''
 insertheader: ''
@@ -21,14 +21,14 @@ includebottom: false
 author: 
   name: Jonathan Neitzell
   image: jonathan-neitzell
-  linkedin: https://www.linkedin.com/in/jon-neitzell-1ba3172/
+  bio: https://www.linkedin.com/in/jon-neitzell-1ba3172/
   title: Founder, Managing Partner
   company: Anduril Partners
   anduril: true
 authorTwo:
   name: ''
   image: ''
-  linkedin: ''
+  bio: ''
   title: ''
   company: ''
   anduril:
@@ -40,7 +40,7 @@ tags:
   - KPI Priorities
   - Process-Driven Approach
   - Data-Driven Decisions
-category: Blog Series
+category: Anduril Post
 pdf: ''
 ---
 

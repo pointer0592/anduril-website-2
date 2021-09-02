@@ -14,10 +14,10 @@
             <span v-if='solutionLead2' class='text-2xl font-medium text-GunMetal dark:text-gray-300' data-aos='fade-up'>{{ solutionLead2 }}</span>
             </p>
           </div>
-          <content-image-horizontal :main-content='kpiWorkflowOne' has-ring />
-          <content-image-horizontal :main-content='kpiWorkflowTwo' image-left is-mockup />
         </div>
       </div>
+          <content-image-horizontal :main-content='kpiWorkflowOne' ring />
+          <content-image-horizontal :main-content='kpiWorkflowTwo' left  />
     </main>
     <contact-form />
 
@@ -54,8 +54,8 @@ export default {
           text2: 'We pair graphic design experts with industry practitioners to generate maximum value in dashboard design.',
           quote: 'Anduril has helped us source all of our data, on board it into our environment, and has helped us build powerful API\'s',
           quoteNameTitle: 'Sam Levinson, CEO, The Arbor Group',
-          imgSrc: 'home/kpi-mac-pic',
-          mobileImgSrc: 'home/kpi-mac-pic-mobile',
+          imgSrc: 'https://res.cloudinary.com/www-andurilpartners-ai/image/upload/v1630251520/general-content/kpi-mac-pic.jpg',
+          mobileImgSrc: 'https://res.cloudinary.com/www-andurilpartners-ai/image/upload/v1630251520/general-content/kpi-mac-pic-mobile.jpg',
           tag: 'p'
         }
     }

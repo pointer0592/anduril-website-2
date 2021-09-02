@@ -6,7 +6,7 @@ published: 2020-11-12
 description: Incorporating data analytics into workflow
 lead: Artificial intelligence generates reams of data, but generating results means you need to separate wheat from chaff and focus on metrics that matter.
 isMockup: false
-coverimg: chart-sheet
+coverImg: chart-sheet
 smallimg: chart-sheet
 imginsert: ''
 insertheader: ''
@@ -20,14 +20,14 @@ includebottom: false
 author: 
   name: Jonathan Neitzell
   image: jonathan-neitzell
-  linkedin: https://www.linkedin.com/in/jon-neitzell-1ba3172/
+  bio: https://www.linkedin.com/in/jon-neitzell-1ba3172/
   title: Founder, Managing Partner
   company: Anduril Partners
   anduril: true
 authorTwo:
   name: ''
   image: ''
-  linkedin: ''
+  bio: ''
   title: ''
   company: ''
   anduril:
@@ -35,7 +35,7 @@ tags:
   - Data
   - Tech
   - KPIs
-category: Blog Post
+category: Anduril Post
 pdf: 'Using the Right Answers'
 ---
 

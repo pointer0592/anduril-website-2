@@ -6,7 +6,7 @@ published: 2021-03-23
 description: Designing and implementing metrics that matter
 lead:  The start of an eight part series discussing unlocking the value of data. Artificial intelligence generates reams of data, focus on metrics that matter.
 isMockup: false
-coverimg: wheat-chaff
+coverImg: wheat-chaff
 smallimg: wheat-chaff
 imginsert: ''
 alt: wheat image
@@ -19,14 +19,14 @@ includebottom: false
 author: 
   name: Jonathan Neitzell
   image: jonathan-neitzell
-  linkedin: https://www.linkedin.com/in/jon-neitzell-1ba3172/
+  bio: https://www.linkedin.com/in/jon-neitzell-1ba3172/
   title: Founder, Managing Partner
   company: Anduril Partners
   anduril: true
 authorTwo:
   name: ''
   image: ''
-  linkedin: ''
+  bio: ''
   title: ''
   company: ''
   anduril:
@@ -35,7 +35,7 @@ tags:
   - Data Science
   - Decision Science
   - Metrics the Matter
-category: Blog Series
+category: Anduril Post
 pdf: ''
 ---
 

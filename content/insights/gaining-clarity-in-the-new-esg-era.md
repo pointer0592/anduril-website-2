@@ -3,10 +3,10 @@ title: Gaining Clarity in the New ESG Era
 isLive: true
 archived: false
 published: 2021-05-28 
-description: 
+description: Introducing three primary pillars to understand ESG 1. Recalculating the Cost of Capital. 2. Rising Regulation and 3.	Community Activists Go Corporate. 
 lead: Introducing three primary pillars to understand ESG 1. Recalculating the Cost of Capital. 2. Rising Regulation and 3.	Community Activists Go Corporate. 
 isMockup: false
-coverimg: esg-cover-website
+coverImg: esg-cover-website
 smallimg: esg-cover-website
 imginsert: 
 insertheader: 
@@ -20,14 +20,14 @@ includebottom: false
 author:
   name: Jonathan Neitzell
   image: jonathan-neitzell
-  linkedin: https://www.linkedin.com/in/jon-neitzell-1ba3172/
+  bio: https://www.linkedin.com/in/jon-neitzell-1ba3172/
   title: Founder, Managing Partner
   company: Anduril Partners
   anduril: true
 authorTwo:
   name: Bethany Schuttinga, PhD
   image: bethany-schuttinga
-  linkedin: https://www.linkedin.com/in/bethany-j-schuttinga-54205716/
+  bio: https://www.linkedin.com/in/bethany-j-schuttinga-54205716/
   title: Partner, ESG Team Lead
   company: Anduril Partners
   anduril: true
@@ -35,7 +35,7 @@ tags:
   - ESG
   - KPIs
   - Governance
-category: Blog Post
+category: Anduril Post
 pdf: Anduril Partners - ESG - Gaining Clarity in the New ESG Era-updated
 ---
 

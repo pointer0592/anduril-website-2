@@ -7,7 +7,7 @@ description: Applying Process in Financial Workflow in designing and implementin
 lead:  Can You OODA? This framework hypothesis suggests the team most successfully cycling through this framework will learn and win while opponents are choking on the noise and confusion of exponential information growth. Process matters. 
 lead2: In this segment of SEPARATING THE WHEAT FROM THE CHAFF (Part 3 of 8) Jon Neitzell, Managing Partner for Anduril Partners, lays out a framework for decision flow in asset selection. Let's discuss what that looks like integrated into dynamic software.
 isMockup: false
-coverimg: wheat-chaff
+coverImg: wheat-chaff
 smallimg: wheat-chaff
 imginsert: 
 gradient: dark
@@ -22,14 +22,14 @@ includebottom: false
 author: 
   name: Jonathan Neitzell
   image: jonathan-neitzell
-  linkedin: https://www.linkedin.com/in/jon-neitzell-1ba3172/
+  bio: https://www.linkedin.com/in/jon-neitzell-1ba3172/
   title: Founder, Managing Partner
   company: Anduril Partners
   anduril: true
 authorTwo:
   name: ''
   image: ''
-  linkedin: ''
+  bio: ''
   title: ''
   company: ''
   anduril:
@@ -38,7 +38,7 @@ tags:
   - Feedback Loops
   - KPIs
   - OODA
-category: Blog Series
+category: Anduril Post
 pdf: ''
 ---
 

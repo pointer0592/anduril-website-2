@@ -41,7 +41,7 @@
             </p>
             <p v-if='heroCopy'
                class='mt-4 max-w-md text-gray-200 font-medium text-base lg:text-lg'
-               :class='[ heroCopyClasses, textPlacement ]'>
+               :class='[ heroCopyClasses, textPlacement, copyColor ]'>
               {{ heroCopy }}
             </p>
           </div>
@@ -50,12 +50,18 @@
                :class='divPlacement' />
           <div v-if='personName' class='text-base font-bold text-gray-200 hover:text-gray-300'
                :class='divPlacement'>
-            <span v-if='personName&&isAnduril'>Authors:</span><span v-else>Author:</span>
-            <nuxt-link v-if='personName&&isAnduril' :to="'/about/' + personImage"
+            <span v-if="personTwoName&&isAnduril&&bio!==''">Authors:</span><span v-else>Author:</span>
+            <nuxt-link v-if='isAnduril' :to="'/about/' + personImage"
                        class='hover:underline text-gray-200 hover:text-gray-300'>
               {{ personName }}
             </nuxt-link>
-            <span v-if='personName&&!isAnduril'>{{ personName }}</span>
+            <a v-if='!isAnduril&&bio' :href='bio'
+               target='_blank'
+               rel='noopener noreferrer'
+               class='hover:underline text-gray-200 hover:text-gray-300'>
+              {{ personName }}<span v-if='title'>,&nbsp;{{ title }}</span><span v-if='company'>,&nbsp;{{ company }}</span>
+            </a>
+            <span v-if="personName&&!isAnduril&&bio===''">{{ personName }}</span>
             <span v-if='personTwoName'>&</span>
             <nuxt-link v-if='personTwoName&&isAnduril2' :to="'/about/' + personTwoImage"
                        class='hover:underline text-gray-200 hover:text-gray-300'>
@@ -130,6 +136,14 @@ export default {
       type: String,
       default: ''
     },
+    company: {
+      type: String,
+      default: ''
+    },
+    title: {
+      type: String,
+      default: ''
+    },
     readingTime: {
       type: Number,
       default: 0
@@ -190,7 +204,7 @@ export default {
       type: String,
       default: 'base'
     },
-    copyColors: {
+    copyColor: {
       type: String,
       default: 'text-gray-200'
     },
@@ -201,6 +215,10 @@ export default {
     isAnduril2: {
       type: Boolean,
       default: true
+    },
+    bio: {
+      type: String,
+      default: ''
     },
     isMockup: { type: Boolean, default: false }
   },
@@ -233,44 +251,7 @@ export default {
       return this.full ? { 'height': '100vh' } : { 'height': '80vh' }
     },
     heroCopyClasses() {
-      const { copyCase, copyWeight, copySize } = this
-      const heroCopyClasses = []
-
-      switch (copyCase) {
-        case 'uppercase':
-          heroCopyClasses.push(`uppercase`)
-          break
-        case 'base':
-        default:
-          heroCopyClasses.push(``)
-      }
-
-      switch (copyWeight) {
-        case 'light':
-          heroCopyClasses.push(`font-light`)
-          break
-        case 'medium':
-          heroCopyClasses.push(`font-medium`)
-          break
-        case 'semibold':
-          heroCopyClasses.push(`font-semibold`)
-          break
-        case 'bold':
-          heroCopyClasses.push(`font-bold`)
-          break
-        case 'extrabold':
-          heroCopyClasses.push(`font-extrabold`)
-          break
-        case 'base':
-        default:
-          heroCopyClasses.push(`font-medium`)
-      }
-
-      return heroCopyClasses
-
-    },
-    heroCopyClasses() {
-      const { copyCase, copyWeight, copySize } = this
+      const { copyCase, copyWeight } = this
       const heroCopyClasses = []
 
       switch (copyCase) {

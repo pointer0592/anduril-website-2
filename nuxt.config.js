@@ -1,4 +1,8 @@
-import { createSEOMeta } from './utils/seo'
+import global from './utils/global'
+import getSiteMeta from './utils/get-site-meta'
+import getRoutes from './utils/get-routes'
+
+const meta = getSiteMeta()
 
 export default {
   env: {
@@ -20,19 +24,70 @@ export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
 
-  // Global page headers: https://go.nuxtjs.dev/config-head
+  // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    title: 'Anduril Partners. Data to KPI solutions',
+    htmlAttrs: {
+      lang: 'en-US',
+      class: 'bg-black'
+    },
+    title: 'Anduril Partners',
     meta: [
-      ...createSEOMeta({
-        title: 'Anduril Partners. Data to KPI solutions',
-        intro:
-          'We help companies discover their ground truth, build KPIs and make data-driven decisions',
-        image: 'https://www.andurilpartners.ai/images/og/default.jpg',
-        url: process.env.HOST_NAME
-      }),
+      ...meta,
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' }
+      {
+        name: 'viewport',
+        content: 'width=device-width, initial-scale=1'
+      },
+      {
+        hid: 'description',
+        name: 'description',
+        content: global.siteDesc || ''
+      },
+      {
+        property: 'og:site_name',
+        content: global.siteName || ''
+      },
+      {
+        hid: 'description',
+        name: 'description',
+        content: global.siteDesc || ''
+      },
+      {
+        property: 'og:image:width',
+        content: '740'
+      },
+      {
+        property: 'og:image:height',
+        content: '300'
+      },
+      {
+        name: 'twitter:site',
+        content: global.siteName || ''
+      },
+      {
+        name: 'twitter:card',
+        content: 'summary_large_image'
+      },
+      {
+        hid: 'linkedin:site',
+        name: 'linkedin:site',
+        content: 'https://www.linkedin.com/company/andurilpartners/'
+      },
+      {
+        hid: 'linkedin:creator',
+        name: 'linkedin:creator',
+        content: 'https://www.linkedin.com/company/andurilpartners/'
+      },
+      {
+        hid: 'og:image',
+        property: 'og:image',
+        content: 'https://res.cloudinary.com/www-andurilpartners-ai/image/upload/v1628882145/og/default_ff6rsr.jpg'
+      },
+      {
+        hid: 'og:image',
+        property: 'og:image',
+        content: 'https://res.cloudinary.com/www-andurilpartners-ai/image/upload/v1628882145/og/default_ff6rsr.jpg'
+      }
     ],
     link: [
       {
@@ -85,7 +140,8 @@ export default {
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
     '@nuxt/components',
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+    '@nuxtjs/sitemap'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -93,6 +149,8 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/cloudinary',
     '@nuxtjs/dotenv',
+    'vue-scrollto/nuxt',
+    '@nuxtjs/markdownit',
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
     // https://go.nuxtjs.dev/content
@@ -104,7 +162,8 @@ export default {
   },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: {
+  },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
@@ -125,17 +184,30 @@ export default {
     }
   },
 
+  purgeCSS: {
+    whitelist: ['dark-mode', 'bg-mayas-green-dark']
+  },
   hooks: {
     'content:file:beforeInsert': (document) => {
+      // eslint-disable-next-line
+      const md = require('markdown-it')();
       // eslint-disable-next-line
       if (document.extension === '.md') {
         // eslint-disable-next-line global-require
         const { time } = require('reading-time')(document.text, { wordsPerMinute: 300 })
-        document.readingTime = time
+        document.readingTime = time;
+        const mdToHtml = md.render(document.text);
+        document.bodyText = mdToHtml;
       }
     }
   },
 
+  markdownit: {
+    preset: 'default',
+    linkify: true,
+    breaks: true,
+    use: ['markdown-it-div', 'markdown-it-attrs'],
+  },
   cloudinary: {
     cloudName: 'www-andurilpartners-ai',
     apiKey: 'tznDwFGJ59UPFhtVzRR80TtiG9g',
@@ -162,19 +234,15 @@ export default {
         theme: 'prism-themes/themes/prism-material-oceanic.css'
       }
     },
-    nestedProperties: ['author.name', 'author.image', 'author.linkedin', 'author.title', 'author.company', 'authorTwo.name', 'authorTwo.image', 'authorTwo.linkedin', 'authorTwo.title', 'authorTwo.company']
+    nestedProperties: ['author.name', 'author.image', 'author.bio', 'author.title', 'author.company', 'authorTwo.name', 'authorTwo.image', 'authorTwo.bio', 'authorTwo.title', 'authorTwo.company']
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
 
   feed: async () => {
     const { $content } = require('@nuxt/content')
-    const { tags } = await $content('insights/tags').fetch()
-    const insights = await $content('insights', { deep: true, text: true })
-      .where({
-        extension: '.md'
-      })
-      .fetch()
+    const tags = await $content('insights').only(['tags']).fetch()
+    const insights = await $content('insights').fetch()
 
     return tags.map(tag => {
       const relevantInsights = insights.filter(insight => insight.tags.includes(tag))
@@ -192,9 +260,9 @@ export default {
             feed.addItem({
               title: insight.title,
               id: insight.slug,
-              link: `https://andurilpartners.ai/insights/${insight.slug}`,
+              link: `https://andurilpartners.ai/${insight.dir}/${insight.slug}`,
               description: insight.description,
-              content: insight.text
+              content: insight.bodyText
             })
           })
         },
@@ -203,10 +271,17 @@ export default {
       }
     })
   },
-  sitemap: {
-    hostname: 'https://andurilpartners.ai'
-  },
 
+  sitemap: {
+    hostname: global.siteUrl,
+    routes () {
+      return getRoutes()
+    }
+  },
   build: {
-  }
+  },
+  generate: {
+    fallback: true,
+    devtools: true,
+  },
 }

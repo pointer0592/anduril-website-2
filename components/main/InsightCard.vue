@@ -2,10 +2,10 @@
   <div class='flex flex-col rounded-0 shadow-lg hover:shadow-xl overflow-hidden'>
     <nuxt-link :to="insight.path"
     >
-      <div v-if='insight.coverimg&&!insight.isMockup' data-aos="fade-up" class='flex-1'>
+      <div v-if='insight.coverImg&&!insight.isMockup' data-aos="fade-up" class='flex-1'>
         <client-only>
         <cld-image
-          :public-id="'/insights/' + insight.coverimg"
+          :public-id="'/insights/' + insight.coverImg"
           :alt='insight.title'
           quality='auto'
           crop='fill'
@@ -26,7 +26,7 @@
       </div>
     </nuxt-link>
     <div class='flex-1 bg-gray-50 dark:bg-GunMetalDk p-6 flex flex-col justify-between'>
-      <nuxt-link :to="insight.path" class='block mt-2'>
+      <nuxt-link :to="`/insights/${insight.slug}`" class='block mt-2'>
         <div class='flex-1 h-40'>
           <p data-aos="fade-up" class='text-xs font-medium text-orange-500'>
             {{ insight.category }}
@@ -44,19 +44,12 @@
           </div>
         </div>
       </nuxt-link>
-      <div data-aos="fade-up" class='h-8'>
-        <nuxt-link :to="insight.path">
-          <p data-aos="fade-up" class='text-base text-gray-500 dark:text-gray-200 underline hover:text-gray-600 dark-hover:text-gray-300'>
-            more...</p>
-        </nuxt-link>
-      </div>
-
-      <div class='h-16 mt-6 flex items-center space-x-4'>
+<div class='h-16 mt-6 flex items-center space-x-4'>
         <div v-if='insight.author.image' data-aos="fade-up" class='flex overflow-hidden' :class='avatarSpace'>
           <client-only>
           <cld-image
             v-if='insight.author.image'
-            :public-id="'/team-headshots/' + insight.author.image"
+            :public-id="'/headshots/' + insight.author.image"
             :alt='insight.author.name'
             quality='auto'
             fetch-format='auto'
@@ -68,7 +61,7 @@
           <client-only>
           <cld-image
             v-if='insight.authorTwo.image'
-            :public-id="'/team-headshots/' + insight.authorTwo.image"
+            :public-id="'/headshots/' + insight.authorTwo.image"
             :alt='insight.authorTwo.name'
             quality='auto'
             fetch-format='auto'
@@ -81,11 +74,17 @@
         <div>
           <div v-if='insight.author.name' data-aos="fade-up"
                class='flex items-center flex-wrap text-sm font-medium text-GunMetal dark:text-white'>
-            <nuxt-link v-if='insight.author.name&&insight.author.anduril' :to="'/about/' + insight.author.image"
+            <nuxt-link v-if='insight.author.anduril' :to="'/about/' + insight.author.image"
                        class='hover:underline hover:text-GunMetalLt dark-hover:text-gray-300'>
               {{ insight.author.name }}
             </nuxt-link>
-            <span v-if='insight.author.name&&!insight.author.anduril'>{{ insight.author.name }}</span>
+            <a v-if="insight.author.anduril===false&&insight.author.bio!==''" :href='insight.bio'
+               target='_blank'
+               rel='noopener noreferrer'
+               class='hover:underline hover:text-GunMetalLt dark-hover:text-gray-300 cursor-pointer'>
+              {{ insight.author.name }}<span v-if='insight.author.title'>,&nbsp;{{ insight.author.title }}</span><span v-if='insight.author.company'>,&nbsp;{{ insight.author.company }}</span>
+            </a>
+            <span v-if="!insight.author.anduril===false&&insight.author.bio===''">{{ insight.author.name }}</span>
             <span v-if='insight.authorTwo.name'>&nbsp; & &nbsp;</span>
             <nuxt-link v-if='insight.authorTwo.anduril' :to="'/about/' + insight.authorTwo.image"
                        class='hover:underline hover:text-GunMetalLt dark-hover:text-gray-300'>
@@ -114,12 +113,12 @@ export default {
   props: {
     insight: {
       type: Object,
-      required: true
+      default: () => {}
     }
   },
   computed: {
     avatarSpace() {
-      return this.insight.authorTwo.image ? '-space-x-1 pr-8' : 'pr-2'
+      return this.insight.authorTwo.image!=="" ? '-space-x-1 pr-8' : 'pr-2'
     }
   }
 }

@@ -6,7 +6,7 @@ published: 2021-01-27
 description: Stock-Market Frenzy Offers Some CFOs a Chance to Cash In 
 lead:
 isMockup: false
-coverimg: monitors 
+coverImg: monitors 
 smallimg: monitors
 imginsert: ''
 insertheader: ''
@@ -19,13 +19,13 @@ citation:
 includebottom: false
 author: 
   name: Nina Trentmann and others
-  linkedin: https://www.linkedin.com/company/andurilpartners/
+  bio: https://www.linkedin.com/company/andurilpartners/
   title: Founder, Managing Partner
   company: Wall Street Journal
 authorTwo:
   name: ''
   image: ''
-  linkedin: ''
+  bio: ''
   title: ''
   company: ''
   anduril:

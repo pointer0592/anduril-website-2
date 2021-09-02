@@ -6,7 +6,7 @@ published: 2021-04-21
 description: ESG - Making Good Intentions Real Through Great Process
 lead:  What does best practice look like to quantify qualitative efforts? We preview a framework that provides consistent, scalable, real time alerts, and a transparent process to asset managers.
 isMockup: false
-coverimg: esg-wheat-chaff
+coverImg: esg-wheat-chaff
 smallimg: esg-wheat-chaff
 imginsert: 
 insertheader: 
@@ -21,14 +21,14 @@ includebottom: false
 author: 
   name: Jonathan Neitzell
   image: jonathan-neitzell
-  linkedin: https://www.linkedin.com/in/jon-neitzell-1ba3172/
+  bio: https://www.linkedin.com/in/jon-neitzell-1ba3172/
   title: Founder, Managing Partner
   company: Anduril Partners
   anduril: true
 authorTwo:
   name: ''
   image: ''
-  linkedin: ''
+  bio: ''
   title: ''
   company: ''
   anduril:
@@ -37,7 +37,7 @@ tags:
   - Data Science
   - Decision Science
   - Metrics the Matter
-category: Blog Series
+category: Anduril Post
 pdf: ''
 ---
 

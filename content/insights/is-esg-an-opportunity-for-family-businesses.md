@@ -4,9 +4,9 @@ isLive: True
 archived: false
 published: 2021-03-17 
 description: Building Generational Centers for Excellence
-lead:  ''
+lead:  Building Generational Centers for Excellence
 isMockup: false
-coverimg: esg-plantation-road
+coverImg: esg-plantation-road
 smallimg: ''
 imginsert: ''
 insertheader: ''
@@ -21,14 +21,14 @@ includebottom: true
 author:
   name: Jonathan Neitzell
   image: jonathan-neitzell
-  linkedin: https://www.linkedin.com/in/jon-neitzell-1ba3172/
+  bio: https://www.linkedin.com/in/jon-neitzell-1ba3172/
   title: Founder, Managing Partner
   company: Anduril Partners
   anduril: true
 authorTwo:
   name: Bethany Schuttinga, PhD
   image: bethany-schuttinga
-  linkedin: https://www.linkedin.com/in/bethany-j-schuttinga-54205716/
+  bio: https://www.linkedin.com/in/bethany-j-schuttinga-54205716/
   title: Partner, ESG Team Lead
   company: Anduril Partners
   anduril: true
@@ -36,7 +36,7 @@ tags:
   - ESG
   - KPIs
   - Governance
-category: Blog Post
+category: Anduril Post
 pdf: Family Businesses are in a Unique Position to Succeed on ESG
 ---
 

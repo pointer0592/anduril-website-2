@@ -14,9 +14,9 @@
             <span v-if='solutionLead2' class='text-2xl font-medium text-GunMetal dark:text-gray-300' data-aos='fade-up'>{{ solutionLead2 }}</span>
             </p>
           </div>
-          <content-image-horizontal :main-content='esgOne' has-ring off-screen />
-          <content-image-horizontal :main-content='esgTwo' image-left has-ring />
-          <content-image-horizontal :main-content='esgThree' has-ring />
+          <content-image-horizontal :main-content='esgOne' ring off-screen />
+          <content-image-horizontal :main-content='esgTwo' left ring />
+          <content-image-horizontal :main-content='esgThree' ring />
         </div>
       </div>
     </main>

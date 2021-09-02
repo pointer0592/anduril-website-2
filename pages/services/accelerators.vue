@@ -3,23 +3,27 @@
     <primary-hero
       :hero-img='"/hero-images/" + solutionImage'
       :hero-title='solutionTitle'
+      :hero-copy='heroCopy'
     />
     <main class='bg-white dark:bg-GunMetal overflow-hidden'>
       <div class='mx-auto py-12 px-4 lg:max-w-7xl lg:px-8 sm:px-6 lg:px-8 lg:py-24'>
         <div class='space-y-12'>
-          <div class='space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-3xl xl:max-w-none px-4 sm:px-6 lg:max-w-none lg:mx-0 pb-24'>
+          <div
+            class='space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-3xl xl:max-w-none px-4 sm:px-6 lg:max-w-none lg:mx-0 pb-24'>
             <h2 class='text-3xl font-extrabold tracking-tight sm:text-4xl text-GunMetalDk dark:text-white'
                 data-aos='fade-up'>{{ solutionTitle }}</h2>
             <p class='text-2xl font-bold text-GunMetal dark:text-gray-300' data-aos='fade-up'>{{ solutionLead }}
-            <span v-if='solutionLead2' class='text-2xl font-medium text-GunMetal dark:text-gray-300' data-aos='fade-up'>{{ solutionLead2 }}</span>
+              <span v-if='solutionLead2' class='text-2xl font-medium text-GunMetal dark:text-gray-300'
+                    data-aos='fade-up'>{{ solutionLead2 }}</span>
             </p>
           </div>
-          <content-image-horizontal :main-content='esgOne' has-ring off-screen />
-          <content-image-horizontal :main-content='esgTwo' image-left has-ring />
-          <content-image-horizontal :main-content='esgThree' has-ring />
         </div>
       </div>
+      <content-image-horizontal :main-content='esgOne' ring off-screen />
+      <content-image-horizontal :main-content='esgTwo' left ring />
+      <content-image-horizontal :main-content='esgThree' ring />
     </main>
+    <media-banner image-src='/general-content/chart-on-table-2' title='This is a title' lead='This is the lead' />
     <contact-form />
 
   </div>
@@ -27,13 +31,16 @@
 
 <script>
 import aosMixin from '~/mixins/aos'
+import MediaBanner from '~/components/global/MediaBanner'
 
 export default {
+  components: { MediaBanner },
   mixins: aosMixin,
   data() {
     return {
       solutionImage: 'esg-services-design',
-      solutionTitle: 'ESG Services',
+      solutionTitle: 'Anduril Accelerators',
+      heroCopy: 'asdfadf',
       solutionLead: 'Build your dashboard.',
       solutionLead2: 'Develop a robust suite of KPI’s and dashboards that you can trust and act upon.',
       esgOne:
