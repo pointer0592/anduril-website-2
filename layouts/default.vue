@@ -1,6 +1,6 @@
 <template>
   <div>
-    <PreLoader v-if='showHideSpinner' />
+<!--    <PreLoader v-if='showHideSpinner' />-->
     <div id='scroll-progress-container'>
       <div class='scroll-progress' :style="{'width': progressWidth+'%'}"></div>
     </div>

@@ -6,7 +6,6 @@ const meta = getSiteMeta()
 
 export default {
   env: {
-    BASE_URL: 'https://www.andurilpartners.ai',
     siteTitle: 'Anduril Partners',
     topNavItems: [
       { label: 'News & Events', slug: 'about' },
