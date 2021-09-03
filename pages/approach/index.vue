@@ -10,7 +10,7 @@
       <content-image-horizontal :main-content='mainContent2' left  />
     </div>
     <expandable-list
-      :faqs='faqs'
+      title="Title" blurb='Customer Support' :items='faqs'
     />
     <contact-form />
   </div>

@@ -6,7 +6,6 @@ const meta = getSiteMeta()
 
 export default {
   // Target: https://go.nuxtjs.dev/config-target
-  mode: 'universal',
   target: 'static',
 
   env: {
@@ -149,7 +148,8 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/cloudinary',
     '@nuxtjs/dotenv',
-    'vue-scrollto/nuxt',
+
+    ['vue-scrollto/nuxt', { duration: 500 }],
     '@nuxtjs/markdownit',
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
@@ -162,8 +162,7 @@ export default {
   },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {
-  },
+  axios: {},
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
@@ -172,7 +171,7 @@ export default {
       description: 'We help companies discover their ground truth, build KPIs and make data-driven decisions',
       ogImage:
         'https://res.cloudinary.com/www-andurilpartners-ai/image/upload/v1628882073/anduril-logos/logo-white-on-orange_syfekv.svg',
-      ogHost: 'https://andurilpartners.ai',
+      ogHost: 'https://andurilpartners.ai'
     },
     manifest: {
       lang: 'en',
@@ -190,14 +189,14 @@ export default {
   hooks: {
     'content:file:beforeInsert': (document) => {
       // eslint-disable-next-line
-      const md = require('markdown-it')();
+      const md = require('markdown-it')()
       // eslint-disable-next-line
       if (document.extension === '.md') {
         // eslint-disable-next-line global-require
         const { time } = require('reading-time')(document.text, { wordsPerMinute: 300 })
-        document.readingTime = time;
-        const mdToHtml = md.render(document.text);
-        document.bodyText = mdToHtml;
+        document.readingTime = time
+        const mdToHtml = md.render(document.text)
+        document.bodyText = mdToHtml
       }
     }
   },
@@ -206,7 +205,7 @@ export default {
     preset: 'default',
     linkify: true,
     breaks: true,
-    use: ['markdown-it-div', 'markdown-it-attrs'],
+    use: ['markdown-it-div', 'markdown-it-attrs']
   },
   cloudinary: {
     cloudName: 'www-andurilpartners-ai',
@@ -274,14 +273,13 @@ export default {
 
   sitemap: {
     hostname: global.siteUrl,
-    routes () {
+    routes() {
       return getRoutes()
     }
   },
-  build: {
-  },
+  build: {},
   generate: {
     fallback: true,
-    devtools: true,
-  },
+    devtools: true
+  }
 }

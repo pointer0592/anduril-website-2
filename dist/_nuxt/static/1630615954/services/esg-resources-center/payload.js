@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/services/esg-resources-center", {data:[{}],fetch:{},mutations:[]});

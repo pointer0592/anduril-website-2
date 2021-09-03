@@ -5,19 +5,19 @@
       <div class='lg:grid lg:grid-cols-3 lg:gap-8'>
         <div>
           <h2 class='text-3xl font-extrabold text-GunMetal dark:text-white' data-aos="fade-up">
-            Frequently asked questions
+            {{ title }}
           </h2>
-          <p class='mt-4 text-lg text-gray-500 dark:text-gray-200' data-aos="fade-up">Can’t find the answer you’re looking for? Reach out to our <a href="mailto:info@andurilpartners.ai?subject=Question%20for%20Anduril%20Partners"
-                                                                                                              target="_blank" class='font-medium text-orange-500 hover:text-orange-700'>{{ customerSupport }}</a> team.</p>
+          <p v-if='blurb' class='mt-4 text-lg text-gray-500 dark:text-gray-200' data-aos="fade-up">Can’t find the answer you’re looking for? Reach out to our <a href="mailto:info@andurilpartners.ai?subject=Question%20for%20Anduril%20Partners"
+                                                                                                              target="_blank" class='font-medium text-orange-500 hover:text-orange-700'>{{ blurb }}</a> team.</p>
         </div>
         <div class='mt-12 lg:mt-0 lg:col-span-2'>
           <dl class='space-y-12'>
-            <div v-for='faq in faqs' :key='faq.question'>
+            <div v-for='item in items' :key='item.issue'>
               <dt class='text-lg leading-6 font-medium text-GunMetal dark:text-white' data-aos="fade-up">
-                {{ faq.question }}
+                {{ item.issue }}
               </dt>
               <dd class='mt-2 text-base text-gray-500 dark:text-gray-200' data-aos="fade-up">
-                {{ faq.answer }}
+                {{ item.response }}
               </dd>
             </div>
           </dl>
@@ -33,11 +33,11 @@ export default {
   name: 'ExpandableList',
   mixins: [aosMixin],
   props: {
-    customerSupport: {
+    blurb: {
       type: String,
-      default: 'customer support'
+      default: ''
     },
-    faqs: {
+    items: {
       type: Array,
       default: () => {
       }
