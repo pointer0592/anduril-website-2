@@ -2,22 +2,20 @@
   <li>
     <div class='space-y-4'>
       <div class='aspect-w-3 aspect-h-2' data-aos="fade-up">
-        <client-only>
-        <cld-image
+
+        <v-cloud-image
           :public-id="'/headshots/' + bio.image"
           :alt='bio.name'
-          quality='auto'
-          fetch-format='png'
-          responsive
-          loading='lazy'
-          class='object-cover shadow-lg rounded-lg'
+          cloud-loading='lazy'
+          cloud-classes='object-cover shadow-lg rounded-lg'
+          cloud-placeholder='blur'
         />
-        </client-only>
+
       </div>
 
       <div class='space-y-2'>
         <div class='text-lg font-semibold text-gray-800 dark:text-white leading-6 font-medium space-y-1'>
-          <h3 data-aos="fade-up">{{ bio.name }}</h3>
+          <h3 data-aos="fade-up" class='font-futura '>{{ bio.name }}</h3>
           <p class='text-orange-500' data-aos="fade-up">
             {{ bio.role }}
           </p>

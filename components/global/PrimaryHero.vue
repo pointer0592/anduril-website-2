@@ -6,7 +6,6 @@
         <div class='absolute inset-0'>
           <client-only>
             <cld-image
-              v-if='heroImg&&!isMockup'
               :public-id='heroImg'
               :alt='heroTitle'
               quality='auto'
@@ -16,11 +15,10 @@
               responsive
               loading='lazy'
             />
-          </client-only>
-          >
-          <span class='absolute inset-0 bg-gray-200 mix-blend-multiply' />
-        </div>
+        <span class='absolute inset-0 mix-blend-multiply' :class='mixBlendColor'/>
+            </client-only>
 
+        </div>
       </div>
       <div class='pb-36 my-auto h-full'>
         <div
@@ -28,19 +26,19 @@
           :class='sectionAlignment'
         >
           <div class='max-w-5xl'>
-            <h1 class='font-extrabold'
+            <h1 class='font-bold font-futura'
                 :class='[ textPlacement, primaryTextSize ]'>
               <span class='block text-white'>{{ heroTitle }}</span>
             </h1>
           </div>
           <div class='max-w-2xl'>
             <p v-if='heroLead'
-               class='mt-4 text-gray-200 font-bold'
+               class='mt-4 font-bold'
                :class='[ heroLeadClasses, textPlacement, leadTextSize ]'>
               {{ heroLead }}
             </p>
             <p v-if='heroCopy'
-               class='mt-4 max-w-md text-gray-200 font-medium text-base lg:text-lg'
+               class='mt-4 max-w-md font-medium text-base lg:text-lg'
                :class='[ heroCopyClasses, textPlacement, copyColor ]'>
               {{ heroCopy }}
             </p>
@@ -48,29 +46,29 @@
           <div v-if='personName'
                class='border border-t border-1 border-gray-300 w-20 my-6'
                :class='divPlacement' />
-          <div v-if='personName' class='text-base font-bold text-gray-200 hover:text-gray-300'
+          <div v-if='personName' class='text-base font-bold text-black hover:text-GunMetal sm:text-gray-200 sm:hover:text-gray-300'
                :class='divPlacement'>
             <span v-if="personTwoName&&isAnduril&&bio!==''">Authors:</span><span v-else>Author:</span>
             <nuxt-link v-if='isAnduril' :to="'/about/' + personImage"
-                       class='hover:underline text-gray-200 hover:text-gray-300'>
+                       class='hover:underline text-black hover:text-GunMetal sm:text-gray-200 sm:hover:text-gray-300'>
               {{ personName }}
             </nuxt-link>
             <a v-if='!isAnduril&&bio' :href='bio'
                target='_blank'
                rel='noopener noreferrer'
-               class='hover:underline text-gray-200 hover:text-gray-300'>
+               class='hover:underline text-black hover:text-GunMetal sm:text-gray-200 sm:hover:text-gray-300'>
               {{ personName }}<span v-if='title'>,&nbsp;{{ title }}</span><span v-if='company'>,&nbsp;{{ company }}</span>
             </a>
             <span v-if="personName&&!isAnduril&&bio===''">{{ personName }}</span>
             <span v-if='personTwoName'>&</span>
             <nuxt-link v-if='personTwoName&&isAnduril2' :to="'/about/' + personTwoImage"
-                       class='hover:underline text-gray-200 hover:text-gray-300'>
+                       class='hover:underline text-black hover:text-GunMetal sm:text-gray-200 sm:hover:text-gray-300'>
               {{ personTwoName }}
             </nuxt-link>
             <span v-if='personTwoName&&!isAnduril'>{{ personTwoName }}</span>
           </div>
           <p v-if='personName'
-             class='mt-2 text-base font-bold text-gray-200'
+             class='mt-2 text-base font-bold text-black hover:text-GunMetal sm:text-gray-200 sm:hover:text-gray-300'
              :class='textPlacement'>
             <span class='text-base font-bold'>Published:</span> {{ published | formatdate }}
             <span aria-hidden='true'>
@@ -220,6 +218,10 @@ export default {
       type: String,
       default: ''
     },
+    mixBlendColor: {
+      type: String,
+      default: 'bg-gray-500 sm:bg-gray-200'
+    },
     isMockup: { type: Boolean, default: false }
   },
   data() {
@@ -233,7 +235,7 @@ export default {
   },
   computed: {
     primaryTextSize() {
-      return this.full ? 'text-6xl lg:text-8xl tracking-wider' : 'text-4xl lg:text-6xl tracking-wide'
+      return this.full ? 'text-6xl lg:text-8xl tracking-wider' : 'text-6xl lg:text-6xl tracking-wide'
     },
     leadTextSize() {
       return this.full ? 'text-2xl lg:text-4xl' : 'text-xl lg:text-2xl'

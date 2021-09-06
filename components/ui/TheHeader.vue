@@ -24,7 +24,7 @@
             <div class='flex justify-start lg:flex-0'>
               <nuxt-link to='/'>
                 <span class='sr-only'>Anduril</span>
-                <IconLogo class='h-8 w-auto sm:h-12 text-white hover:text-orange-500'
+                <v-icon name='anduril-full' class='h-8 w-auto sm:h-12 text-white hover:text-orange-500'
                           aria-hidden='true' />
               </nuxt-link>
             </div>
@@ -33,10 +33,55 @@
               <the-burger />
             </div>
             <div class='hidden md:inline-flex lg:inline-flex xl:space-x-10 lg:space-x-5 space-x-4 items-center'>
-              <nuxt-link v-for='item in sectionNames' :key='item.slug' :to="'/' + item.slug"
-                         class='text-white hover:text-orange-500 hover:border-b hover:border-orange-500 font-bold text-sm xl:text-base uppercase'>
-                {{ item.label }}
-              </nuxt-link>
+              <div v-for='item in sectionNames' :key='item.slug'>
+                <div v-if='item.dropdown===true' v-click-outside='externalClick' class='relative'>
+                  <!--              PopoverButton-->
+                  <button
+                    class='group inline-flex items-center text-white font-futura group-hover:text-orange-500 font-bold text-sm xl:text-base uppercase'
+                    @click='isMenuOpen = !isMenuOpen'>
+                    <span
+                      class='text-white group-hover:text-orange-500 font-futura font-bold text-sm xl:text-base uppercase'
+                      :class="[isMenuOpen ? 'text-orange-800' : '']"
+                    >
+                      {{ item.label }}
+                    </span>
+                    <v-icon :name='chevronFlip'
+                            class='ml-2 h-5 w-5 text-white group-hover:text-orange-500'
+                            :class="[isMenuOpen ? 'text-orange-800' : '']"
+                            aria-hidden='true' />
+                  </button>
+
+                  <transition enter-active-class='transition ease-out duration-200'
+                              enter-from-class='opacity-0 translate-y-1' enter-to-class='opacity-100 translate-y-0'
+                              leave-active-class='transition ease-in duration-150'
+                              leave-from-class='opacity-100 translate-y-0' leave-to-class='opacity-0 translate-y-1'>
+                    <!--                PopoverPanel-->
+                    <div
+                      :class="isMenuOpen ? '' : 'hidden'"
+                      class='absolute z-10 -ml-4 mt-3 transform w-screen max-w-md lg:max-w-md lg:ml-0 lg:left-1/2 lg:-translate-x-1/2'>
+                      <div class='rounded-0 shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden'>
+                        <div class='relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8 lg:grid-cols-1'>
+                          <nuxt-link v-for='subNav in item.subNavs' :key='subNav.name' :to='subNav.slug'
+                                     class='-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50'>
+                            <div class='ml-4'>
+                              <p class='font-futura text-base font-medium text-GunMetal'>
+                                {{ subNav.name }}
+                              </p>
+                              <p class='mt-1 text-sm text-gray-500'>
+                                {{ subNav.description }}
+                              </p>
+                            </div>
+                          </nuxt-link>
+                        </div>
+                      </div>
+                    </div>
+                  </transition>
+                </div>
+                <nuxt-link v-else :to="'/' + item.slug"
+                           class='font-futura text-white hover:text-orange-500 font-bold text-sm xl:text-base uppercase'>
+                  {{ item.label }}
+                </nuxt-link>
+              </div>
             </div>
           </div>
         </nav>
@@ -48,17 +93,18 @@
 
 <script>
 import { mapGetters } from 'vuex'
-import IconLogo from '~/assets/svg/anduril-full.svg?inline'
+import vClickOutside from 'v-click-outside'
 
 export default {
   name: 'TheHeader',
-  components: {
-    IconLogo
+  directives: {
+    clickOutside: vClickOutside.directive
   },
   data() {
     return {
       isScrolled: false,
       isOpen: false,
+      isMenuOpen: false,
       sectionNames: process.env.navItems,
       topSectionNames: process.env.topNavItems,
       showNavbar: true,
@@ -66,7 +112,10 @@ export default {
     }
   },
   computed: {
-    ...mapGetters({ drawer: 'header/getDrawerState' })
+    ...mapGetters({ drawer: 'header/getDrawerState' }),
+    chevronFlip() {
+      return this.isMenuOpen ? 'chevron-up' : 'chevron-down'
+    }
   },
   mounted() {
     window.addEventListener('scroll', this.onScroll)
@@ -75,6 +124,11 @@ export default {
     window.removeEventListener('scroll', this.onScroll)
   },
   methods: {
+    externalClick(event) {
+      this.isMenuOpen = false
+      // eslint-disable-next-line no-console
+      console.log('External click. Event: ', event)
+    },
     onScroll() {
       // Get the current scroll position
       const currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop

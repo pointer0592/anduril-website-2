@@ -1,41 +1,39 @@
 <template>
-  <section class='bg-white dark:bg-GunMetal'>
-    <div class='bg-white dark:bg-GunMetal pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8'>
-      <div class='bg-white dark:bg-GunMetal relative max-w-lg mx-auto divide-y-2 divide-gray-200 dark:divide-GunMetal lg:max-w-7xl'>
-        <div class='pb-6'>
-          <h2 class='text-3xl tracking-tight font-extrabold text-GunMetal dark:text-white sm:text-4xl'>
+    <section class='bg-white dark:bg-GunMetal'>
+      <div class='mx-auto py-12 px-4 max-w-7xl sm:px-6 lg:px-8 lg:py-24'>
+        <div class='space-y-12'>
+          <div class='space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-3xl xl:max-w-none'>
+            <h2 class='font-futura text-3xl font-extrabold tracking-tight sm:text-4xl text-GunMetalDk dark:text-white'
+                data-aos='fade-up'>
             {{ gridTitle }}
-          </h2>
-          <div class='mt-3 sm:mt-4 lg:grid lg:grid-cols-2 lg:gap-5 lg:items-center'>
-            <p class='text-xl text-gray-500 dark:text-gray-200'>
+            </h2>
+            <p class='text-xl text-GunMetal dark:text-gray-300' data-aos='fade-up'>
               {{ gridLead }}
             </p>
           </div>
-        </div>
         <div
-          class='rounded-lg dark:bg-GunMetalDarker bg-gray-200 overflow-hidden shadow divide-y divide-gray-200 sm:divide-y-0 sm:grid sm:grid-cols-2 sm:gap-px'>
-          <div v-for='(gridItem, gridIndex) in gridItems' :key='gridItem.title' class='text-GunMetal dark:text-white'
-               :class="[gridIndex === 0 ? 'rounded-tl-lg rounded-tr-lg sm:rounded-tr-none' : '', gridIndex === 1 ? 'sm:rounded-tr-lg' : '', gridIndex === gridItems.length - 2 ? 'sm:rounded-bl-lg' : '', gridIndex === gridItems.length - 1 ? 'rounded-bl-lg rounded-br-lg sm:rounded-bl-none' : '', 'relative group dark:bg-GunMetalLt bg-white p-6 focus-within:ring-2 focus-within:ring-inset focus-within:ring-orange-500']">
+          class='rounded-0 overflow-hidden shadow divide-y sm:divide-y-0 divide-gray-200 sm:grid sm:grid-cols-2 sm:gap-px'>
+          <div v-for='(gridItem, gridIndex) in gridItems' :key='gridItem.title' class='text-GunMetal'
+               :class="[gridIndex === 0 ? 'rounded-0 rounded-0 sm:rounded-0' : '', gridIndex === 1 ? 'sm:rounded-0' : '', gridIndex === gridItems.length - 2 ? 'sm:rounded-0' : '', gridIndex === gridItems.length - 1 ? 'rounded-0 rounded-0 sm:rounded-0' : '', 'relative group dark:bg-GunMetalDk bg-gray-50 p-6 focus-within:ring-2 focus-within:ring-inset focus-within:ring-orange-500']">
             <div>
         <span
-          :class="[gridItem.iconBackground, gridItem.iconForeground, 'rounded-lg inline-flex p-3']">
+          class="dark:bg-GunMetalLt text-orange-500 bg-orange-50 rounded-lg inline-flex p-3">
           <v-icon :name='gridItem.icon' class='h-6 w-6' aria-hidden='true' />
         </span>
             </div>
             <div class='mt-8'>
-              <h3 class='text-lg font-medium'>
-                <a :href='gridItem.href' class='focus:outline-none'>
+              <h3 class='font-futura text-lg font-medium'>
+                <nuxt-link :to='gridItem.href' class='focus:outline-none text-GunMetal dark:text-white'>
                   <!-- Extend touch target to entire panel -->
                   <span class='absolute inset-0' aria-hidden='true' />
                   {{ gridItem.title }}
-                </a>
+                </nuxt-link>
               </h3>
               <p class='mt-2 text-sm text-gray-500 dark:text-gray-200'>
-                Doloribus dolores nostrum quia qui natus officia quod et dolorem. Sit repellendus qui ut at blanditiis
-                et quo et molestiae.
+                {{ gridItem.copy }}
               </p>
             </div>
-            <span class='pointer-events-none absolute top-6 right-6 text-gray-500 dark:text-gray-300 dark:group-hover:text-gray-100 group-hover:text-gray-700'
+            <span class='pointer-events-none absolute top-6 right-6 text-GunMetal dark:text-gray-300 dark:hover:text-gray-100 group-hover:text-gray-500'
                   aria-hidden='true'>
         <svg class='h-6 w-6' xmlns='http://www.w3.org/2000/svg' fill='currentColor' viewBox='0 0 24 24'>
           <path

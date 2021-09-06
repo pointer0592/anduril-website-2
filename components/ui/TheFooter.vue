@@ -30,7 +30,7 @@
           <div class='mt-12 grid xl:mt-0'>
             <div>
               <h3 data-aos='fade-up'
-                  class='text-sm font-semibold text-gray-700 dark:text-gray-200 tracking-wider uppercase'>
+                  class='font-futura text-sm font-semibold text-gray-700 dark:text-gray-200 tracking-wider uppercase'>
                 Solutions
               </h3>
               <ul data-aos='fade-up' role='list' class='mt-4 space-y-4'>
@@ -47,7 +47,7 @@
           <div class='mt-12 grid xl:mt-0'>
             <div>
               <h3 data-aos='fade-up'
-                  class='text-sm font-semibold text-gray-700 dark:text-gray-200 tracking-wider uppercase'>
+                  class='font-futura text-sm font-semibold text-gray-700 dark:text-gray-200 tracking-wider uppercase'>
                 Company
               </h3>
               <ul role='list' class='mt-4 space-y-4'>
@@ -63,7 +63,7 @@
           <div class='mt-12 grid xl:mt-0'>
             <div>
               <h3 data-aos='fade-up'
-                  class='text-sm font-semibold text-gray-700 dark:text-gray-200 tracking-wider uppercase'>
+                  class='font-futura text-sm font-semibold text-gray-700 dark:text-gray-200 tracking-wider uppercase'>
                 Legal
               </h3>
               <ul role='list' class='mt-4 space-y-4'>

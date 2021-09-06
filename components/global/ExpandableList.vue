@@ -1,43 +1,44 @@
 <!-- This example requires Tailwind CSS v2.0+ -->
 <template>
-  <div class='bg-white dark:bg-GunMetal'>
-    <div class='max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:py-20 lg:px-8'>
-      <div class='lg:grid lg:grid-cols-3 lg:gap-8'>
-        <div>
-          <h2 class='text-3xl font-extrabold text-GunMetal dark:text-white' data-aos="fade-up">
-            {{ title }}
-          </h2>
-          <p v-if='blurb' class='mt-4 text-lg text-gray-500 dark:text-gray-200' data-aos="fade-up">Can’t find the answer you’re looking for? Reach out to our <a href="mailto:info@andurilpartners.ai?subject=Question%20for%20Anduril%20Partners"
-                                                                                                              target="_blank" class='font-medium text-orange-500 hover:text-orange-700'>{{ blurb }}</a> team.</p>
-        </div>
-        <div class='mt-12 lg:mt-0 lg:col-span-2'>
-          <dl class='space-y-12'>
-            <div v-for='item in items' :key='item.issue'>
-              <dt class='text-lg leading-6 font-medium text-GunMetal dark:text-white' data-aos="fade-up">
-                {{ item.issue }}
+  <section class='bg-white dark:bg-GunMetal'>
+    <div class='bg-white dark:bg-GunMetal pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8'>
+      <div class='relative mx-auto divide-y-2 divide-orange-500 dark:divide-orange-500 divide-opacity-25 dark:divide-opacity-25 lg:max-w-7xl'>
+        <h2 class='font-futura text-3xl tracking-tight font-extrabold text-GunMetal dark:text-white sm:text-4xl'>
+          {{ expandableTitle }}
+        </h2>
+        <div class='mt-6 pt-10'>
+          <dl class='space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:grid-rows-2 md:gap-x-8 md:gap-y-12'>
+            <div v-for='item in expandableItems' :key='item.id'>
+              <dt class='text-lg leading-6 font-medium text-GunMetal dark:text-white'>
+                {{ item.question }}
               </dt>
-              <dd class='mt-2 text-base text-gray-500 dark:text-gray-200' data-aos="fade-up">
-                {{ item.response }}
+              <dd class='mt-2 text-base text-orange-500'>
+                {{ item.answer }}
               </dd>
             </div>
           </dl>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
 import aosMixin from '~/mixins/aos'
+
 export default {
   name: 'ExpandableList',
   mixins: [aosMixin],
   props: {
-    blurb: {
+    expandableTitle: {
+      type: String,
+      default: 'Frequently Asked Questions'
+    },
+    expandableLead: {
       type: String,
       default: ''
     },
-    items: {
+    expandableItems: {
       type: Array,
       default: () => {
       }

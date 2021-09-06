@@ -2,20 +2,19 @@
   <div class='flex-shrink-0'>
     <figure>
       <figcaption v-if='title' class='text-lg font-bold text-GunMetal dark:text-white pb-4'>{{ title }}</figcaption>
-      <client-only>
-      <cld-image
+
+      <v-cloud-image
         :public-id="src"
         :alt='caption'
-        quality='auto'
-        crop='fill'
-        fetch-format='auto'
+        cloud-quality='auto'
+        cloud-crop='fill'
+        cloud-fetch-format='auto'
         class='h-full w-full'
-        responsive
-        loading='lazy'
-      >
-      <cld-placeholder type='blur' />
-      </cld-image>
-      </client-only>
+        cloud-loading='lazy'
+          cloud-placeholder='blur'
+        />
+
+
       <figcaption v-if='caption' class='text-center text-sm italic text-GunMetal dark:text-white'>Source: {{ caption }}
       </figcaption>
     </figure>

@@ -17,21 +17,7 @@
     />
     <why-anduril :features="whyAnduril" />
     <esg-cta />
-    <main class='bg-white dark:bg-GunMetal'>
-      <div class='mx-auto py-12 px-4 max-w-7xl sm:px-6 lg:px-8 lg:py-24'>
-        <div class='space-y-12'>
-          <div class='space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-3xl xl:max-w-none'>
-            <h2 class='text-3xl font-extrabold tracking-tight sm:text-4xl text-GunMetalDk dark:text-white'
-                data-aos='fade-up'>Explore our Site</h2>
-            <p class='text-xl text-GunMetal dark:text-gray-300' data-aos='fade-up'>We represent a growing culmination of
-              experience, focus on business improvement, and a consistent quest for applied excellence. From technology and data science deployments,
-              to measuring daily portfolio performance in the most competitive fields of industry, we seek to blend
-              disciplines with a focus on outcomes. We look forward to including you in the discussion.</p>
-          </div>
-          </div>
-        </div>
-    </main>
-    <discover-cards :discover-cards="discoverCards" is-three />
+    <grid-list id='esg-resources' :grid-title='exploreTitle' :grid-lead='exploreLead' :grid-items='exploreItems' />
     <contact-form />
   </div>
 </template>
@@ -49,36 +35,6 @@ export default {
         { label: 'Pepperoni', number: '100k'},
         { label: 'Delivery', number: '24/7'},
         { label: 'Calories', number: '100%'}
-      ],
-      discoverCards: [
-        {
-          area: 'Approach',
-          link: '/approach',
-          title: 'Time-test methodology',
-          preview: 'Do you OODA? Observe, Orient, Decide, Act with our KPI driven approach.',
-          linkLabel: 'Read about our Approach'
-        },
-        {
-          area: 'Services',
-          link: '/services',
-          title: 'From data solutions to KPIs',
-          preview: 'Engage with us in KPI Strategy, Design, and Workflow to establish feedback loops and continuous defined improvement.',
-          linkLabel: 'Check out our Services'
-        },
-        {
-          area: 'Insights',
-          link: '/insights',
-          title: 'Sharing our discoveries and insights',
-          preview: 'Knowledge is noisy unless converted to insight and applied to decisions. Lets discuss use cases.',
-          linkLabel: 'Read our Insights'
-        },
-        {
-          area: 'About us',
-          link: '/about',
-          title: 'Our team',
-          preview: 'The Anduril team and advisors have roots in building tech infrastructure and applied data science, with demonstrated success.',
-          linkLabel: 'Read our Bios'
-        }
       ],
       whyAnduril: [
         {
@@ -112,6 +68,46 @@ export default {
           description: 'Our leadership team has deep industry experience and building their own companies'
         }
       ],
+      exploreTitle: 'Explore our Site',
+      exploreLead: '',
+      exploreItems: [
+        {
+          title: 'See if Our Services Can Help Overcome your Challenges',
+          href: '/services',
+          icon: 'badge-check',
+          copy: 'Engage with us in KPI Strategy, Design, and Workflow to establish feedback loops and continuous defined improvement.'
+        },
+        {
+          title: 'Sharing our Discoveries and Insights',
+          href: '/insights',
+          icon: 'light-bulb',
+          copy: 'Knowledge is noisy unless converted to insight and applied to decisions. Read our insights blog.'
+        },
+        {
+          title: 'Read our Bios',
+          href: '/about',
+          icon: 'user-group',
+          copy: 'The Anduril team and advisors have roots in building tech infrastructure and applied data science, with demonstrated success.'
+        },
+        {
+          title: 'Check our our ESG Resource Center',
+          href: '/resources/esg-resource-center',
+          icon: 'academic-cap',
+          copy: 'Scan our collection of relevant news items, get answers to typical ESG questions and take advantage of our links to helpful resources'
+        },
+        {
+          title: 'Time-test methodology',
+          href: '/approach',
+          icon: 'clock',
+          copy: 'Learn about how we use the OODA Loop - Observe, Orient, Decide, Act  - within our KPI-driven approach.'
+        },
+        {
+          title: 'Have Questions? Reach out.',
+          href: '/contact',
+          icon: 'question-mark-circle',
+          copy: "Have a question or would you like to discuss an issue? Please reach out. We're eager to start a conversation"
+        }
+      ]
     }
   }
 }

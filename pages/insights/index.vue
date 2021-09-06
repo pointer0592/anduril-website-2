@@ -5,31 +5,17 @@
       hero-title='Anduril Insights'
       hero-copy='Blog Posts and Current Events'
     />
-    <section class='bg-white dark:bg-GunMetal'>
-      <div class='mx-auto py-6 px-4 max-w-7xl sm:px-6 lg:px-8 lg:py-12'>
-        <div class='space-y-12'>
-          <div class='space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-3xl xl:max-w-none'>
-            <h2 class='text-3xl font-extrabold tracking-tight sm:text-4xl text-GunMetalDk dark:text-white'
-                data-aos='fade-up'>Search all content</h2>
+    <section-navigation :nav-links='navLinks' />
+    <main-section-header section-title='Search all content' :has-line=false is-tight>
             <app-search-input data-aos='fade-up' />
-            </div>
-          </div>
-        </div>
-    </section>
-    <section id='anduril-insights' class='bg-white dark:bg-GunMetal'>
-      <div class='mx-auto py-12 px-4 max-w-7xl sm:px-6 lg:px-8 lg:py-24'>
-        <div class='space-y-12'>
-          <div class='space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-3xl xl:max-w-none'>
-            <h2 class='text-3xl font-extrabold tracking-tight sm:text-4xl text-GunMetalDk dark:text-white'
-                data-aos='fade-up'>Anduril Post and Insights</h2>
-            <p class='text-xl text-GunMetal dark:text-gray-300' data-aos='fade-up'>Lorem ipsum dolor sit amet,
+    </main-section-header>
+    <main-section-header id='anduril-insights' section-title='Anduril Post and Insights' section-lead='Lorem ipsum dolor sit amet,
               consectetur adipiscing elit. Sed eget dolor tortor. Phasellus viverra sem non eros vestibulum, in auctor
-              sapien commodo. In nisl erat, efficitur et ipsum in, posuere ornare tortor.</p>
-          </div>
+              sapien commodo. In nisl erat, efficitur et ipsum in, posuere ornare tortor.' :has-line=true is-medium-top>
           <transition-group
             name='page'
             tag='div'
-            class='mt-12 mx-auto max-w-md grid gap-8 sm:max-w-lg grid:col-1 lg:grid-cols-2 xl:grid-cols-3 lg:max-w-7xl'
+            class='mt-6 mx-auto max-w-md grid gap-8 sm:max-w-lg grid:col-1 lg:grid-cols-2 xl:grid-cols-3 lg:max-w-7xl'
           >
               <insight-card
               v-for='insight in insights'
@@ -37,26 +23,15 @@
                 :insight='insight'
               />
           </transition-group>
+    </main-section-header>
 
-        </div>
-      </div>
-    </section>
-    <section id='external-perspective-items' class='bg-white dark:bg-GunMetal'>
-      <div class='mx-auto py-12 px-4 max-w-7xl sm:px-6 lg:px-8 lg:py-24'>
-        <div class='space-y-12'>
-          <div class='space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-3xl xl:max-w-none'>
-            <h2 class='text-3xl font-extrabold tracking-tight sm:text-4xl text-GunMetalDk dark:text-white'
-                data-aos='fade-up'>External Perspective</h2>
-            <p class='text-xl text-GunMetal dark:text-gray-300' data-aos='fade-up'>Lorem ipsum dolor sit amet,
+    <main-section-header id='external-perspective-items' section-title='External Perspective' section-lead='Lorem ipsum dolor sit amet,
               consectetur adipiscing elit. Sed eget dolor tortor. Phasellus viverra sem non eros vestibulum, in auctor
-              sapien commodo. In nisl erat, efficitur et ipsum in, posuere ornare tortor.</p>
-          </div>
-
-        </div>
+              sapien commodo. In nisl erat, efficitur et ipsum in, posuere ornare tortor.' :has-line=true is-medium-top>
         <transition-group
           name='page'
           tag='div'
-          class='mt-12 mx-auto max-w-md grid gap-8 sm:max-w-lg grid:col-1 lg:grid-cols-2 xl:grid-cols-3 lg:max-w-7xl'
+          class='mt-6 mx-auto max-w-md grid gap-8 sm:max-w-lg grid:col-1 lg:grid-cols-2 xl:grid-cols-3 lg:max-w-7xl'
         >
           <div
             v-for='extpost in extposts'
@@ -67,54 +42,14 @@
             />
           </div>
         </transition-group>
-
-      </div>
-    </section>
-    <section id='anduril-news-items' class='bg-white dark:bg-GunMetal'>
-      <div class='mx-auto py-12 px-4 max-w-7xl sm:px-6 lg:px-8 lg:py-24'>
-        <div class='space-y-12'>
-          <div class='space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-3xl xl:max-w-none'>
-            <h2 class='text-3xl font-extrabold tracking-tight sm:text-4xl text-GunMetalDk dark:text-white'
-                data-aos='fade-up'>News Articles</h2>
-            <p class='text-xl text-GunMetal dark:text-gray-300' data-aos='fade-up'>Lorem ipsum dolor sit amet,
+    </main-section-header>
+    <main-section-header id='anduril-newsletter' section-title='Anduril Newsletters & Updates' section-lead='Lorem ipsum dolor sit amet,
               consectetur adipiscing elit. Sed eget dolor tortor. Phasellus viverra sem non eros vestibulum, in auctor
-              sapien commodo. In nisl erat, efficitur et ipsum in, posuere ornare tortor.</p>
-          </div>
-
-        </div>
+              sapien commodo. In nisl erat, efficitur et ipsum in, posuere ornare tortor.' :has-line=true is-medium-top>
         <transition-group
           name='page'
           tag='div'
-          class='mt-12 mx-auto max-w-md grid gap-8 sm:max-w-lg grid:col-1 lg:grid-cols-2 xl:grid-cols-3 lg:max-w-7xl'
-        >
-          <div
-            v-for='article in news'
-            :key='article.slug'
-          >
-            <insight-card
-              :insight='article'
-            />
-          </div>
-        </transition-group>
-
-      </div>
-    </section>
-    <section id='anduril-newsletters' class='bg-white dark:bg-GunMetal'>
-      <div class='mx-auto py-12 px-4 max-w-7xl sm:px-6 lg:px-8 lg:py-24'>
-        <div class='space-y-12'>
-          <div class='space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-3xl xl:max-w-none'>
-            <h2 class='text-3xl font-extrabold tracking-tight sm:text-4xl text-GunMetalDk dark:text-white'
-                data-aos='fade-up'>Anduril Newsletters</h2>
-            <p class='text-xl text-GunMetal dark:text-gray-300' data-aos='fade-up'>Lorem ipsum dolor sit amet,
-              consectetur adipiscing elit. Sed eget dolor tortor. Phasellus viverra sem non eros vestibulum, in auctor
-              sapien commodo. In nisl erat, efficitur et ipsum in, posuere ornare tortor.</p>
-          </div>
-
-        </div>
-        <transition-group
-          name='page'
-          tag='div'
-          class='mt-12 mx-auto max-w-md grid gap-8 sm:max-w-lg grid:col-1 lg:grid-cols-2 xl:grid-cols-3 lg:max-w-7xl'
+          class='mt-6 mx-auto max-w-md grid gap-8 sm:max-w-lg grid:col-1 lg:grid-cols-2 xl:grid-cols-3 lg:max-w-7xl'
         >
           <div
             v-for='newsletter in newsletters'
@@ -125,17 +60,35 @@
             />
           </div>
         </transition-group>
-
-      </div>
-    </section>
+    </main-section-header>
+    <main-section-header id='anduril-news-items' section-title='News Articles' section-lead='Lorem ipsum dolor sit amet,
+              consectetur adipiscing elit. Sed eget dolor tortor. Phasellus viverra sem non eros vestibulum, in auctor
+              sapien commodo. In nisl erat, efficitur et ipsum in, posuere ornare tortor.' :has-line=true is-medium-top>
+        <transition-group
+          name='page'
+          tag='div'
+          class='mt-6 mx-auto max-w-md grid gap-8 sm:max-w-lg grid:col-1 lg:grid-cols-2 xl:grid-cols-3 lg:max-w-7xl'
+        >
+          <div
+            v-for='article in news'
+            :key='article.slug'
+          >
+            <insight-card
+              :insight='article'
+            />
+          </div>
+        </transition-group>
+    </main-section-header>
     <contact-form />
   </div>
 </template>
 
 <script>
 import aosMixin from '~/mixins/aos'
+import MainSectionHeader from '~/components/global/MainSectionHeader'
 
 export default {
+  components: { MainSectionHeader },
   mixins: aosMixin,
   async asyncData({ $content, params }) {
     const insights = await $content('insights',{ deep: true })
@@ -185,6 +138,17 @@ export default {
       news,
       extposts,
       newsletters
+    }
+  },
+  data: () => {
+    return {
+      navLinks: [
+        { name: 'Anduril Insights', id: 'anduril-insights' },
+        { name: 'External Insights', id: 'external-perspective-items' },
+        { name: 'Anduril Newsletter', id: 'anduril-newsletters' },
+        { name: 'News', id: 'anduril-news-items' },
+
+      ]
     }
   }
 }

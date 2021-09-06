@@ -11,15 +11,20 @@ export default {
   env: {
     siteTitle: 'Anduril Partners',
     topNavItems: [
-      { label: 'News & Events', slug: 'about' },
       { label: 'Contact', slug: 'contact' }
     ],
     navItems: [
-      { label: 'Home', slug: '' },
-      { label: 'About Us', slug: 'about' },
-      { label: 'Our Services', slug: 'services' },
-      { label: 'Our Approach', slug: 'approach' },
-      { label: 'Insights', slug: 'insights' }
+      { label: 'Home', slug: '', dropdown: false },
+      { label: 'About Us', slug: 'about', dropdown: false },
+      {
+        label: 'Our Services', slug: 'services', dropdown: true, subNavs: [
+          { name: 'KPI Services', slug: 'services/core-services/kpi-services', description: 'This is a description' },
+          { name: 'ESG Services', slug: 'services/core-services/esg-services', description: 'This is a description' },
+          { name: 'Anduril Accelerators', slug: 'services/core-services/anduril-accelerators', description: 'This is a description' }
+        ]
+      },
+      { label: 'Our Approach', slug: 'approach', dropdown: false },
+      { label: 'Insights', slug: 'insights', dropdown: false }
     ]
   },
 
@@ -100,22 +105,17 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    '~/assets/css/tailwind.css',
     'aos/dist/aos.css'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    { src: '@/plugins/vClickOutside', ssr: false },
     '~/plugins/axios.js',
-    '~/plugins/clickaway',
     { src: '~/plugins/disqus' },
     { src: '~/plugins/format-date' },
     { src: '~/plugins/truncate' },
     { src: '~/plugins/format-time' },
-    {
-      src: '~/plugins/vue-gtag',
-      mode: 'client'
-    },
     {
       src: '~/plugins/gdpr',
       mode: 'client'
@@ -140,6 +140,8 @@ export default {
     '@nuxtjs/tailwindcss',
     '@nuxt/components',
     '@nuxtjs/pwa',
+    // Doc: https://github.com/nuxt-community/google-fonts-module
+    '@nuxtjs/google-fonts',
     '@nuxtjs/sitemap'
   ],
 
@@ -157,10 +159,12 @@ export default {
     '@nuxt/content'
   ],
 
-  colorMode: {
-    classSuffix: ''
-  },
 
+  googleFonts: {
+    families: {
+      Inter: true
+    }
+  },
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},
 
@@ -184,7 +188,7 @@ export default {
   },
 
   purgeCSS: {
-    whitelist: ['dark-mode', 'dark', 'dark-hover', 'aos-init', 'aos-animate', 'GunMetal', 'GunMetalLt', 'GunMetalDk', 'GunMetalDarker', 'GunMetalLighter']
+    whitelist: ['dark-mode', 'aos-init', 'aos-animate']
   },
   hooks: {
     'content:file:beforeInsert': (document) => {
@@ -214,9 +218,6 @@ export default {
     useComponent: true
   },
 
-  publicRuntimeConfig: {
-    baseUrl: process.env.BASE_URL || 'https://andurilpartners.ai'
-  },
 
   // Content module configuration: https://go.nuxtjs.dev/config-content
   content: {
@@ -269,6 +270,23 @@ export default {
         type: 'rss2'
       }
     })
+  },
+
+  googleAnalytics: {
+    id: 'G-FWFH1CH7FB',
+    autoTracking: {
+      screenview: true
+    }
+  },
+
+  tailwindcss: {
+    jit: true,
+    // add '~tailwind.config` alias
+    exposeConfig: true
+  },
+
+  colorMode: {
+    classSuffix: ''
   },
 
   sitemap: {

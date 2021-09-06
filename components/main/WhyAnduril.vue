@@ -2,7 +2,7 @@
 <template>
   <div class="bg-white dark:bg-GunMetal">
     <div class="max-w-4xl mx-auto px-4 py-16 sm:px-6 sm:pt-20 sm:pb-24 lg:max-w-7xl lg:pt-24 lg:px-8">
-      <h2 data-aos="fade-up" class="text-3xl font-extrabold text-gray-800 dark:text-white tracking-tight">
+      <h2 data-aos="fade-up" class="font-futura text-3xl font-extrabold text-gray-800 dark:text-white tracking-tight">
         Why hire Anduril Partners?
       </h2>
       <p data-aos="fade-up" class="mt-4 max-w-3xl text-lg text-gray-500 dark:text-gray-200">
@@ -16,7 +16,7 @@
             </span>
           </div>
           <div data-aos="fade-up" class="mt-6">
-            <h3 class="text-lg font-medium dark:text-white text-GunMetalDk">
+            <h3 class="font-futura text-lg font-medium dark:text-white text-GunMetalDk">
               {{ feature.name }}
             </h3>
             <p class="mt-2 text-base text-gray-700 dark:text-gray-200">

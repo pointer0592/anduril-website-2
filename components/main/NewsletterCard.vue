@@ -4,7 +4,7 @@
     <div class='w-full flex flex-col'>
       <div class='p-4 pb-0 flex-1'>
         <v-icon data-aos='fade-up' :name='logoToggle' class='h-20 w-auto p-4' />
-        <p data-aos='fade-up' class='text-xs text-center font-bold text-orange-500 uppercase pt-2'>
+        <p data-aos='fade-up' class='font-futura text-xs text-center font-bold text-orange-500 uppercase pt-2'>
           {{ newsletter.category }}</p>
         <h3 data-aos='fade-up'
             class='text-base text-center font-extrabold text-GunMetal dark:text-white leading-6'>

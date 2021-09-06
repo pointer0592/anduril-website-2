@@ -47,9 +47,9 @@
 
 @tailwind base;
 
-body {
-  @apply bg-gray-200 dark:bg-GunMetal text-gray-200 dark:text-GunMetal;
-}
+  body {
+    @apply bg-gray-200 dark:bg-GunMetal text-gray-200 dark:text-GunMetal;
+  }
 
 .page-enter-active,
 .page-leave-active {

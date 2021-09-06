@@ -5,7 +5,7 @@
         <h2 class='sr-only'>Contact us</h2>
 
         <div class='py-10 xl:py-12 bg-white dark:bg-GunMetal'>
-          <h1 class='text-GunMetal dark:text-white font-bold text-2xl'>Stay in Touch</h1>
+          <h1 class='text-GunMetal dark:text-white font-futura font-bold text-2xl'>Stay in Touch</h1>
         </div>
         <div class='grid lg:grid-cols-4 grid-cols-1'>
           <div class='grid grid-cols-1 lg:grid-cols-3 col-span-3'>
@@ -54,7 +54,7 @@
                   </defs>
                 </svg>
               </div>
-              <h3 class='text-lg font-medium text-white'>Contact information</h3>
+              <h3 class='font-futura text-lg font-medium text-white'>Contact information</h3>
               <p class='mt-6 text-base text-gray-200 max-w-3xl'>Questions? How can we help? Please reach out to us.</p>
               <dl class='mt-8 space-y-6'>
                 <dt><span class='sr-only'>Phone number</span></dt>
@@ -89,7 +89,7 @@
 
             <!-- Contact form -->
             <div class='py-10 px-6 sm:px-10 lg:col-span-2 xl:p-12 bg-white '>
-              <h3 class='text-lg font-medium text-GunMetal'>Send us a message</h3>
+              <h3 class='font-futura text-lg font-medium text-GunMetal'>Send us a message</h3>
               <form action='#' method='POST' class='mt-6 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8'>
                 <div>
                   <label for='first-name' class='block text-sm font-medium text-GunMetal'>First name</label>
@@ -158,7 +158,7 @@
             </div>
             </div>
             <div class='py-10 col-span-1 xl:py-12 bg-white dark:bg-GunMetal'>
-              <h1 class='text-GunMetal dark:text-white font-bold text-2xl'>Latest Insights</h1>
+              <h1 class='text-GunMetal dark:text-white font-futura font-bold text-2xl'>Latest Insights</h1>
               <div class='mt-12 mx-auto max-w-md px-4 grid gap-2 sm:max-w-lg sm:px-6 lg:px-8 grid-cols-1 lg:max-w-7xl'>
                 <div
                   v-for='insight in latestInsights'

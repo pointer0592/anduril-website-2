@@ -1,0 +1,84 @@
+{
+  "heroImage": "esg-cover-website",
+  "title": "KPI Services",
+  "tagline": "",
+  "preview": "We help you with the vital function of keeping score, both internally and externally—enabling you to track progress against your objectives, understand your ‘ground truth’, and rapidly respond to new insights/data.",
+  "description": "KPI’s are an actionable scorecard that keeps your strategy on track. They enable you to manage, control and achieve desired business results. Our observation is that most companies know they should be using KPIs and making data-driven decision, but they struggle developing them. We can take our clients through the full lifecycle of KPI development or help develop a component.",
+  "quote": {
+    "copy": "",
+    "author": "",
+    "context": ""
+  },
+  "services": [
+    {
+      "id": "1",
+      "name": "KPI Strategy",
+      "tagline": "",
+      "image": "",
+      "quote": {
+        "copy": "",
+        "author": "",
+        "context": ""
+      },
+      "preview": "Put an end to indecision, uninformed decisions, and haphazard decisions. Adopted from military doctrine, We will align your decision-making with our time-test approach adapted from military decision-making doctrine.",
+      "description": "",
+      "sub": [
+        {
+          "name": "Signal Development",
+          "link": "services/kpi-design-signal-development"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "KPI Design",
+      "tagline": "",
+      "image": "",
+      "quote": {
+        "copy": "",
+        "author": "",
+        "context": ""
+      },
+      "preview": "We bring our industry experience to help convert key business questions into KPI modeling and development – a universal language across Corporate, Quant, Fundamental, and Private Equity use cases.",
+      "description": "",
+      "sub": [
+        {
+          "name": "Signal Development",
+          "link": "services/kpi-design-signal-development"
+        },
+        {
+          "name": "KPI Development",
+          "link": "services/kpi-design-kpi-development"
+        },
+        {
+          "name": "Dashboard Design & Build",
+          "link": "services/kpi-design-dashboard-design"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "name": "KPI Workflow",
+      "tagline": "",
+      "image": "",
+      "quote": {
+        "copy": "",
+        "author": "",
+        "context": ""
+      },
+      "preview": "We help you develop a robust solution that fits your organizational needs, resources and technology capabilities. We also evaluate vendors in-place and offer alternative solutions when there are opportunities to accelerate or strengthen organization decision-making and shared intelligence.",
+      "description": "",
+      "sub":
+    [
+      {
+        "name": "Process Design",
+        "link": "services/process-design"
+      },
+      {
+        "name": "KPI Implementation",
+        "link": "services/implementation"
+      }
+    ]
+    }
+  ]
+}

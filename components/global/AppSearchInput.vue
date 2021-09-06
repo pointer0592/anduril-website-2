@@ -1,11 +1,12 @@
 <template>
   <div>
-    <div v-on-clickaway="closeMenu" class='w-80 mt-1 relative'>
+    <div class='w-80 mt-1 relative'>
       <div class='absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none'>
         <v-icon name='search' class='h-5 w-5 font-medium text-GunMetal dark:text-orange-500' aria-hidden='true' />
       </div>
       <input
         v-model='searchQuery'
+        v-click-outside='externalClick'
         type='search'
         autocomplete='off'
         placeholder='Search'
@@ -20,8 +21,7 @@
       leave-class='transform opacity-100 scale-100'
       leave-to-class='transform opacity-0 scale-95'
     >
-      <ul
-        v-if='insights.length'
+      <ul v-if='insights.length'
         class='z-10 absolute w-80 flex-1 bg-white dark:bg-GunMetal rounded-md border border-gray-300 overflow-hidden'
       >
         <li v-for='insight of insights' :key='insight.slug'>
@@ -38,9 +38,13 @@
   </div>
 </template>
 <script>
+import vClickOutside from 'v-click-outside'
 
 export default {
   name: 'AppSearchInput',
+  directives: {
+    clickOutside: vClickOutside.directive
+  },
   data() {
     return {
       searchQuery: '',
@@ -48,8 +52,10 @@ export default {
     }
   },
   methods: {
-    closeMenu() {
+    externalClick(event) {
       this.searchQuery = ''
+      // eslint-disable-next-line no-console
+      console.log('External click. Event: ', event)
     }
   },
   watch: {

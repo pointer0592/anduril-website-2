@@ -1,0 +1,9 @@
+{
+  "area": "KPI Strategy",
+  "prePath": "/services/sub-services/",
+  "areaLink": "/services/core-services/core/kpi-services",
+  "heroImage": "kpi-strategy",
+  "title": "OODA Implementation",
+  "preview": "The OODA (Observe, Orient, Decide, Act) Loop is a time-tested framework for executing, measuring, evaluating, and continuously improving on the fly that we have adopted to help drive a data-driven culture.",
+  "linkLabel": "KPI Strategy"
+}

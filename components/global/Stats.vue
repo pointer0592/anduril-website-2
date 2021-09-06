@@ -4,7 +4,7 @@
     <div class='bg-gray-50 dark:bg-GunMetalLt pt-12 sm:pt-16'>
       <div class='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
         <div class='max-w-4xl mx-auto text-center'>
-          <h2 class='text-3xl font-extrabold text-GunMetal dark:text-white sm:text-4xl'>
+          <h2 class='font-futura text-3xl font-extrabold text-GunMetal dark:text-white sm:text-4xl'>
             {{ header }}
           </h2>
           <p class='mt-3 text-xl text-gray-500 dark:text-gray-200 sm:mt-4'>

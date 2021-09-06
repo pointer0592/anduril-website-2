@@ -19,13 +19,22 @@
             </div>
           </div>
           <div class='px-2 pt-2 pb-3'>
-            <nuxt-link v-for='item in sectionNames' :key='item.slug' :to="'/' + item.slug"
-                       class='block px-3 py-2 rounded-md text-base font-bold text-GunMetal dark:text-white dark:text-gray-200 hover:text-orange-500 dark-hover:bg-GunMetal hover:bg-gray-50'>
-              {{ item.label }}
-            </nuxt-link>
+            <div v-for='item in sectionNames' :key='item.slug' class='divide-y divide-gray-200'>
+              <nuxt-link :to="'/' + item.slug"
+                         class='font-futura block px-3 py-2 rounded-0 text-base font-bold text-GunMetal dark:text-white dark:text-gray-200 hover:text-orange-500 dark-hover:bg-GunMetal hover:bg-gray-50'>
+                {{ item.label }}
+              </nuxt-link>
+              <div class='border border-b border-gray-200 dark:border dark:border-b-1 dark:border-gray-200' />
+              <div v-if='item.dropdown===true' class='divide-y divide-gray-200'>
+                <nuxt-link v-for='subNav in item.subNavs' :key='subNav.name' :to='subNav.slug'
+                           class='font-futura block pr-3 pl-6 py-2 rounded-0 text-sm font-semibold bg-gray-100 dark:bg-GunMetalLt text-GunMetal dark:text-white dark:text-gray-200 hover:text-orange-500 dark-hover:bg-GunMetal hover:bg-gray-50'>
+                  {{ subNav.name }}
+                </nuxt-link>
+              </div>
+            </div>
           </div>
           <nuxt-link to='/contact'
-             class='block w-full px-5 py-3 text-center font-extrabold text-orange-500 bg-gray-200 hover:bg-gray-300'>
+                     class='block w-full px-5 py-3 text-center font-extrabold text-orange-500 bg-gray-200 hover:bg-gray-300'>
             Contact Us
           </nuxt-link>
         </div>
@@ -49,9 +58,9 @@ export default {
     }
   },
   computed: {
-    ...mapGetters({ drawer:  "header/getDrawerState" })
+    ...mapGetters({ drawer: 'header/getDrawerState' })
   }
-};
+}
 </script>
 
 <style lang='postcss' scoped>

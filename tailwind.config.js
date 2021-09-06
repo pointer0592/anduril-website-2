@@ -56,7 +56,8 @@ module.exports = {
         LinkedinDK: '#054f73'
       },
       fontFamily: {
-        sans: ['futura-pt', ...defaultTheme.fontFamily.sans]
+        futura: ["futura-pt", ...defaultTheme.fontFamily.sans],
+        sans: ["Inter", ...defaultTheme.fontFamily.sans]
       }
     }
   },

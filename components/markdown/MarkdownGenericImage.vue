@@ -2,36 +2,32 @@
   <div class='flex-shrink-0'>
     <figure>
       <figcaption v-if='title' class='text-lg font-bold text-GunMetal dark:text-white pb-4'>{{ title }}</figcaption>
-      <client-only>
-      <cld-image
+
+      <v-cloud-image
         v-if='dark'
         :public-id="imageToggle"
         :alt='caption'
         :quality='quality'
-        crop='fill'
+        cloud-crop='fill'
         :fetch-format='fetchFormat'
         class='h-full w-full'
-        :class='[ hasRing, isRounded ]'
-        responsive
-        loading='lazy'
-      >
-      <cld-placeholder type='blur' />
-      </cld-image>
-      <cld-image
+        :cloud-classes='[ hasRing, isRounded ]'
+        cloud-loading='lazy'
+          cloud-placeholder='blur'
+        />
+      <v-cloud-image
         v-else
         :public-id="`${prePath}${filename}`"
-        :alt='caption'
-        :quality='quality'
-        crop='fill'
+        :cloud-alt='caption'
+        :cloud-quality='quality'
+        cloud-crop='fill'
         :fetch-format='fetchFormat'
         class='h-full w-full'
-        :class='[ hasRing, isRounded ]'
-        responsive
-        loading='lazy'
-      >
-      <cld-placeholder type='blur' />
-      </cld-image>
-      </client-only>
+        :cloud-class='[ hasRing, isRounded ]'
+        cloud-loading='lazy'
+          cloud-placeholder='blur'
+        />
+
       <figcaption v-if='caption' class='text-center text-sm italic text-GunMetal dark:text-white'>Source: {{ caption }}
       </figcaption>
     </figure>
