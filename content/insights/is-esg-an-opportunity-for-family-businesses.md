@@ -40,7 +40,7 @@ category: Anduril Post
 pdf: 
 ---
 
-<p class="heading">Embracing Sustainable Practices</p>
+### Embracing Sustainable Practices
 
 In a year where the pandemic has challenged corporate businesses on most fronts, family-owned enterprises have subsequently faced similar demands in responding to surging voices, from consumer interests to cries heard throughout 2020, for greater social accountability and calls for the embrace of more sustainable practices — often referred to as Environmental, Social, and Governance (ESG) principles. While ESG may be a challenging priority — as we all are digesting the aftermath of Covid 19 — it is quickly rising as a broad mandate unifying many communities. Adapting to this growing momentum will depend on the ability of each business to prioritize sustainability goals, accelerate digital transformation, and formalize family governance.
 
@@ -50,23 +50,26 @@ In comparison to 23% of businesses in the US and 39% of the UK, Asian businesses
 
 Broadly, family businesses are in a unique position to succeed in ESG. Reports show over 80% proactively engaged in social activity, with philanthroimage initiatives dominating other categories. Formalizing these constructive global citizen efforts into ESG initiatives, may require relatively low effort, and will likely be strategic for family businesses to meet ‘outside expectations’ of sustainability while continuing to build generational centers of excellence.
 
->Cody Nath, second generation President and CEO for <a target="_blank" rel="nofollow" href="https://r-t-i.com/">Refined Technologies Inc. (RTI)</a> says, “As a family business, we have a long history of being committed to a wider social purpose. We are eager to continue in our work demonstrating <a target="_blank" rel="nofollow" href="https://r-t-i.com/">RTI's</a> commitment around sustainability and wider ESG issues to our customers, stakeholders, and employees.”
+Cody Nath, second generation President and CEO for <a target="_blank" rel="nofollow" href="https://r-t-i.com/">Refined Technologies Inc. (RTI)</a> says, 
+>As a family business, we have a long history of being committed to a wider social purpose. We are eager to continue in our work demonstrating <a target="_blank" rel="nofollow" href="https://r-t-i.com/">RTI's</a> commitment around sustainability and wider ESG issues to our customers, stakeholders, and employees.
 
->Katie Marshall, head of the ESG Practice at <a target="_blank" rel="nofollow" href="https://cruzalta.com/">CruzAlta</a>, a division of <a target="_blank" rel="nofollow" href="https://r-t-i.com/">RTI</a> adds, “We have an enduring commitment to making a positive impact in the communities where we live and work. We are expanding our focus on sustainability and corporate responsibility by supporting our clients with ESG challenges.”
+Katie Marshall, head of the ESG Practice at <a target="_blank" rel="nofollow" href="https://cruzalta.com/">CruzAlta</a>, a division of <a target="_blank" rel="nofollow" href="https://r-t-i.com/">RTI</a> adds, 
+>“We have an enduring commitment to making a positive impact in the communities where we live and work. We are expanding our focus on sustainability and corporate responsibility by supporting our clients with ESG challenges.
 
 <a target="_blank" rel="nofollow" href="https://r-t-i.com/">RTI</a>, an ecologically conscious refinery services company and a leader in global sustainability projects, is one of many family businesses who have long held philanthropy and community investment as a core component of their business model and an extension of their brand. By setting meaningful targets and implementing reporting systems to demonstrate a clear framework of their existing values and purpose, they have simply formalized activities started long ago.
 
-<p class="heading">Digital Transformation</p>
+### Digital Transformation
 
 In the report from <a target="_blank" rel="nofollow" href="https://www.pwc.com/familybusinesssurvey">PwC<a>, although 80% of family businesses adapted to the challenges of the COVID-19 pandemic by enabling remote work for employees, concerns remain about longer term evolution when it comes to digital transformation. On the issue of digital capabilities, 62% of respondents described their digital capabilities as ‘not strong,’ with a further 19% reporting it as a work in progress.
 
 Clear generational differences were also shown in the research with 41% of businesses that describe themselves as digitally strong as 3rd or 4th generation, with Next Gens taking an increased role in 46% of digitally strong businesses.
 
-<p class="heading">Governance</p>
+### Governance
 
 The research highlights the benefits of a formalized governance structure despite family businesses reporting good levels of trust, transparency and communication. A high number of businesses (79%) report having some form of governance procedure or policy in place. However, the figures fall dramatically when it comes to important areas with only 25% having a family constitution or protocol and only 15% with established conflict resolution mechanisms.
 
->Bethany Schuttinga, PhD, Partner and Team Lead for ESG at Anduril Partners, is optimistic about generational executives assuming leadership in ESG matters. “It’s encouraging to see family enterprise pushing the pace. They are critical players in driving ESG adoption and naturally inclined to measure their success by generations, not business cycles.”
+Bethany Schuttinga, PhD, Partner and Team Lead for ESG at Anduril Partners, is optimistic about generational executives assuming leadership in ESG matters. 
+> It’s encouraging to see family enterprise pushing the pace. They are critical players in driving ESG adoption and naturally inclined to measure their success by generations, not business cycles.
 
 We are eager to work with businesses ready to take the next step. Visit Anduril Partners or reach out to us at ESG@andurilpartners.ai for an internal self checklist and detailed framework information on how to architect your bridge to create tangible, transparent and shared goals for a sustainable future.
 

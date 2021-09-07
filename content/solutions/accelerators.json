@@ -1,0 +1,100 @@
+{
+  "heroImage": "anduril-accelerators",
+  "colorBlend": "bg-gray-200",
+  "order": 5,
+  "title": "Anduril Accelerators",
+  "target": "accelerators",
+  "tagline": "Accelerate your growth",
+  "preview": "Benefit from our deep industry connections with capital providers, industry peers, and our understanding of the technology landscape and use cases that can help provide clear pathways toward success.",
+  "description": "We help you with the vital function of keeping score, both internally and externally—enabling you to track progress against your objectives, understand your ‘ground truth’, and rapidly respond to new insights/data.",
+  "body": [
+    {
+      "lead": "Our Solution",
+      "para": [
+        "Anduril Partners will bring our industry experience to help convert key business questions into KPI modeling and development – a universal language across Corporate, Quant, Fundamental, and Private Equity use cases. Our KPI design framework, as illustrated below, follows an iterative processes that originates with fundamental questions and hypotheses and ends with a validated source of information feeding actionable KPIs that provide a full picture of company performance."
+      ]
+    }
+  ],
+  "bodyImage": {
+   "title": "title",
+    "caption": "caption",
+    "src": "KPI-design"
+  },
+  "quote": {
+    "copy": "",
+    "author": "",
+    "context": "",
+    "banner": {
+      "title": "",
+      "lead": "",
+      "mediaCaption": "",
+      "copy": "",
+      "image": "",
+      "linkLabel": "",
+      "link": ""
+    }
+  },
+  "banner": {
+    "bannerTitle": "",
+    "lead": "",
+    "mediaCaption": "",
+    "copy": "",
+    "image": "",
+    "linkLabel": "",
+    "link": ""
+  },
+  "subSolutions": [
+    {
+      "link": "/solutions/subsolutions/accelerator-digital-branding",
+      "id": "1",
+      "name": "Digital Branding",
+      "tagline": "Build a brand that is 100% you",
+      "image": "",
+      "quote": {
+        "copy": "People don’t buy what you do; they buy why you do it.",
+        "author": "Simon Sinek",
+        "context": ""
+      },
+      "description": "Your brand identity is how the outside world sees your company. Your brand must plant itself into the hearts and minds of your prospects and customers. It is the projection of your company to the outside world.\nEverything from your logo, typography and colors, to promotional materials, your website and the way you present your use cases—collectively, these assets build an image of your company."
+    },
+    {
+      "link": "/solutions/subsolutions/accelerator-people-assessment-culture-development",
+      "id": "2",
+      "name": "People Assessment, Culture & Performance",
+      "tagline": "Invest in your most valuable assets",
+      "image": "",
+      "quote": {
+        "copy": "",
+        "author": "",
+        "context": ""
+      },
+      "description": "We consistently deliver the 4 people fundamentals...bringing in the right people, challenging them, rewarding them appropriately and treating them well."
+    },
+    {
+      "link": "/solutions/subsolutions/accelerator-leadership-development",
+      "id": "3",
+      "name": "Leadership Development",
+      "tagline": "Be the Boss you Always Wanted",
+      "image": "",
+      "quote": {
+        "copy": "The single biggest way to impact an organization is to focus on leadership development. There is almost no limit to the potential of an organization that recruits good people, raises them up as leaders and continually develops them.",
+        "author": "John Maxwell",
+        "context": ""
+      },
+      "description": "Your company’s competitive edge and ability to thrive will hinge on your leadership ability. We help leaders know and maximize their giftedness, while identifying missing core competencies to help build strong and diverse leaders."
+    },
+    {
+      "link": "/solutions/subsolutions/accelerator-funding-partnerships",
+      "id": "4",
+      "name": "Growth",
+      "tagline": "Future-Proof your Future",
+      "image": "",
+      "quote": {
+        "copy": "If you don’t know where you are going, you’ll end up someplace else.",
+        "author": "Yogi Berra",
+        "context": ""
+      },
+      "description": "Developing a prudent strategy and action plan to grow your company has many facets. We bring a wealth of experiences and connections to help you succeed into the future."
+    }
+  ]
+}

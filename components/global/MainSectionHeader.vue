@@ -8,12 +8,13 @@
           :class='textCenter'>
             {{ sectionTitle }}
           </h2>
+        <div class='mb-3' :class='topLineClasses' />
             <p  v-if='sectionLead' class='text-base lg:text-lg text-gray-500 dark:text-gray-200'
           :class='textCenter'>
               {{ sectionLead }}
             </p>
         </div>
-        <div class='pb-10 pb-5' :class='lineColors' />
+        <div class='pb-10 pb-5' :class='lineClasses' />
         <slot />
       </div>
     </div>
@@ -60,22 +61,81 @@ export default {
       type: Boolean,
       default: true
     },
+    hasTopLine: {
+      type: Boolean,
+      default: false
+    },
     lineColor: {
       type: String,
       default: 'gray'
+    },
+    topLineColor: {
+      type: String,
+      default: 'gray'
+    },
+    lineWidth: {
+      type: String,
+      default: 'full'
+    },
+    topLineWidth: {
+      type: String,
+      default: 'short'
     }
   },
   computed:{
-    lineColors() {
-      if ( this.hasLine===true ) {
-        return `border-b border-${this.lineColor}-100 dark:border-b dark:border-${this.lineColor}-400`
-      }
-      return ''
-    },
     textCenter() {
       return this.isCentered ? 'text-center' : ''
     },
+    lineClasses() {
+      const { isCentered, lineWidth, hasLine, lineColor } = this
+      const lineClasses = []
 
+      switch (true) {
+        case hasLine === true && isCentered === true && lineWidth === 'full':
+          lineClasses.push(`border-b border-${lineColor}-100 dark:border-b dark:border-${lineColor}-400`)
+          break
+        case hasLine === true && isCentered === true && lineWidth === 'short':
+          lineClasses.push(`border-b border-${lineColor}-100 dark:border-b dark:border-${lineColor}-400 mx-auto w-16`)
+          break
+        case hasLine === true && isCentered === false && lineWidth === 'short':
+          lineClasses.push(`border-b border-${lineColor}-100 dark:border-b-2 dark:border-${lineColor}-400 mr-auto w-16`)
+          break
+        case hasLine === true && isCentered === false && lineWidth === 'full':
+          lineClasses.push(`border-b border-${lineColor}-100 dark:border-b-2 dark:border-${lineColor}-400 w-16`)
+          break
+        case hasLine === false:
+          default:
+          lineClasses.push(``)
+          break
+      }
+
+      return lineClasses
+    },
+    topLineClasses() {
+      const { isCentered, topLineWidth, hasTopLine, topLineColor } = this
+      const topLineClasses = []
+
+      switch (true) {
+        case hasTopLine === false:
+          topLineClasses.push(``)
+          break
+        case hasTopLine === true && isCentered === true && topLineWidth === 'full':
+          topLineClasses.push(`border-b border-${topLineColor}-100 dark:border-b dark:border-${topLineColor}-400`)
+          break
+        case hasTopLine === true && isCentered === false && topLineWidth === 'short':
+          topLineClasses.push(`border-b border-${topLineColor}-100 border-b-2 dark:border-b-2 dark:border-${topLineColor}-400 mr-auto w-16`)
+          break
+        case hasTopLine === true && isCentered === false && topLineWidth === 'full':
+          topLineClasses.push(`border-b border-${topLineColor}-100 border-b-2 dark:border-b-2 dark:border-${topLineColor}-400`)
+          break
+        case hasTopLine === true && isCentered === true && topLineWidth === 'short':
+          default:
+          topLineClasses.push(`border-b border-${topLineColor}-100 border-b-2 dark:border-b-2 dark:border-${topLineColor}-400 mx-auto w-16`)
+          break
+      }
+
+      return topLineClasses
+    },
     paddingClasses() {
       const { isTight, isMediumBottom, isTightBottom, isMediumTop, isTightTop } = this
       const paddingClasses = []
@@ -105,6 +165,7 @@ export default {
         case isTightBottom === false && isMediumBottom === false && isTightTop === false && isMediumTop === false && isTight === false:
         default:
           paddingClasses.push(`py-12 lg:py-24`)
+          break
       }
 
       return paddingClasses

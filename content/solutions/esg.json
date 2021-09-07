@@ -1,0 +1,65 @@
+{
+  "heroImage": "esg-cover",
+  "colorBlend": "bg-gray-200",
+  "order": 4,
+  "title": "ESG Solutions",
+  "target": "esg",
+  "tagline": "Successfully navigate the ESG ecosystem",
+  "preview": "Leverage our deep understanding of ESG and experience working with many types of stakeholder groups the ESG ecosystem.",
+  "description": "We understand ESG and have experience working with many types of stakeholder groups. The Anduril team has decades of experience in the world of business, strategy, finance and regulation. If you are looking for a team who can do analysis, and who can build products around analytics and data for sustainability, you have come to the right place.",
+  "body": [
+    {
+      "lead": "The Challenge",
+      "para": [
+        "Anduril Partners will bring our industry experience to help convert key business questions into KPI modeling and development – a universal language across Corporate, Quant, Fundamental, and Private Equity use cases. Our KPI design framework, as illustrated below, follows an iterative processes that originates with fundamental questions and hypotheses and ends with a validated source of information feeding actionable KPIs that provide a full picture of company performance."
+      ]
+    }
+  ],
+  "bodyImage": {
+   "title": "Sample ESG Dashboard",
+    "caption": "Anduril Partners & Equity Data Science (EDS)",
+    "src": "esg-dashboard"
+  },
+  "quote": {
+    "copy": "",
+    "author": "",
+    "context": ""
+  },
+  "banner": {
+    "title": "esg-resource-center",
+    "lead": "We’re here to help",
+    "mediaCaption": "Anduril ESG Resource Center",
+    "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, egestas tempus tellus etiam sed. Quam ascelerisque amet ullamcorper eu enim et fermentum, augue. Aliquet amet volutpat quisque ut interdum tincidunt",
+    "image": "https://res.cloudinary.com/www-andurilpartners-ai/image/upload/v1631007204/solutions-page/esg-resource.jpg",
+    "linkLabel": "Visit our ESG Resources",
+    "link": "/resources/esg-resource-center"
+  },
+  "subSolutions": [
+    {
+      "link": "/solutions/subsolutions/esg-materiality-assessment-and-remediation",
+      "id": "1",
+      "name": "Materiality Assessment & Remediation",
+      "tagline": "",
+      "image": "",
+      "quote": {
+        "copy": "",
+        "author": "",
+        "context": ""
+      },
+      "description": "Experience this essential process for to understand your organization’s current standing, identify stakeholder groups and audience."
+    },
+    {
+      "link": "/solutions/subsolutions/esg-materiality-dashboard-and-scorecard",
+      "id": "2",
+      "name": "Dashboard & Scorecard",
+      "tagline": "",
+      "image": "",
+      "quote": {
+        "copy": "",
+        "author": "",
+        "context": ""
+      },
+      "description": "The Anduril team and advisors have roots in building tech infrastructure and applied data science, with demonstrated success."
+    }
+  ]
+}

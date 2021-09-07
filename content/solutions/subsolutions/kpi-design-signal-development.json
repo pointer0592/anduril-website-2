@@ -1,0 +1,22 @@
+{
+  "area": "KPI Design",
+  "banner": {
+    "bannerTitle": "",
+    "lead": "",
+    "mediaCaption": "",
+    "copy": "",
+    "image": "",
+    "linkLabel": "",
+    "link": ""
+  },
+  "tgt": true,
+  "parentSolution": "KPI Design",
+  "prePath": "/solutions/subsolutions/",
+  "areaLink": "/solutions/design",
+  "heroImage": "kpi-design",
+  "title": "Signal Development",
+  "description": "Signals can be critically important in providing early warnings. As a complement to KPIs, they act as “scouts” that provide early indicators of changes that may impact KPIs.",
+ "body": [
+    ""
+    ]
+}

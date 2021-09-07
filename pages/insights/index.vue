@@ -11,7 +11,7 @@
     </main-section-header>
     <main-section-header id='anduril-insights' section-title='Anduril Post and Insights' section-lead='Lorem ipsum dolor sit amet,
               consectetur adipiscing elit. Sed eget dolor tortor. Phasellus viverra sem non eros vestibulum, in auctor
-              sapien commodo. In nisl erat, efficitur et ipsum in, posuere ornare tortor.' :has-line=true is-medium-top>
+              sapien commodo. In nisl erat, efficitur et ipsum in, posuere ornare tortor.' :has-line=false :has-top-line=true top-line-color='orange' is-medium-top>
           <transition-group
             name='page'
             tag='div'
@@ -27,7 +27,7 @@
 
     <main-section-header id='external-perspective-items' section-title='External Perspective' section-lead='Lorem ipsum dolor sit amet,
               consectetur adipiscing elit. Sed eget dolor tortor. Phasellus viverra sem non eros vestibulum, in auctor
-              sapien commodo. In nisl erat, efficitur et ipsum in, posuere ornare tortor.' :has-line=true is-medium-top>
+              sapien commodo. In nisl erat, efficitur et ipsum in, posuere ornare tortor.' :has-line=false :has-top-line=true top-line-color='orange' is-medium-top>
         <transition-group
           name='page'
           tag='div'
@@ -45,7 +45,7 @@
     </main-section-header>
     <main-section-header id='anduril-newsletter' section-title='Anduril Newsletters & Updates' section-lead='Lorem ipsum dolor sit amet,
               consectetur adipiscing elit. Sed eget dolor tortor. Phasellus viverra sem non eros vestibulum, in auctor
-              sapien commodo. In nisl erat, efficitur et ipsum in, posuere ornare tortor.' :has-line=true is-medium-top>
+              sapien commodo. In nisl erat, efficitur et ipsum in, posuere ornare tortor.' :has-line=false :has-top-line=true top-line-color='orange' is-medium-top>
         <transition-group
           name='page'
           tag='div'
@@ -63,7 +63,7 @@
     </main-section-header>
     <main-section-header id='anduril-news-items' section-title='News Articles' section-lead='Lorem ipsum dolor sit amet,
               consectetur adipiscing elit. Sed eget dolor tortor. Phasellus viverra sem non eros vestibulum, in auctor
-              sapien commodo. In nisl erat, efficitur et ipsum in, posuere ornare tortor.' :has-line=true is-medium-top>
+              sapien commodo. In nisl erat, efficitur et ipsum in, posuere ornare tortor.' :has-line='false' :has-top-line=true top-line-color='orange' is-medium-top>
         <transition-group
           name='page'
           tag='div'
@@ -96,7 +96,6 @@ export default {
         isLive: true
       })
       .where({ category: { $eq: 'Anduril Post' } })
-      .sortBy('published', 'desc')
       .without('body')
       .fetch()
 
@@ -143,11 +142,10 @@ export default {
   data: () => {
     return {
       navLinks: [
-        { name: 'Anduril Insights', id: 'anduril-insights' },
-        { name: 'External Insights', id: 'external-perspective-items' },
-        { name: 'Anduril Newsletter', id: 'anduril-newsletters' },
-        { name: 'News', id: 'anduril-news-items' },
-
+        { title: 'Anduril Insights', slug: 'anduril-insights' },
+        { title: 'External Insights', slug: 'external-perspective-items' },
+        { title: 'Anduril Newsletter', slug: 'anduril-newsletters' },
+        { title: 'News', slug: 'anduril-news-items' },
       ]
     }
   }

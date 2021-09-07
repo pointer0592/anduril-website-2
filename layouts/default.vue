@@ -1,18 +1,18 @@
 <template>
   <div>
-<!--    <PreLoader v-if='showHideSpinner' />-->
+    <PreLoader v-if='showHideSpinner' />
     <div id='scroll-progress-container'>
       <div class='scroll-progress' :style="{'width': progressWidth+'%'}"></div>
     </div>
-    <div class='relative overflow-hidden bg-white dark:bg-GunMetal flex flex-col'>
       <the-header />
       <nuxt />
       <the-footer />
-    </div>
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
   name: 'Default',
   data() {
@@ -23,6 +23,9 @@ export default {
   },
   head: {
     titleTemplate: '%s | Anduril Partners'
+  },
+  computed: {
+    ...mapGetters({ drawer:  "header/getDrawerState" })
   },
   beforeCreate() {
     this.showHideSpinner = true

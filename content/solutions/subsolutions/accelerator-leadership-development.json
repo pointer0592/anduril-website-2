@@ -1,0 +1,22 @@
+{
+  "area": "Accelerators",
+  "banner": {
+    "bannerTitle": "",
+    "lead": "",
+    "mediaCaption": "",
+    "copy": "",
+    "image": "",
+    "linkLabel": "",
+    "link": ""
+  },
+  "tgt": true,
+  "parentSolution": "Anduril Accelerators",
+  "prePath": "/solutions/subsolutions/",
+  "areaLink": "/solutions/accelerators",
+  "heroImage": "accelerator",
+  "title": "Leadership Development",
+  "description": "Leadership development boosts employee engagement, increases the organization's ability to deal with gaps in the talent pipeline, and reduces the headaches and costs associated with turnover. Most importantly, great leaders attract, hire, and inspire the best people.",
+  "body": [
+    ""
+    ]
+}

@@ -17,10 +17,13 @@ export default {
       { label: 'Home', slug: '', dropdown: false },
       { label: 'About Us', slug: 'about', dropdown: false },
       {
-        label: 'Our Services', slug: 'services', dropdown: true, subNavs: [
-          { name: 'KPI Services', slug: 'services/core-services/kpi-services', description: 'This is a description' },
-          { name: 'ESG Services', slug: 'services/core-services/esg-services', description: 'This is a description' },
-          { name: 'Anduril Accelerators', slug: 'services/core-services/anduril-accelerators', description: 'This is a description' }
+        label: 'Our Solutions', slug: 'solutions', dropdown: true, subNavs: [
+          { name: 'All Solutions', tgt: '/solutions', description: '' },
+          { name: 'KPI Strategy', tgt: '/solutions/strategy', description: 'Put an end to indecision, uninformed decisions, and haphazard decisions. We\'ll help align your decision-making around a data-driven approach.' },
+          { name: 'KPI Design', tgt: '/solutions/design', description: 'Develop a universal language across you organization and answer key business questions buy developing a robust set of KPIs.' },
+          { name: 'KPI Workflow', tgt: '/solutions/workflow', description: 'Build a robust solution that fits your organizational needs, resources and technology capabilities.' },
+          { name: 'ESG Solutions', tgt: '/solutions/esg', description: 'Leverage our deep understanding of ESG and experience working with many types of stakeholder groups the ESG ecosystem.' },
+          { name: 'Anduril Accelerators', tgt: '/solutions/accelerators', description: 'Accelerate your growth by excelling in the critical elements that often hamper growth.' }
         ]
       },
       { label: 'Our Approach', slug: 'approach', dropdown: false },
@@ -234,7 +237,7 @@ export default {
         theme: 'prism-themes/themes/prism-material-oceanic.css'
       }
     },
-    nestedProperties: ['author.name', 'author.image', 'author.bio', 'author.title', 'author.company', 'authorTwo.name', 'authorTwo.image', 'authorTwo.bio', 'authorTwo.title', 'authorTwo.company']
+    nestedProperties: ['solutions.banner']
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

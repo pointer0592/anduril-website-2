@@ -1,0 +1,87 @@
+{
+  "heroImage": "kpi-solutions",
+  "colorBlend": "bg-gray-200",
+  "order": 2,
+  "title": "KPI Design",
+  "target": "design",
+  "tagline": "Convert knowledge into insights",
+  "preview": "Develop a universal language across you organization and answer key business questions buy developing a robust set of KPIs.",
+  "description": "We offer end-to-end KPI design services, starting with asking the fundamental questions that will get our client to ground truth and ending with a suite of KPI's that provide a full picture and a platform for effective decision-making. ",
+  "body": [
+    {
+      "lead": "Our Solution",
+      "para": [
+        "Anduril Partners will bring our industry experience to help convert key business questions into KPI modeling and development – a universal language across Corporate, Quant, Fundamental, and Private Equity use cases. Our KPI design framework, as illustrated below, follows an iterative processes that originates with fundamental questions and hypotheses and ends with a validated source of information feeding actionable KPIs that provide a full picture of company performance."
+      ]
+    }
+  ],
+  "bodyImage": {
+   "title": "Iterative KPI design process",
+    "caption": "Anduril Partners",
+    "src": "KPI-design"
+  },
+  "quote": {
+    "copy": "",
+    "author": "",
+    "context": "",
+    "banner": {
+      "title": "",
+      "lead": "",
+      "mediaCaption": "",
+      "copy": "",
+      "image": "",
+      "linkLabel": "",
+      "link": ""
+    }
+  },
+  "banner": {
+    "bannerTitle": "",
+    "lead": "",
+    "mediaCaption": "",
+    "copy": "",
+    "image": "",
+    "linkLabel": "",
+    "link": ""
+  },
+  "subSolutions": [
+    {
+      "link": "/solutions/subsolutions/kpi-design-signal-development",
+      "id": "1",
+      "name": "Signal Development",
+      "tagline": "",
+      "image": "",
+      "quote": {
+        "copy": "",
+        "author": "",
+        "context": ""
+      },
+      "description": "Signals can be critically important in providing early warnings. We help you build this complement to KPIs, that act as “scouts” providing early indicators of changes that may impact KPIs."
+    },
+    {
+      "link": "/solutions/subsolutions/kpi-design-kpi-development",
+      "id": "2",
+      "name": "KPI Development",
+      "tagline": "",
+      "image": "",
+      "quote": {
+        "copy": "",
+        "author": "",
+        "context": ""
+      },
+      "description": "We take you through An interactive process, iteratively cycling through the three key discovery layers below until each KPI is validated."
+    },
+    {
+      "link": "/solutions/subsolutions/kpi-design-dashboard-design",
+      "id": "3",
+      "name": "Dashboard Design & Build",
+      "tagline": "",
+      "image": "",
+      "quote": {
+        "copy": "",
+        "author": "",
+        "context": ""
+      },
+      "description": "We develop a canvas upon which KPI’s and signals are placed to represent current state while providing monitors & alerts, and initiating workflow activities. We pair graphic design experts with industry practitioners to generate maximimum value in dashboard design."
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "area": "KPI Design",
+  "banner": {
+    "bannerTitle": "",
+    "lead": "",
+    "mediaCaption": "",
+    "copy": "",
+    "image": "",
+    "linkLabel": "",
+    "link": ""
+  },
+  "tgt": true,
+  "parentSolution": "KPI Design",
+  "prePath": "/solutions/subsolutions/",
+  "areaLink": "/solutions/design",
+  "heroImage": "kpi-design",
+  "title": "KPI Development",
+  "description": "An interactive process iteratively cycling through the three layers - Hypothesis Formation, KPI Development and Data Validation - until each KPI is validated and optimized.",
+  "body": [
+    ""
+    ]
+}

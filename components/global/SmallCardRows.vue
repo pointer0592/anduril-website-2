@@ -16,8 +16,8 @@
                   <p data-aos='fade-up' class='text-xl font-futura font-bold text-gray-900 dark:text-gray-100 my-0'>
                     {{ card.title }}
                   </p>
-                  <p v-if='card.preview' data-aos='fade-up' class='mt-1 text-base text-gray-500 dark:text-gray-400'>
-                    {{ card.preview }}
+                  <p v-if='card.description' data-aos='fade-up' class='mt-1 text-base text-gray-500 dark:text-gray-400'>
+                    {{ card.description }}
                   </p>
                 </div>
               </div>

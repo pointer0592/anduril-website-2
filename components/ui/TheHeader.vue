@@ -1,10 +1,10 @@
 <template>
-  <div class='relative bg-white dark:bg-GunMetal'>
+  <div class='z-20 relative bg-white dark:bg-GunMetal'>
     <!-- The Header-->
     <div class='relative'>
-      <div v-if='!drawer'>
+      <div>
         <nav
-          class='relative xl:px-32 lg:px-24 px-4 max-w-full mx-auto flex-col m-auto w-screen bg-GunMetal bg-opacity-50'
+          class='flex-col xl:px-32 lg:px-24 px-4 max-w-full mx-auto m-auto w-screen bg-GunMetal bg-opacity-50'
           :class="[ showNavbar ? 'show-navbar' : 'hide-navbar' ]"
         >
 
@@ -24,7 +24,7 @@
             <div class='flex justify-start lg:flex-0'>
               <nuxt-link to='/'>
                 <span class='sr-only'>Anduril</span>
-                <v-icon name='anduril-full' class='h-8 w-auto sm:h-12 text-white hover:text-orange-500'
+                <v-icon name='anduril-full' class='h-8 w-auto sm:h-12 text-orange-500 hover:text-white md:text-white md:hover:text-orange-500'
                           aria-hidden='true' />
               </nuxt-link>
             </div>
@@ -61,13 +61,13 @@
                       class='absolute z-10 -ml-4 mt-3 transform w-screen max-w-md lg:max-w-md lg:ml-0 lg:left-1/2 lg:-translate-x-1/2'>
                       <div class='rounded-0 shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden'>
                         <div class='relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8 lg:grid-cols-1'>
-                          <nuxt-link v-for='subNav in item.subNavs' :key='subNav.name' :to='subNav.slug'
-                                     class='-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50'>
+                          <nuxt-link v-for='subNav in item.subNavs' :key='subNav.name' :to='subNav.tgt'
+                                     class='-m-3 p-3 flex items-start rounded-0 hover:bg-orange-50'>
                             <div class='ml-4'>
-                              <p class='font-futura text-base font-medium text-GunMetal'>
+                              <p class='font-futura text-base font-medium text-orange-500'>
                                 {{ subNav.name }}
                               </p>
-                              <p class='mt-1 text-sm text-gray-500'>
+                              <p v-if='subNav.description' class='mt-1 text-sm text-gray-500'>
                                 {{ subNav.description }}
                               </p>
                             </div>
@@ -127,7 +127,7 @@ export default {
     externalClick(event) {
       this.isMenuOpen = false
       // eslint-disable-next-line no-console
-      console.log('External click. Event: ', event)
+      console.log('The Header Outside Click: ', event)
     },
     onScroll() {
       // Get the current scroll position
@@ -141,6 +141,8 @@ export default {
         return
       }
       this.showNavbar = currentScrollPosition < this.lastScrollPosition
+      // eslint-disable-next-line no-console
+      console.log('isScrolled On')
       this.isScrolled = currentScrollPosition > 50
       this.lastScrollPosition = currentScrollPosition
     }

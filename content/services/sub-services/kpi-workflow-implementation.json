@@ -1,9 +1,0 @@
-{
-  "area": "KPI Workflow",
-  "prePath": "/services/sub-services/",
-  "areaLink": "/services/core-services/core/kpi-services",
-  "heroImage": "kpi-workflow",
-  "title": "Implementation",
-  "preview": "We stand-up test environments that run parallel to existing solutions then help your organization go live.",
-  "linkLabel": "KPI Workflow Implementation"
-}

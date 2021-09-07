@@ -49,9 +49,9 @@ export default {
   data: () => {
     return {
       navLinks: [
-        { name: 'Bios', id: 'anduril-bios' },
-        { name: 'How We Work', id: 'how-we-work' },
-        { name: 'Our Values', id: 'our-values' }
+        { title: 'Bios', slug: 'anduril-bios' },
+        { title: 'How We Work', slug: 'how-we-work' },
+        { title: 'Our Values', slug: 'our-values' }
       ],
       bioTitle: 'Our Team',
       bioLead: 'We represent a growing culmination of experience, focus on business improvement, and a consistent quest for applied excellence. From technology and data science deployments, to measuring daily portfolio performance in the most competitive fields of industry, we seek to blend disciplines with a focus on outcomes. We look forward to including you in the discussion.',

@@ -1,0 +1,22 @@
+{
+  "area": "KPI Design",
+  "banner": {
+    "bannerTitle": "",
+    "lead": "",
+    "mediaCaption": "",
+    "copy": "",
+    "image": "",
+    "linkLabel": "",
+    "link": ""
+  },
+  "tgt": true,
+  "parentSolution": "KPI Design",
+  "prePath": "/solutions/subsolutions/",
+  "areaLink": "/solutions/design",
+  "heroImage": "kpi-design",
+  "title": "Dashboard Design",
+  "description": "A canvas upon which KPI’s and signals are placed to represent current state while providing monitors & alerts, and initiating workflow activities. We pair graphic design experts with industry practitioners to generate maximimum value in dashboard design.",
+  "body": [
+    ""
+    ]
+}

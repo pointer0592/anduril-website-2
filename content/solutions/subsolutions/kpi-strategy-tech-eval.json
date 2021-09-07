@@ -1,0 +1,22 @@
+{
+  "area": "KPI Strategy",
+  "banner": {
+    "bannerTitle": "",
+    "lead": "",
+    "mediaCaption": "",
+    "copy": "",
+    "image": "",
+    "linkLabel": "",
+    "link": ""
+  },
+  "tgt": true,
+  "parentSolution": "KPI Strategy",
+  "prePath": "/solutions/subsolutions/",
+  "areaLink": "/solutions/strategy",
+  "heroImage": "kpi-strategy",
+  "title": "Tech Evaluation & Design",
+  "description": "We develop a solution that fits your organizational needs, resources and technology capabilities. We also evaluate data providers, existing vendors and offer alternative solutions when there are opportunities for improvement.",
+ "body": [
+    ""
+    ]
+}

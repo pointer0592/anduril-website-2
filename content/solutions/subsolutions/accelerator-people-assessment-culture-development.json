@@ -1,0 +1,23 @@
+{
+  "area": "Accelerators",
+  "banner": {
+    "bannerTitle": "",
+    "lead": "",
+    "mediaCaption": "",
+    "copy": "",
+    "image": "",
+    "linkLabel": "",
+    "link": ""
+  },
+  "tgt": true,
+  "parentSolution": "Anduril Accelerators",
+  "prePath": "/solutions/subsolutions/",
+  "areaLink": "/solutions/accelerators",
+  "heroImage": "accelerator",
+  "title": "People Assessment, Culture and Performance",
+  "description": "Investment in human capital significantly improves Return on Investment for businesses. In short, employees are the lifeblood of your company. We partners with you to keep your people happy and performing.",
+  "body": [
+    ""
+    ],
+  "linkLabel": "People Solutions"
+}

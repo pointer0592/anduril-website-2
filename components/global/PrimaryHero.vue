@@ -20,9 +20,9 @@
 
         </div>
       </div>
-      <div class='pb-36 my-auto h-full'>
+      <div class='my-auto h-full' :class='verticalAdjustment'>
         <div
-          class='relative xl:px-32 lg:px-24 px-4 max-w-full flex flex-col justify-end bg-transparent dark:bg-transparent h-full'
+          class='relative xl:px-32 lg:px-24 px-4 flex flex-col justify-end bg-transparent dark:bg-transparent h-full'
           :class='sectionAlignment'
         >
           <div class='max-w-5xl'>
@@ -33,7 +33,7 @@
           </div>
           <div class='max-w-2xl'>
             <p v-if='heroLead'
-               class='mt-4 font-bold'
+               class='mt-4 font-bold text-white'
                :class='[ heroLeadClasses, textPlacement, leadTextSize ]'>
               {{ heroLead }}
             </p>
@@ -46,29 +46,29 @@
           <div v-if='personName'
                class='border border-t border-1 border-gray-300 w-20 my-6'
                :class='divPlacement' />
-          <div v-if='personName' class='text-base font-bold text-black hover:text-GunMetal sm:text-gray-200 sm:hover:text-gray-300'
+          <div v-if='personName' class='text-base font-bold text-gray-200 hover:text-gray-300'
                :class='divPlacement'>
-            <span v-if="personTwoName&&isAnduril&&bio!==''">Authors:</span><span v-else>Author:</span>
+            <span v-if="personTwoName&&isAnduril&&bio!==''">Authors:</span><span v-else-if='personName'>Author:</span>
             <nuxt-link v-if='isAnduril' :to="'/about/' + personImage"
-                       class='hover:underline text-black hover:text-GunMetal sm:text-gray-200 sm:hover:text-gray-300'>
+                       class='hover:underline text-gray-200 hover:text-gray-300'>
               {{ personName }}
             </nuxt-link>
             <a v-if='!isAnduril&&bio' :href='bio'
                target='_blank'
                rel='noopener noreferrer'
-               class='hover:underline text-black hover:text-GunMetal sm:text-gray-200 sm:hover:text-gray-300'>
+               class='hover:underline text-black text-gray-200 hover:text-gray-300'>
               {{ personName }}<span v-if='title'>,&nbsp;{{ title }}</span><span v-if='company'>,&nbsp;{{ company }}</span>
             </a>
-            <span v-if="personName&&!isAnduril&&bio===''">{{ personName }}</span>
+            <span v-if="personName&&!isAnduril&&bio===null">{{ personName }}</span>
             <span v-if='personTwoName'>&</span>
             <nuxt-link v-if='personTwoName&&isAnduril2' :to="'/about/' + personTwoImage"
-                       class='hover:underline text-black hover:text-GunMetal sm:text-gray-200 sm:hover:text-gray-300'>
+                       class='hover:underline text-gray-200 hover:text-gray-300'>
               {{ personTwoName }}
             </nuxt-link>
             <span v-if='personTwoName&&!isAnduril'>{{ personTwoName }}</span>
           </div>
           <p v-if='personName'
-             class='mt-2 text-base font-bold text-black hover:text-GunMetal sm:text-gray-200 sm:hover:text-gray-300'
+             class='mt-2 text-base font-bold text-gray-200 hover:text-gray-300'
              :class='textPlacement'>
             <span class='text-base font-bold'>Published:</span> {{ published | formatdate }}
             <span aria-hidden='true'>
@@ -192,7 +192,7 @@ export default {
     },
     leadColors: {
       type: String,
-      default: 'text-gray-200'
+      default: 'text-gray-200 hover:text-gray-300'
     },
     copyCase: {
       type: String,
@@ -204,7 +204,7 @@ export default {
     },
     copyColor: {
       type: String,
-      default: 'text-gray-200'
+      default: 'text-gray-200 hover:text-gray-300'
     },
     isAnduril: {
       type: Boolean,
@@ -220,7 +220,7 @@ export default {
     },
     mixBlendColor: {
       type: String,
-      default: 'bg-gray-500 sm:bg-gray-200'
+      default: ''
     },
     isMockup: { type: Boolean, default: false }
   },
@@ -234,6 +234,9 @@ export default {
     }
   },
   computed: {
+    verticalAdjustment() {
+      return this.center || this.heroCopy!=="" ? 'pb-40' : 'pb-64'
+    },
     primaryTextSize() {
       return this.full ? 'text-6xl lg:text-8xl tracking-wider' : 'text-6xl lg:text-6xl tracking-wide'
     },
@@ -241,7 +244,7 @@ export default {
       return this.full ? 'text-2xl lg:text-4xl' : 'text-xl lg:text-2xl'
     },
     sectionAlignment() {
-      return this.center ? 'items-center' : ''
+      return this.center ? 'items-center max-w-7xl mx-auto' : 'max-w-2xl '
     },
     textPlacement() {
       return this.center ? 'text-center' : ''

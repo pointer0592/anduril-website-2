@@ -1,0 +1,23 @@
+{
+  "area": "Accelerators",
+  "banner": {
+    "bannerTitle": "",
+    "lead": "",
+    "mediaCaption": "",
+    "copy": "",
+    "image": "",
+    "linkLabel": "",
+    "link": ""
+  },
+  "tgt": true,
+  "parentSolution": "Anduril Accelerators",
+  "prePath": "/solutions/subsolutions/",
+  "areaLink": "/solutions/accelerators",
+  "heroImage": "accelerator",
+  "title": "Funding and Strategic Partnerships",
+  "description": "Strategically improve your odds of future success",
+  "body": [
+    "We don’t possess a crystal ball, but we do have a wealth of experience growing business and helping companies create long-term plans to strategically improve the odds of future success.",
+    "Value from growth services is primarily derived from our deep industry connections with capital providers, industry peers, and our understanding of the technology landscape and use cases that can help provide clear pathways toward success."
+  ]
+}

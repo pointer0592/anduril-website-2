@@ -1,0 +1,22 @@
+{
+  "area": "KPI Workflow",
+  "banner": {
+    "bannerTitle": "",
+    "lead": "",
+    "mediaCaption": "",
+    "copy": "",
+    "image": "",
+    "linkLabel": "",
+    "link": ""
+  },
+  "tgt": true,
+  "parentSolution": "KPI Workflow",
+  "prePath": "/solutions/subsolutions/",
+  "areaLink": "/solutions/workflow",
+  "heroImage": "kpi-workflow",
+  "title": "Process Design",
+  "description": "Workflows are the backbone to data-driven decision-making. We create workflows that drive clarity, seamless information flow and decision-routing; leading to accelerated, sound decision-making within your organization.",
+  "body": [
+    ""
+    ]
+}

@@ -1,0 +1,23 @@
+{
+  "area": "ESG",
+  "banner": {
+    "bannerTitle": "",
+    "lead": "",
+    "mediaCaption": "",
+    "copy": "",
+    "image": "",
+    "linkLabel": "",
+    "link": ""
+  },
+  "tgt": true,
+  "parentSolution": "ESG Solutions",
+  "prePath": "/solutions/subsolutions/",
+  "areaLink": "/solutions/esg",
+  "heroImage": "solutions-design",
+  "title": "Materiality Assessment & Remediation",
+  "description": "Experience this essential process for to understand your organization’s current standing, identify stakeholder groups and audience.",
+  "body": [
+    ""
+    ],
+  "linkLabel": "ESG Materiality A&R"
+}

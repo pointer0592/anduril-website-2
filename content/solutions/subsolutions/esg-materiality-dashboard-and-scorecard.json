@@ -1,0 +1,23 @@
+{
+  "area": "ESG",
+  "banner": {
+    "bannerTitle": "",
+    "lead": "",
+    "mediaCaption": "",
+    "copy": "",
+    "image": "",
+    "linkLabel": "",
+    "link": ""
+  },
+  "tgt": true,
+  "parentSolution": "ESG Solutions",
+  "prePath": "/solutions/subsolutions/",
+  "areaLink": "/solutions/esg",
+  "heroImage": "solutions-design",
+  "title": "Dashboard & Scorecard",
+  "description": "The Anduril team and advisors have roots in building tech infrastructure and applied data science, with demonstrated success.",
+  "body": [
+    ""
+    ],
+  "linkLabel": "ESG Dashboard & Scorecard"
+}

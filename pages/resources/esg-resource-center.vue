@@ -1,12 +1,14 @@
 <template>
   <div>
     <primary-hero
-      hero-img='/hero-images/esg-services-design'
+      hero-img='/hero-images/esg-cover'
       hero-title='ESG Resource Center'
     />
     <section-navigation :nav-links='navLinks' />
     <news-stream id='press-box' :news-title='newsTitle' :news-lead='newsLead' :news-stream='esg' />
-    <main-section-header section-title='ESG Resources' section-lead='asdfads asdfgasdfg asdfasf' :is-padded=false />
+    <main-section-header section-title='ESG Resources' section-lead='Lorem ipsum dolor sit amet,
+              consectetur adipiscing elit. Sed eget dolor tortor. Phasellus viverra sem non eros vestibulum, in auctor
+              sapien commodo. In nisl erat, efficitur et ipsum in, posuere ornare tortor.' line-width='short' line-color='orange' is-tight-bottom />
     <small-card-rows id='esg-resources' :card-items='esgItems' :card-title='esgItemsTitle' large-grid-cols='4' />
     <small-card-rows id='esg-resources' :card-items='esgItems2' :card-title='esgItems2Title' large-grid-cols='4' />
     <small-card-rows id='esg-resources' :card-items='esgItems3' :card-title='esgItems3Title' large-grid-cols='4' />
@@ -32,9 +34,9 @@ export default {
   data() {
     return {
       navLinks: [
-        { name: 'ESG PressBox', id: 'press-box' },
-        { name: 'ESG Resources', id: 'esg-resources' },
-        { name: 'ESG FAQs', id: 'esg-faqs' }
+        { title: 'ESG PressBox', slug: 'press-box' },
+        { title: 'ESG Resources', slug: 'esg-resources' },
+        { title: 'ESG FAQs', slug: 'esg-faqs' }
       ],
       newsTitle: 'ESG Press',
       newsLead: 'Donec vitae urna tincidunt, tempus enim sit amet, elementum lorem. Ut ac dui feugiat, pulvinar ligula vitae, finibus mauris. Aenean convallis, orci et mollis venenatis, nunc nulla ornare quam, ac vestibulum augue dolor id augue.',

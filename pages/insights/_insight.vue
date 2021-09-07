@@ -21,6 +21,7 @@
       :title='insight.author.title'
       :company='insight.author.company'
       center
+      mix-blend-color='bg-gray-400'
     >
       <div class='mt-4'>
         <tags :tags='insight.tags' />

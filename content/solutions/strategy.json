@@ -1,0 +1,81 @@
+{
+  "heroImage": "kpi-solutions",
+  "colorBlend": "bg-gray-200",
+  "order": 1,
+  "title": "KPI Strategy",
+  "target": "strategy",
+  "tagline": "Reveal your Ground Truth",
+  "preview":  "We help align your decision-making with our time-test approach adapted from military decision-making doctrine.",
+  "description": "Put an end to indecision, uninformed decisions, and haphazard decisions. Adopted from military doctrine, We will align your decision-making with our time-test approach adapted from military decision-making doctrine.",
+  "body": [
+    {
+      "lead": "The Challenge",
+      "para": [
+        "Most processes are isolated glimmers of effort orphaned in static slides, spreadsheets, and email. Tremendous effort can lead to little gain in market intelligence, scalable processes and effective decisions-making. Data will continue to increase exponentially and leave many companies in risk of slipping further behind the few companies with effective data-driven decision processes.",
+        "The good news is that more tools and capability continue to emerge. Next generation efforts will progress towards an integrated single pane of glass combining internal and external qualitative and quantitative inputs. This software infrastructure will enable feedback loops and growing sophistication including accuracy, ML, and AI learning."
+      ]
+    },
+    {
+      "lead": "Our Solution",
+      "para": [
+        "Anduril can help you put an end to indecision, uninformed decisions, and hap-hazard decisions. Adopted from military doctrine, Anduril will align your decision-making to our model that allows for continuous data gathering, a holistic suite of evolving KPIs, while providing you with a powerful platform for sound decision-making."
+      ]
+    }
+  ],
+  "bodyImage": {
+   "title": "The OODA Loop",
+    "caption": "Anduril Partners",
+    "src": "OODA-Loop_2"
+  },
+  "quote": {
+    "copy": "",
+    "author": "",
+    "context": "",
+    "banner": {
+      "title": "",
+      "lead": "",
+      "mediaCaption": "",
+      "copy": "",
+      "image": "",
+      "linkLabel": "",
+      "link": ""
+    }
+  },
+  "banner": {
+    "bannerTitle": "",
+    "lead": "",
+    "mediaCaption": "",
+    "copy": "",
+    "image": "",
+    "linkLabel": "",
+    "link": ""
+  },
+  "subSolutions": [
+    {
+      "link": "/solutions/subsolutions/kpi-strategy-ooda",
+      "id": "1",
+      "name": "OODA-Driven Workshops & Design",
+      "tagline": "",
+      "image": "",
+      "quote": {
+        "copy": "",
+        "author": "",
+        "context": ""
+      },
+      "description": "The OODA (Observe, Orient, Decide, Act) Loop is a time-tested framework for executing, measuring, evaluating, and continuously improving on the fly that we have adopted to help drive a data-driven culture."
+    },
+    {
+      "link": "/solutions/subsolutions/kpi-strategy-tech-eval",
+      "id": "2",
+      "name": "Technical Evaluation",
+      "tagline": "",
+      "image": "",
+      "quote": {
+        "copy": "",
+        "author": "",
+        "context": ""
+      },
+      "description": "We develop a solution that fits your organizational needs, resources and technology capabilities. We also evaluate data providers, existing vendors and offer alternative solutions when there \nare opportunities for improvement."
+    }
+  ]
+}

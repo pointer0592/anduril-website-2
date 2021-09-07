@@ -1,0 +1,82 @@
+{
+  "heroImage": "kpi-solutions",
+  "colorBlend": "bg-gray-200",
+  "order": 3,
+  "title": "KPI Workflow",
+  "target": "workflow",
+  "tagline": "Workflows that drive sound decision-making",
+  "preview": "Build a robust solution that fits your organizational needs, resources and technology capabilities.",
+  "description": "Data without a mechanism that makes sense of it is just noise. Anduril will help you create workflows that drive clarity and sound decision-making. We accelerate the process of building workflows that report, inform and drive sound decision-making within your organization.",
+  "body": [
+    {
+      "lead": "The Challenge",
+      "para": [
+        "Abundance is the challenge. Today, data is available across thousands of sources and platforms. How do organizations isolate meaningful data, process it, then swiftly move it through their reporting and approval requirements? The truth is that few organizations have adequate workflows in place. They understandably struggle with the volume of data. As a result, many organizations either attempt to divine meaning from an overabundance of data, or they super-simplify--evaluating an inadequate subset of data.",
+        "Academic research shows that after a certain level of inputs, analysts flat line their predictive ability as decision-makers and become overwhelmed."
+      ]
+    },
+    {
+      "lead": "Our Solution",
+      "para": [
+        "Anduril develops a solution that fits your organizational needs, resources and technology capabilities. We also evaluate vendors in-place and offer alternative solutions when there are opportunities to accelerate or strengthen organization decision-making and shared intelligence.",
+        "The table below shows a sample ESG scorecard (the result of our workflow implementation), where Anduril was able to aggregate inputs from business user views, data science groups, ESG sustainability metrics, real-time data, and risk management perspectives into a single firm view which immediately integrates all key decision components. In this view we show how it has been used to rank potential asset investments, but similar criteria might be shown for product pricing, market opportunity, and peer group comparisons."
+      ]
+    }
+  ],
+  "bodyImage": {
+   "title": "",
+    "caption": "",
+    "src": "kpi-workflow"
+  },
+  "quote": {
+    "copy": "",
+    "author": "",
+    "context": "",
+    "banner": {
+      "title": "",
+      "lead": "",
+      "mediaCaption": "",
+      "copy": "",
+      "image": "",
+      "linkLabel": "",
+      "link": ""
+    }
+  },
+  "banner": {
+    "bannerTitle": "",
+    "lead": "",
+    "mediaCaption": "",
+    "copy": "",
+    "image": "",
+    "linkLabel": "",
+    "link": ""
+  },
+  "subSolutions": [
+    {
+      "link": "/solutions/subsolutions/kpi-workflow-process-design",
+      "id": "1",
+      "name": "Process Design",
+      "tagline": "",
+      "image": "",
+      "quote": {
+        "copy": "",
+        "author": "",
+        "context": ""
+      },
+      "description": "Workflows are the backbone to data-driven decision-making. We create workflows that drive clarity, seamless information flow and decision-routing; leading to accelerated, sound decision-making within your organization."
+    },
+    {
+      "link": "/solutions/subsolutions/kpi-workflow-implementation",
+      "id": "2",
+      "name": "Workflow Implementation",
+      "tagline": "",
+      "image": "",
+      "quote": {
+        "copy": "",
+        "author": "",
+        "context": ""
+      },
+      "description": "We stand-up test environments that run parallel to existing solutions then help your organization go live."
+    }
+  ]
+}

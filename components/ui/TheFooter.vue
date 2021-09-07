@@ -35,10 +35,10 @@
               </h3>
               <ul data-aos='fade-up' role='list' class='mt-4 space-y-4'>
                 <li>
-                <li v-for='service in services' :key='service.name' data-aos='fade-up'>
-                  <nuxt-link :to="`${service.link}`"
+                <li v-for='solution in solutions' :key='solution.name' data-aos='fade-up'>
+                  <nuxt-link :to="`${solution.link}`"
                              class='text-base text-gray-600 hover:text-gray-900 dark:text-gray-300 dark-hover:text-white'>
-                    {{ service.name }}
+                    {{ solution.name }}
                   </nuxt-link>
                 </li>
               </ul>
@@ -111,12 +111,12 @@ export default {
         { name: 'Insights', link: '/insights' },
         { name: 'Contact', link: '/contact' }
       ],
-      services: [
-        { name: 'KPI Strategy', link: '/services/kpi-strategy' },
-        { name: 'KPI Design', link: '/services/kpi-design' },
-        { name: 'KPI Workflow', link: '/services/kpi-workflow' },
-        { name: 'ESG', link: '/services/esg-services' },
-        { name: 'Accelerators', link: '/services/accelerators' }
+      solutions: [
+        { name: 'KPI Strategy', link: '/solutions/strategy' },
+        { name: 'KPI Design', link: '/solutions/design' },
+        { name: 'KPI Workflow', link: '/solutions/workflow' },
+        { name: 'ESG Solutions', link: '/solutions/esg' },
+        { name: 'Anduril Accelerators', link: '/solutions/accelerators' }
       ],
       socials: [
         {

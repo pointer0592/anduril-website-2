@@ -4,11 +4,7 @@
       hero-img='/hero-images/chess-design'
       hero-title='Anduril Partners'
       hero-lead='Think Deeper, See Further, Execute Faster'
-      lead-color='orange'
-      lead-weight='extrabold'
-      lead-color-dark-shade='700'
       hero-copy='Anduril Partners can help you leverage your data into actionable insights and increase your probability of success through real-time Key Performance Indicators (KPIs)'
-      full
       />
     <stats
       header='This is the header'
@@ -72,8 +68,8 @@ export default {
       exploreLead: '',
       exploreItems: [
         {
-          title: 'See if Our Services Can Help Overcome your Challenges',
-          href: '/services',
+          title: 'See if Our Solutions Can Help Overcome your Challenges',
+          href: '/solutions',
           icon: 'badge-check',
           copy: 'Engage with us in KPI Strategy, Design, and Workflow to establish feedback loops and continuous defined improvement.'
         },

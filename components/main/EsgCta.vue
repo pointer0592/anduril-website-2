@@ -8,7 +8,7 @@
       </h2>
       <div data-aos="fade-up" class="mt-8 flex lg:mt-0 lg:flex-shrink-0">
         <div class="inline-flex rounded-0 shadow">
-          <nuxt-link to="/" class="inline-flex items-center justify-center px-5 pt-3 pb-2 border border-transparent text-base font-bold uppercase rounded-0 text-orange-500 dark:text-orange-500 dark:text-orange-500 bg-white dark-hover:text-orange-700 hover:text-orange-700">
+          <nuxt-link to="/solutions/esg" class="inline-flex items-center justify-center px-5 pt-3 pb-2 border border-transparent text-base font-bold uppercase rounded-0 text-orange-500 dark:text-orange-500 dark:text-orange-500 bg-white dark-hover:text-orange-700 hover:text-orange-700">
             <span>Learn more</span>
             <icon-arrow-right class='h-6 w-6 ml-2'/>
           </nuxt-link>

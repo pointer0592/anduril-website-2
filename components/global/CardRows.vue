@@ -30,12 +30,12 @@
                 <p v-else data-aos='fade-up' class='text-sm font-medium text-orange-600 my-0'>
                   {{ card.area }}
                 </p>
-                <div :to="card.path" class='block mt-1'>
+                <div class='block mt-1'>
                   <p data-aos='fade-up' class='font-futura text-xl font-bold text-gray-900 dark:text-gray-100 my-0'>
                     {{ card.title }}
                   </p>
                   <p data-aos='fade-up' class='mt-1 text-base text-gray-500 dark:text-gray-400'>
-                    {{ card.preview }}
+                    {{ card.description }}
                   </p>
                 </div>
               </div>
@@ -52,13 +52,13 @@
                 </nuxt-link>
               </div>
               <div v-else data-aos='fade-up' class='inline-flex justify-end mt-2'>
-                <nuxt-link v-if='card.link' :to="`${card.link}`"
+                <nuxt-link v-if='card.tgt' :to="`${card.path}`"
                            class='inline-flex items-center justify-center border border-transparent text-base font-bold uppercase rounded-0 text-orange-500 hover:text-orange-700 bg-transparent'>
                   <span v-if='card.linkLabel'>to&nbsp;{{ card.linkLabel }}</span>
                   <span v-else>to&nbsp;{{ card.title }}</span>
                   <v-icon name='arrow-right' class='h-6 w-6 ml-2' />
                 </nuxt-link>
-                <nuxt-link v-else :to="`${card.prePath}/${card.slug}`"
+                <nuxt-link v-else :to="`${card.prePath}${card.slug}`"
                            class='inline-flex items-center justify-center border border-transparent text-base font-bold uppercase rounded-0 text-orange-500 hover:text-orange-700 bg-transparent'>
                   <span v-if='card.linkLabel'>to&nbsp;{{ card.linkLabel }}</span>
                   <span v-else>to&nbsp;{{ card.title }}</span>

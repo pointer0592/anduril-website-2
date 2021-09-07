@@ -1,0 +1,23 @@
+{
+  "area": "KPI Workflow",
+  "banner": {
+    "bannerTitle": "",
+    "lead": "",
+    "mediaCaption": "",
+    "copy": "",
+    "image": "",
+    "linkLabel": "",
+    "link": ""
+  },
+  "tgt": true,
+  "parentSolution": "KPI Workflow",
+  "prePath": "/solutions/subsolutions/",
+  "areaLink": "/solutions/workflow",
+  "heroImage": "kpi-workflow",
+  "title": "Implementation",
+  "description": "We stand-up test environments that run parallel to existing solutions then help your organization go live.",
+  "body": [
+    ""
+    ],
+  "linkLabel": "KPI Workflow Implementation"
+}

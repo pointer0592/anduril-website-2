@@ -1,0 +1,21 @@
+{
+  "area": "KPI Strategy",
+  "banner": {
+    "bannerTitle": "",
+    "lead": "",
+    "mediaCaption": "",
+    "copy": "",
+    "image": "",
+    "linkLabel": "",
+    "link": ""
+  },
+  "tgt": true,
+  "parentSolution": "KPI Strategy",
+  "prePath": "/solutions/subsolutions/",
+  "areaLink": "/solutions/strategy",
+  "heroImage": "kpi-strategy",
+  "title": "OODA Implementation",
+  "description": "The OODA (Observe, Orient, Decide, Act) Loop is a time-tested framework for executing, measuring, evaluating, and continuously improving on the fly that we have adopted to help drive a data-driven culture.",
+  "body": "",
+  "linkLabel": "KPI Strategy"
+}
