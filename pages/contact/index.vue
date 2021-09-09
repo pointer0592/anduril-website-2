@@ -59,12 +59,12 @@
               <dl class='mt-8 space-y-6'>
                 <dt><span class='sr-only'>Phone number</span></dt>
                 <dd class='flex text-base text-gray-100'>
-                  <icon-phone class='flex-shrink-0 w-6 h-6 text-gray-200' aria-hidden='true' />
+                  <PhoneIcon class='flex-shrink-0 w-6 h-6 text-gray-200' aria-hidden='true' />
                   <span class='ml-3'>+1 (917) 887-1295</span>
                 </dd>
                 <dt><span class='sr-only'>Email</span></dt>
                 <dd class='flex text-base text-gray-100'>
-                  <icon-mail class='flex-shrink-0 w-6 h-6 text-gray-200' aria-hidden='true' />
+                  <MailIcon class='flex-shrink-0 w-6 h-6 text-gray-200' aria-hidden='true' />
                   <span class='ml-3'>info@andurilpartners.ai</span>
                 </dd>
               </dl>
@@ -72,14 +72,14 @@
                 <li>
                   <a>
                     <span class='sr-only'>LinkedIn</span>
-                    <icon-linked-in class='h-6 w-6 text-gray-200 hover:text-Linkedin'
+                    <LinkedInLogoIcon class='h-6 w-6 text-gray-200 hover:text-Linkedin'
                                     href='https://www.linkedin.com/company/andurilpartners/' aria-hidden='true' />
                   </a>
                 </li>
                 <li>
                   <a>
                     <span class='sr-only'>Medium</span>
-                    <icon-medium class='h-6 w-6 text-gray-200 hover:text-black'
+                    <MediumLogoIcon class='h-6 w-6 text-gray-200 hover:text-black'
                                  href='https://medium.com/anduril-partners'
                                  aria-hidden='true' />
                   </a>
@@ -149,9 +149,13 @@
                          viewBox='0 0 100 100' version='1.1' xmlns='http://www.w3.org/2000/svg'
                          xmlns:xlink='http://www.w3.org/1999/xlink' xml:space='preserve'
                          xmlns:serif='http://www.serif.com/'
-                         style='fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;'><g><rect x='7.28' y='45.637' width='76.651' height='8.333'/><path
+                         style='fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;'>
+<g>
+<rect x='7.28' y='45.637' width='76.651' height='8.333'/><path
                       d='M86.81,44.047l-27.998,27.998l5.893,5.892l27.997,-27.998l-5.892,-5.892Z' /><path
-                      d='M86.827,55.971l-28.015,-28.016l5.893,-5.892l28.015,28.015l-5.893,5.893Z' /></g></svg>
+                      d='M86.827,55.971l-28.015,-28.016l5.893,-5.892l28.015,28.015l-5.893,5.893Z' />
+</g>
+</svg>
                   </button>
                 </div>
               </form>
@@ -177,17 +181,17 @@
 </template>
 
 <script>
-import IconMail from '~/assets/svg/mail.svg?inline'
-import IconPhone from '~/assets/svg/phone.svg?inline'
-import IconLinkedIn from '~/assets/svg/linkedin.svg?inline'
-import IconMedium from '~/assets/svg/medium-logo.svg?inline'
+import PhoneIcon from '~/assets/svg/phone.svg?inline'
+import MailIcon from '~/assets/svg/mail.svg?inline'
+import MediumLogoIcon from '~/assets/svg/medium-logo.svg?inline'
+import LinkedInLogoIcon from '~/assets/svg/linkedin.svg?inline'
 
 export default {
   components: {
-    IconLinkedIn,
-    IconMedium,
-    IconMail,
-    IconPhone
+    PhoneIcon,
+    MailIcon,
+    MediumLogoIcon,
+    LinkedInLogoIcon
   },
   async asyncData({ $content, params }) {
     const latestInsights = await $content('insights', params.slug)

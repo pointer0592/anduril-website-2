@@ -22,7 +22,7 @@
             <nuxt-link :to="mediaBanner.link"
                        class='inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-gray-900 bg-white hover:bg-gray-50'>
               {{ mediaBanner.linkLabel }}
-              <v-icon name='external-link' class='-mr-1 ml-3 h-5 w-5 text-gray-400' aria-hidden='true' />
+              <ExternalLinkIcon class='-mr-1 ml-3 h-5 w-5 text-gray-400' aria-hidden='true' />
             </nuxt-link>
           </div>
         </div>
@@ -32,8 +32,12 @@
 </template>
 
 <script>
+import ExternalLinkIcon from '~/assets/svg/external-link.svg?inline'
 export default {
   name: 'MediaBanner',
+  components: {
+    ExternalLinkIcon
+  },
   props: {
     mediaBanner: {
       type: Object,

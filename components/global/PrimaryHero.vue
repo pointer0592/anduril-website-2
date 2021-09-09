@@ -4,20 +4,18 @@
       <!-- Hero card -->
       <div class='max-w-full mx-auto'>
         <div class='absolute inset-0'>
-          <client-only>
-            <cld-image
-              :public-id='heroImg'
+            <nuxt-img
+              provider='cloudinary'
+              :src="heroImg"
               :alt='heroTitle'
               quality='auto'
               crop='fill'
-              fetch-format='auto'
+              format='auto'
               class='h-full w-full object-cover z-1'
               responsive
               loading='lazy'
             />
-        <span class='absolute inset-0 mix-blend-multiply' :class='mixBlendColor'/>
-            </client-only>
-
+            <span class='absolute inset-0 mix-blend-multiply' :class='mixBlendColor' />
         </div>
       </div>
       <div class='my-auto h-full' :class='verticalAdjustment'>
@@ -57,9 +55,12 @@
                target='_blank'
                rel='noopener noreferrer'
                class='hover:underline text-black text-gray-200 hover:text-gray-300'>
-              {{ personName }}<span v-if='title'>,&nbsp;{{ title }}</span><span v-if='company'>,&nbsp;{{ company }}</span>
+              {{ personName }}<span v-if='title'>,&nbsp;{{ title }}</span><span v-if='company'>
+,&nbsp;{{ company
+              }}
+</span>
             </a>
-            <span v-if="personName&&!isAnduril&&bio===null">{{ personName }}</span>
+            <span v-if='personName&&!isAnduril&&bio===null'>{{ personName }}</span>
             <span v-if='personTwoName'>&</span>
             <nuxt-link v-if='personTwoName&&isAnduril2' :to="'/about/' + personTwoImage"
                        class='hover:underline text-gray-200 hover:text-gray-300'>
@@ -235,7 +236,7 @@ export default {
   },
   computed: {
     verticalAdjustment() {
-      return this.center || this.heroCopy!=="" ? 'pb-40' : 'pb-64'
+      return this.center || this.heroCopy !== '' ? 'pb-40' : 'pb-64'
     },
     primaryTextSize() {
       return this.full ? 'text-6xl lg:text-8xl tracking-wider' : 'text-6xl lg:text-6xl tracking-wide'

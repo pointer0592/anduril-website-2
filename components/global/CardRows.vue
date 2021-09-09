@@ -43,12 +43,14 @@
                 <nuxt-link v-if='card.link' :to="card.link">
                   <p data-aos='fade-up'
                      class='inline-flex items-center justify-center border border-transparent text-base font-bold uppercase rounded-0 text-orange-500 hover:text-orange-700 bg-transparent underline'>
-                    learn more...</p>
+                    learn more...
+</p>
                 </nuxt-link>
                 <nuxt-link v-else :to="card.slug">
                   <p data-aos='fade-up'
                      class='inline-flex items-center justify-center border border-transparent text-base font-bold uppercase rounded-0 text-orange-500 hover:text-orange-700 bg-transparent underline'>
-                    learn more...</p>
+                    learn more...
+</p>
                 </nuxt-link>
               </div>
               <div v-else data-aos='fade-up' class='inline-flex justify-end mt-2'>
@@ -56,13 +58,13 @@
                            class='inline-flex items-center justify-center border border-transparent text-base font-bold uppercase rounded-0 text-orange-500 hover:text-orange-700 bg-transparent'>
                   <span v-if='card.linkLabel'>to&nbsp;{{ card.linkLabel }}</span>
                   <span v-else>to&nbsp;{{ card.title }}</span>
-                  <v-icon name='arrow-right' class='h-6 w-6 ml-2' />
+                  <arrow-right />
                 </nuxt-link>
                 <nuxt-link v-else :to="`${card.prePath}${card.slug}`"
                            class='inline-flex items-center justify-center border border-transparent text-base font-bold uppercase rounded-0 text-orange-500 hover:text-orange-700 bg-transparent'>
                   <span v-if='card.linkLabel'>to&nbsp;{{ card.linkLabel }}</span>
                   <span v-else>to&nbsp;{{ card.title }}</span>
-                  <v-icon name='arrow-right' class='h-6 w-6 ml-2' />
+                  <arrow-right />
                 </nuxt-link>
               </div>
             </div>
@@ -75,9 +77,11 @@
 
 <script>
 import aosMixin from '~/mixins/aos'
+import ArrowRight from '~/components/global/ArrowRight'
 
 export default {
   name: 'CardRows',
+  components: { ArrowRight },
   mixins: [aosMixin],
   props: {
     cardTitle: {

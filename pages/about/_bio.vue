@@ -51,17 +51,16 @@
             <div class='relative text-base mx-auto max-w-prose lg:max-w-none'>
               <figure>
                 <div class='aspect-w-12 aspect-h-7 lg:aspect-none'>
-
-                  <v-cloud-image
-                    :public-id="'/team-headshots/' + bio.image"
+<nuxt-img
+                    provider="cloudinary"
+:src="'/team-headshots/' + bio.image"
                     :alt='bio.name'
-                    cloud-quality='auto'
-                    fetch-format='jpg'
-                    cloud-loading='lazy'
+                    quality='auto'
+                    format='jpg'
+                    loading='lazy'
                     class='rounded-lg shadow-lg object-cover object-center'
                   />
-
-                </div>
+</div>
               </figure>
             </div>
           </div>
@@ -72,7 +71,7 @@
                 <span class='mr-4'>Connect with {{ bio.name.substring(0, bio.name.indexOf(' ')) }}: </span>
                 <a :href='bio.linkedinProfileLink' target='_blank' class='cursor-pointer'>
                   <span class='sr-only'>LinkedIn</span>
-                  <v-icon name='linkedin'
+                  <LinkedInLogoIcon
                     class='mb-2 w-6 h-6 cursor-pointer rounded-md p-0 inline-flex items-center justify-center text-gray-600 dark:text-gray-200 dark-hover:text-Linkedin hover:text-Linkedin focus:outline-none focus:ring-2 focus:ring-inset focus:ring-orange-500' />
                 </a>
               </div>
@@ -86,9 +85,11 @@
 </template>
 
 <script>
+import LinkedInLogoIcon from '~/assets/svg/linkedin.svg?inline'
 
 export default {
   components: {
+    LinkedInLogoIcon
   },
   transition: {
     name: 'fade',

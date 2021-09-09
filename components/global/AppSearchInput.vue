@@ -1,17 +1,30 @@
 <template>
   <div>
-    <div class='w-80 mt-1 relative'>
-      <div class='absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none'>
-        <v-icon name='search' class='h-5 w-5 font-medium text-GunMetal dark:text-orange-500' aria-hidden='true' />
+    <div class='w-full mt-1 relative'>
+      <div
+        class='w-full relative'
+        @keydown.down='increment'
+        @keydown.up='decrement'
+        @keydown.enter='go'
+      >
+        <label for='search' class='sr-only'>Search</label>
+        <div class='relative'>
+          <div class='absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none'>
+            <IconSearch class='h-5 w-5 font-medium text-GunMetal dark:text-orange-500' aria-hidden='true'/>
+          </div>
+          <input
+            id='search'
+            ref='search'
+            v-model='searchQuery'
+            type='search'
+            autocomplete='off'
+            placeholder='Search'
+            class='block w-full pl-10 pr-3 py-2 truncate leading-5 placeholder-gray-300 border border-1 border-GunMetal dark:border-white dark:bg-GunMetal dark:text-white text-GunMetal focus:border-gray-300 rounded-0 focus:outline-none focus:bg-white bg-white'
+            @focus='onFocus'
+            @blur='onBlur'
+          />
+        </div>
       </div>
-      <input
-        v-model='searchQuery'
-        v-click-outside='externalClick'
-        type='search'
-        autocomplete='off'
-        placeholder='Search'
-        class='block w-80 pl-10 pr-3 py-2 truncate leading-5 placeholder-gray-300 border border-1 border-GunMetal dark:border-white dark:bg-GunMetal dark:text-white text-GunMetal focus:border-gray-300 rounded-md focus:outline-none focus:bg-white bg-white'
-      />
     </div>
     <transition
       enter-active-class='transition ease-out duration-100'
@@ -21,53 +34,126 @@
       leave-class='transform opacity-100 scale-100'
       leave-to-class='transform opacity-0 scale-95'
     >
-      <ul v-if='insights.length'
-        class='z-10 absolute w-80 flex-1 bg-white dark:bg-GunMetal rounded-md border border-gray-300 overflow-hidden'
+      <ul
+        v-show='focus && (searching || results.length)'
+        class='z-10 absolute w-full flex-1 bg-white dark:bg-GunMetal rounded-0 border border-gray-300 overflow-hidden'
       >
-        <li v-for='insight of insights' :key='insight.slug'>
+        <li v-if='searching && !results.length' class='px-4 py-2'>
+          Searching...
+        </li>
+        <li v-for='(result, index) of results'
+            :key='result.slug'
+            @mouseenter='focusIndex = index'
+            @mousedown='go'
+        >
           <NuxtLink
-            :to="'/insights/' + insight.slug"
+            :to="{
+            name: 'article',
+            params: { slug: result.slug !== 'index' ? result.slug : undefined }
+          }"
             class='flex px-4 py-2 items-center leading-5 transition ease-in-out duration-150 text-GunMetal hover:bg-gray-50 dark:text-white dark-hover:bg-GunMetalLighter'
+            @click='focus = false'
           >
-            {{ insight.title }}
+            <IconChevronRight class='w-3 h-3 mx-1 hidden sm:block' />
+            {{ result.title }}
+            <span class='font-base hidden text-orange-500 sm:block ml-4'>from <b>{{ result.category }}</b></span>
           </NuxtLink>
-            <div class='border-t border-gray-200 dark:border-gray-200'></div>
+          <div class='border-t border-gray-200 dark:border-gray-200'></div>
         </li>
       </ul>
     </transition>
   </div>
 </template>
 <script>
-import vClickOutside from 'v-click-outside'
-
+  import IconSearch from '~/assets/svg/search.svg?inline'
+  import IconChevronRight from '~/assets/svg/chevron-right.svg?inline'
 export default {
   name: 'AppSearchInput',
-  directives: {
-    clickOutside: vClickOutside.directive
+    components: {
+      IconSearch,
+      IconChevronRight
+    },
+  props: {
+    searchItem: {
+      type: String,
+      default: 'insights'
+    }
   },
   data() {
     return {
       searchQuery: '',
-      insights: []
+      focus: false,
+      focusIndex: -1,
+      open: false,
+      searching: false,
+      results: []
     }
+  },
+  watch: {
+    async searchQuery(searchQuery) {
+      this.focusIndex = -1
+      if (!searchQuery) {
+        this.searching = false
+        this.results = []
+        return
+      }
+      this.searching = true
+      this.results = await this.$content(this.searchItem)
+        .sortBy('position', 'asc')
+        .limit(12)
+        .search(searchQuery)
+        .fetch()
+      this.searching = false
+    }
+  },
+  mounted() {
+    window.addEventListener('keyup', this.keyup)
+  },
+  beforeDestroy() {
+    window.removeEventListener('keyup', this.keyup)
   },
   methods: {
     externalClick(event) {
       this.searchQuery = ''
       // eslint-disable-next-line no-console
       console.log('External click. Event: ', event)
-    }
-  },
-  watch: {
-    async searchQuery(searchQuery) {
-      if (!searchQuery) {
-        this.insights = []
+    },
+    onFocus() {
+      this.focus = true
+      this.$emit('focus', true)
+    },
+    onBlur() {
+      this.focus = false
+      this.$emit('focus', false)
+    },
+    keyup(e) {
+      if (e.key === '/') {
+        this.$refs.search.focus()
+      }
+    },
+    increment() {
+      if (this.focusIndex < this.results.length - 1) {
+        this.focusIndex++
+      }
+    },
+    decrement() {
+      if (this.focusIndex >= 0) {
+        this.focusIndex--
+      }
+    },
+    go() {
+      if (this.results.length === 0) {
         return
       }
-      this.insights = await this.$content('insights')
-        .limit(6)
-        .search(searchQuery)
-        .fetch()
+      const result =
+        this.focusIndex === -1
+          ? this.results[0]
+          : this.results[this.focusIndex]
+      const path = `/blog/${result.slug !== 'index' ? result.slug : ''}`
+      this.$router.push(path)
+      // Unfocus the input and reset the query.
+      this.$refs.search.blur()
+      this.searchQuery = ''
     }
   }
 }

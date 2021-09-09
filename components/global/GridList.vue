@@ -18,7 +18,7 @@
             <div>
         <span
           class="dark:bg-GunMetalLt text-orange-500 bg-orange-50 rounded-lg inline-flex p-3">
-          <v-icon :name='gridItem.icon' class='h-6 w-6' aria-hidden='true' />
+          <component :is='gridItem.icon' class='h-6 w-6' aria-hidden='true' />
         </span>
             </div>
             <div class='mt-8'>
@@ -48,11 +48,9 @@
 </template>
 
 <script>
-import VIcon from '~/components/global/VIcon'
 
 export default {
   name: 'GridList',
-  components: { VIcon },
   props: {
     gridTitle: {
       type: String,

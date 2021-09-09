@@ -19,7 +19,7 @@ category: Vendor Spotlight
 
 Our vendor spotlight has turned to an up-and-coming company that has been building momentum. Scroll to the end to read the transcript from an interview we conducted with Greg McCall, one of EDS' founders.
 
-<markdown-generic-image pre-path="newsletter/inserts/" fetch-format="png" filename="eds-screenshot" caption=""></markdown-generic-image>
+<markdown-generic-image pre-path="newsletter/inserts/" format="png" filename="eds-screenshot" caption=""></markdown-generic-image>
 
 
 ## COMPANY STATS

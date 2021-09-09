@@ -12,7 +12,7 @@
         <div v-for="feature in features" :key="feature.name">
           <div>
             <span v-if="feature.icon" data-aos="fade-up" class="flex items-center justify-center h-12 w-12 rounded-md bg-orange-500">
-              <v-icon :name="feature.icon" class="h-6 w-6 text-white" aria-hidden="true" />
+              <component :is="feature.icon" class="h-6 w-6 text-white" aria-hidden="true" />
             </span>
           </div>
           <div data-aos="fade-up" class="mt-6">

@@ -3,19 +3,18 @@
     <figure>
       <figcaption v-if='title' class='text-lg font-bold text-GunMetal dark:text-white pb-4'>{{ title }}</figcaption>
 
-      <v-cloud-image
-        :public-id="src"
+      <nuxt-img
+        provider='cloudinary'
+        :src='src'
         :alt='caption'
-        cloud-quality='auto'
-        cloud-crop='fill'
-        cloud-fetch-format='auto'
+        quality='auto'
+        crop='fill'
+        format='auto'
         class='h-full w-full'
-        cloud-loading='lazy'
-          cloud-placeholder='blur'
-        />
-
-
-      <figcaption v-if='caption' class='text-center text-sm italic text-GunMetal dark:text-white'>Source: {{ caption }}
+        loading='lazy'
+      />
+      <figcaption v-if='caption' class='text-center text-sm italic text-GunMetal dark:text-white'>
+        Source: {{ caption }}
       </figcaption>
     </figure>
   </div>

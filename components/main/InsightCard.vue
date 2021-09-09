@@ -3,19 +3,18 @@
     <nuxt-link :to='insight.path'
     >
       <div v-if='insight.coverImg&&!insight.isMockup' data-aos='fade-up' class='flex-1'>
-
-        <v-cloud-image
-          :public-id="'/insights/' + insight.coverImg"
+<nuxt-img
+          provider="cloudinary"
+:src="'/insights/' + insight.coverImg"
           :alt='insight.title'
           quality='auto'
           crop='fill'
-          fetch-format='auto'
-          cloud-classes='h-48 w-full object-cover z-1'
+          format='auto'
+          class='h-48 w-full object-cover z-1'
           loading='lazy'
           placeholder='blur'
         />
-
-      </div>
+</div>
       <div v-if='insight.videoSrc' data-aos='fade-up' class='h-48 w-full object-cover lazyload'>
         <video loop autoplay muted>
           <source :src='insight.videoSrc' type='video/mp4'>
@@ -44,13 +43,13 @@
       </nuxt-link>
       <div class='h-16 mt-6 flex items-center space-x-4'>
         <div v-if='insight.author.image' data-aos='fade-up' class='flex overflow-hidden' :class='avatarSpace'>
-          <client-only>
-            <cld-image
+<nuxt-img
               v-if='insight.author.image'
-              :public-id="'/headshots/' + insight.author.image"
+              provider="cloudinary"
+:src="'/headshots/' + insight.author.image"
               :alt='insight.author.name'
               quality='auto'
-              fetch-format='png'
+              format='png'
               loading='lazy'
               crop='thumb'
               rounded='50'
@@ -58,15 +57,15 @@
               gravity='face'
               class='h-10 w-10 rounded-full m-1 ring-2 ring-gray-400 dark:ring-gray-400'
             />
-            <cld-placeholder type='blur' />
-          </client-only>
-          <client-only>
-            <cld-image
+
+
+            <nuxt-img
               v-if='insight.authorTwo.image'
-              :public-id="'/headshots/' + insight.authorTwo.image"
+              provider="cloudinary"
+:src="'/headshots/' + insight.authorTwo.image"
               :alt='insight.authorTwo.name'
               quality='auto'
-              fetch-format='png'
+              format='png'
               loading='lazy'
               crop='thumb'
               rounded='50'
@@ -74,8 +73,6 @@
               gravity='face'
               class='h-10 w-10 rounded-full m-1 ring-2 ring-gray-400 dark:ring-gray-400'
             />
-            <cld-placeholder type='blur' />
-          </client-only>
         </div>
         <div>
           <div v-if='insight.author.name' data-aos='fade-up'
@@ -89,7 +86,9 @@
                rel='noopener noreferrer'
                class='hover:underline hover:text-GunMetalLt dark-hover:text-gray-300 cursor-pointer'>
               {{ insight.author.name }}<span v-if='insight.author.title'>,&nbsp;{{ insight.author.title }}</span><span
-              v-if='insight.author.company'>,&nbsp;{{ insight.author.company }}</span>
+              v-if='insight.author.company'>
+,&nbsp;{{ insight.author.company }}
+</span>
             </a>
             <span v-if="!insight.author.anduril===false&&insight.author.bio===''">{{ insight.author.name }}</span>
             <span v-if='insight.authorTwo.name'>&nbsp; & &nbsp;</span>

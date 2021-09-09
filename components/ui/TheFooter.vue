@@ -8,10 +8,12 @@
         <div class='space-y-8 col-span-1'>
           <div data-aos='fade-up'>
             <span class='flex items-start'>
-              <v-icon name='anduril-logo' class='h-16 w-auto text-orange-500 mr-auto' />
+              <IconAndurilLogo class='h-16 w-auto text-orange-500 mr-auto' />
             </span>
-            <p data-aos='fade-up' class='text-2xl font-extrabold text-gray-900 dark:text-white leading-0'>Anduril
-              Partners</p>
+            <p data-aos='fade-up' class='text-2xl font-extrabold text-gray-900 dark:text-white leading-0'>
+Anduril
+              Partners
+</p>
             <p data-aos='fade-up' class='text-gray-700 dark:text-gray-200 text-base'>
               We help companies discover their ground truth, build KPIs and make data-driven decisions
             </p>
@@ -19,7 +21,7 @@
           <div class='flex space-x-6'>
             <a v-for='item in socials' :key='item.name' data-aos='fade-up' :href='item.href'>
               <span class='sr-only'>{{ item.name }}</span>
-              <v-icon :name='item.icon'
+              <component :is='item.icon'
                       class='h-6 w-6 text-gray-700 dark:text-gray-300'
                       :class='item.hoverColor'
                       aria-hidden='true' />
@@ -99,9 +101,17 @@
 
 <script>
 import aosMixin from '~/mixins/aos'
+import IconAndurilLogo from '~/assets/svg/anduril-logo.svg?inline'
+import MediumLogoIcon from '~/assets/svg/medium-logo.svg?inline'
+import LinkedInLogoIcon from '~/assets/svg/linkedin.svg?inline'
 
 export default {
   name: 'TheFooter',
+  components: {
+    IconAndurilLogo,
+    MediumLogoIcon,
+    LinkedInLogoIcon
+  },
   mixins: [aosMixin],
   data() {
     return {
@@ -121,13 +131,13 @@ export default {
       socials: [
         {
           name: 'LinkedIn',
-          icon: 'linkedin',
+          icon: LinkedInLogoIcon,
           href: 'https://www.linkedin.com/company/andurilpartners/',
           hoverColor: 'hover:text-Linkedin dark-hover:text-Linkedin'
         },
         {
           name: 'Medium',
-          icon: 'medium-logo',
+          icon: MediumLogoIcon,
           href: 'https://medium.com/anduril-partners',
           hoverColor: 'hover:text-GunMetalDk dark-hover:text-white'
         }

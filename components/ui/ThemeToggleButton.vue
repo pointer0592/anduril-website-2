@@ -25,13 +25,13 @@ export default {
       return this.$colorMode
     },
     themeIcon() {
-      return this.$colorMode.preference === 'light-mode' ? 'icon-moon' : 'icon-sun'
+      return this.$colorMode.preference === 'light' ? IconMoon : IconSun
     },
   },
   methods: {
     toggleDarkMode() {
       this.$colorMode.preference =
-        this.$colorMode.value === 'light-mode' ? 'dark-mode' : 'light-mode'
+        this.$colorMode.value === 'light' ? 'dark' : 'light'
     },
   },
 }

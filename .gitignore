@@ -1,7 +1,7 @@
 # Created by .ignore support plugin (hsz.mobi)
 ### Node template
 # Logs
-/logs
+logs
 *.log
 npm-debug.log*
 yarn-debug.log*
@@ -57,7 +57,7 @@ typings/
 .yarn-integrity
 
 # dotenv environment variables file
-
+.env
 
 # parcel-bundler cache (https://parceljs.org/)
 .cache
@@ -69,22 +69,30 @@ typings/
 .nuxt
 
 # Nuxt generate
-/static/images
+dist
 
 # vuepress build output
 .vuepress/dist
 
 # Serverless directories
 .serverless
+/lambda
 
-# IDE / Editor
+# IDE
 .idea
 
-# Service worker
+# Mac
+*.DS_Store
+
+# Progressive Web Apps
 sw.*
 
-# macOS
-.DS_Store
+ClicksMethods.md
 
-# Vim swap files
-*.swp
+# Local Netlify folder
+.netlify
+
+# cypress
+cypress/integration/examples
+cypress/videos
+cypress/screenshots

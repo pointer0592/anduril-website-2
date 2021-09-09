@@ -24,12 +24,12 @@
               <div data-aos='fade-up' class='inline-flex justify-end mt-2'>
                 <a v-if='card.link&&card.linkLabel' :href='card.link'
                    class='inline-flex items-center justify-center border border-transparent text-base font-bold uppercase rounded-0 text-orange-500 hover:text-orange-700 bg-transparent'>
-                  <v-icon name='external-link' class='h-6 w-6 ml-2' />
+                  <ExternalLinkIcon class='h-6 w-6 ml-2' />
                   <span>{{ card.linkLabel }}</span>
                 </a>
                 <nuxt-link v-if='card.internalLink&&card.linkLabel' :to='card.internalLink'
                            class='inline-flex items-center justify-center border border-transparent text-base font-bold uppercase rounded-0 text-orange-500 hover:text-orange-700 bg-transparent'>
-                  <v-icon name='external-link' class='h-6 w-6 ml-2' />
+                  <ExternalLinkIcon class='h-6 w-6 ml-2' />
                   <span>{{ card.linkLabel }}</span>
                 </nuxt-link>
               </div>
@@ -43,9 +43,13 @@
 
 <script>
 import aosMixin from '~/mixins/aos'
+import ExternalLinkIcon from '~/assets/svg/external-link.svg?inline'
 
 export default {
   name: 'SmallCardRows',
+  components: {
+    ExternalLinkIcon
+  },
   mixins: [aosMixin],
   props: {
     cardTitle: {

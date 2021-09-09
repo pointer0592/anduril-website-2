@@ -9,8 +9,9 @@
               class='px-4 sm:px-0 bg-gray-100 overflow-hidden lg:max-w-7xl my-auto  rounded-xl shadow-lg'
               :class="[serviceIdx % 2 === 0 ? 'flex-auto lg:col-start-7' : 'lg:col-start-1', 'lg:row-start-1 lg:col-span-6']"
               data-aos='fade-up'>
-              <v-cloud-image
-                :public-id="`/solutions-page/${solution.heroImage}`"
+              <nuxt-img
+                provider="cloudinary"
+:src="`/solutions-page/${solution.heroImage}`"
                 classes='w-full h-full'
                 />
             </div>

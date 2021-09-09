@@ -8,15 +8,20 @@
             data-aos='fade-up'>
             <div class='lg:col-start-1'>
               <h2 id='features-heading2' class='font-futura font-medium text-orange-500' data-aos='fade-up'>
-                {{ solution.tagline }}</h2>
+                {{ solution.tagline }}
+</h2>
               <p
                 class='font-futura mt-2 text-4xl font-extrabold tracking-wide text-GunMetal dark:text-white tracking-tight'
-                data-aos='fade-up'>{{ solution.title }}</p>
+                data-aos='fade-up'>
+{{ solution.title }}
+</p>
               <div class='border border-b-1 border-orange-50 dark:border-orange-400 mt-4 w-16' />
               <p class='mt-4 text-xl font-semibold text-gray-500 dark:text-gray-200' data-aos='fade-up'>{{ solution.description }}</p>
               <div v-if="solution.body.title!==''">
                 <p v-for='(para, index) in solution.body' :key='`para-${index}`'
-                   class='mt-4 text-lg text-gray-500 dark:text-gray-200' data-aos='fade-up'>{{ para }}</p>
+                   class='mt-4 text-lg text-gray-500 dark:text-gray-200' data-aos='fade-up'>
+{{ para }}
+</p>
               </div>
             </div>
           </div>

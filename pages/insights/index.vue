@@ -85,10 +85,8 @@
 
 <script>
 import aosMixin from '~/mixins/aos'
-import MainSectionHeader from '~/components/global/MainSectionHeader'
 
 export default {
-  components: { MainSectionHeader },
   mixins: aosMixin,
   async asyncData({ $content, params }) {
     const insights = await $content('insights',{ deep: true })

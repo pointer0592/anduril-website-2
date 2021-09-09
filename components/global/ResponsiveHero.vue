@@ -38,7 +38,8 @@
                  target='_blank'
                  rel='noopener noreferrer'
                  class='hover:underline text-black text-gray-200 hover:text-gray-300'>
-                {{ personName }}<span v-if='title'>,&nbsp;{{ title }}</span><span v-if='company'>,&nbsp;{{ company }}</span>
+                {{ personName }}<span v-if='title'>,&nbsp;{{ title }}</span><span v-if='company'>,&nbsp;{{ company
+                }}</span>
               </a>
               <span v-if="personName&&!isAnduril&&bio===''">{{ personName }}</span>
               <span v-if='personTwoName'>&</span>
@@ -74,19 +75,17 @@
       </div>
     </div>
     <div class='lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2'>
-      <client-only>
-        <cld-image
-          :public-id='heroImg'
-          :alt='heroTitle'
-          quality='auto'
-          crop='fill'
-          fetch-format='auto'
-          class='h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full'
-          responsive
-          loading='lazy'
-        />
-        <span class='absolute inset-0 mix-blend-multiply' :class='mixBlendColor' />
-      </client-only>
+      <nuxt-img
+        provider='cloudinary'
+        :src='heroImg'
+        :alt='heroTitle'
+        quality='auto'
+        crop='fill'
+        format='auto'
+        class='h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full'
+        loading='lazy'
+      />
+      <span class='absolute inset-0 mix-blend-multiply' :class='mixBlendColor' />
     </div>
   </div>
 </template>

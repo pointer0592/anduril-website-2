@@ -38,7 +38,7 @@
                 <nuxt-link :to="`${card.dir}/${card.slug}`"
                            class='inline-flex items-center justify-center border border-transparent text-base font-bold uppercase rounded-0 text-orange-500 hover:text-orange-700 bg-transparent'>
                        <span>to&nbsp;{{ card.title }}</span>
-                  <v-icon name='arrow-right' class='h-6 w-6 ml-2' />
+                  <arrow-right />
                 </nuxt-link>
               </div>
             </div>

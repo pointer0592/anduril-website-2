@@ -1,15 +1,9 @@
-import global from './utils/global'
-import getSiteMeta from './utils/get-site-meta'
-import getRoutes from './utils/get-routes'
-
-const meta = getSiteMeta()
-
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
 
   env: {
-    siteTitle: 'Anduril Partners',
+    title: 'Anduril Partners',
     topNavItems: [
       { label: 'Contact', slug: 'contact' }
     ],
@@ -19,11 +13,31 @@ export default {
       {
         label: 'Our Solutions', slug: 'solutions', dropdown: true, subNavs: [
           { name: 'All Solutions', tgt: '/solutions', description: '' },
-          { name: 'KPI Strategy', tgt: '/solutions/strategy', description: 'Put an end to indecision, uninformed decisions, and haphazard decisions. We\'ll help align your decision-making around a data-driven approach.' },
-          { name: 'KPI Design', tgt: '/solutions/design', description: 'Develop a universal language across you organization and answer key business questions buy developing a robust set of KPIs.' },
-          { name: 'KPI Workflow', tgt: '/solutions/workflow', description: 'Build a robust solution that fits your organizational needs, resources and technology capabilities.' },
-          { name: 'ESG Solutions', tgt: '/solutions/esg', description: 'Leverage our deep understanding of ESG and experience working with many types of stakeholder groups the ESG ecosystem.' },
-          { name: 'Anduril Accelerators', tgt: '/solutions/accelerators', description: 'Accelerate your growth by excelling in the critical elements that often hamper growth.' }
+          {
+            name: 'KPI Strategy',
+            tgt: '/solutions/strategy',
+            description: 'Put an end to indecision, uninformed decisions, and haphazard decisions. We\'ll help align your decision-making around a data-driven approach.'
+          },
+          {
+            name: 'KPI Design',
+            tgt: '/solutions/design',
+            description: 'Develop a universal language across you organization and answer key business questions buy developing a robust set of KPIs.'
+          },
+          {
+            name: 'KPI Workflow',
+            tgt: '/solutions/workflow',
+            description: 'Build a robust solution that fits your organizational needs, resources and technology capabilities.'
+          },
+          {
+            name: 'ESG Solutions',
+            tgt: '/solutions/esg',
+            description: 'Leverage our deep understanding of ESG and experience working with many types of stakeholder groups the ESG ecosystem.'
+          },
+          {
+            name: 'Anduril Accelerators',
+            tgt: '/solutions/accelerators',
+            description: 'Accelerate your growth by excelling in the critical elements that often hamper growth.'
+          }
         ]
       },
       { label: 'Our Approach', slug: 'approach', dropdown: false },
@@ -39,7 +53,6 @@ export default {
     },
     title: 'Anduril Partners',
     meta: [
-      ...meta,
       { charset: 'utf-8' },
       {
         name: 'viewport',
@@ -48,110 +61,106 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: global.siteDesc || ''
+        content: 'We help companies discover their ground truth, build KPIs and make data-driven decisions'
       },
       {
         property: 'og:site_name',
-        content: global.siteName || ''
+        content: 'Anduril Partners'
+      },
+      { hid: 'og:type', property: 'og:type', content: 'website' },
+      {
+        hid: 'og:url',
+        property: 'og:url',
+        content: 'https://andurilpartners.ai'
       },
       {
-        hid: 'description',
-        name: 'description',
-        content: global.siteDesc || ''
+        hid: 'og:title',
+        property: 'og:title',
+        content: 'Anduril Partners | Data-driven Decisions, KPIs, Ground Truth Discovery'
       },
       {
-        property: 'og:image:width',
-        content: '740'
-      },
-      {
-        property: 'og:image:height',
-        content: '300'
-      },
-      {
-        name: 'twitter:site',
-        content: global.siteName || ''
-      },
-      {
-        name: 'twitter:card',
-        content: 'summary_large_image'
-      },
-      {
-        hid: 'linkedin:site',
-        name: 'linkedin:site',
-        content: 'https://www.linkedin.com/company/andurilpartners/'
-      },
-      {
-        hid: 'linkedin:creator',
-        name: 'linkedin:creator',
-        content: 'https://www.linkedin.com/company/andurilpartners/'
+        hid: 'og:description',
+        property: 'og:description',
+        content:
+          'We help companies discover their ground truth, build KPIs and make data-driven decisions.'
       },
       {
         hid: 'og:image',
         property: 'og:image',
-        content: 'https://res.cloudinary.com/www-andurilpartners-ai/image/upload/v1628882145/og/default_ff6rsr.jpg'
+        content: 'https://res.cloudinary.com/www-andurilpartners-ai/image/upload/v1628882145/og/default_ff6rsr.png'
+      },
+      // Test on: https://cards-dev.twitter.com/validator or https://socialsharepreview.com/
+      { name: 'twitter:site', content: '@AndurilPartners' },
+      { name: 'twitter:card', content: 'summary_large_image' },
+      {
+        hid: 'twitter:url',
+        name: 'twitter:url',
+        content: 'https://andurilpartners.ai'
       },
       {
-        hid: 'og:image',
-        property: 'og:image',
-        content: 'https://res.cloudinary.com/www-andurilpartners-ai/image/upload/v1628882145/og/default_ff6rsr.jpg'
+        hid: 'twitter:title',
+        name: 'twitter:title',
+        content:
+          'Anduril Partners | Data-driven Decisions, KPIs, Ground Truth Discovery'
+      },
+      {
+        hid: 'twitter:description',
+        name: 'twitter:description',
+        content:
+          'We help companies discover their ground truth, build KPIs and make data-driven decisions'
+      },
+      {
+        hid: 'twitter:image',
+        name: 'twitter:image',
+        content: 'https://res.cloudinary.com/www-andurilpartners-ai/image/upload/v1628882145/og/default_ff6rsr.png'
       }
     ],
+
     link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       {
-        rel: 'icon',
-        type: 'image/x-icon',
-        href:
-          'https://res.cloudinary.com/www-andurilpartners-ai/image/upload/v1628882073/anduril-logos/logo-white-on-orange_syfekv.svg'
+        hid: 'canonical',
+        rel: 'canonical',
+        href: 'https://andurilpartners.ai'
       }
     ]
   },
 
+  loading: { color: '#FF8400' },
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    '~/assets/css/main',
     'aos/dist/aos.css'
   ],
 
+  colorMode: {
+    classSuffix: ''
+  },
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    { src: '@/plugins/vClickOutside', ssr: false },
-    '~/plugins/axios.js',
-    { src: '~/plugins/disqus' },
+    { src: '~/plugins/vClickOutside', ssr: false },
     { src: '~/plugins/format-date' },
     { src: '~/plugins/truncate' },
-    { src: '~/plugins/format-time' },
-    {
-      src: '~/plugins/gdpr',
-      mode: 'client'
-    }
+    { src: '~/plugins/format-time' }
   ],
 
-  // Auto import components: https://go.nuxtjs.dev/config-components
-  components: {
-    dirs: [
-      '~/components/', '~/components/main/', '~/components/global/', '~/components/ui/', '~/components/markdown/'
-    ]
-  },
 
-  // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     '@nuxtjs/svg',
-    // Doc: https://github.com/nuxt-community/color-mode-module
     '@nuxtjs/color-mode',
-    // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
-    // https://go.nuxtjs.dev/tailwindcss
+    '@nuxtjs/stylelint-module',
     '@nuxtjs/tailwindcss',
     '@nuxt/components',
     '@nuxtjs/pwa',
-    // Doc: https://github.com/nuxt-community/google-fonts-module
     '@nuxtjs/google-fonts',
-    '@nuxtjs/sitemap'
+    'vue-plausible',
+    'nuxt-build-optimisations',
+    '@nuxt/image'
   ],
 
-  // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     '@nuxtjs/axios',
-    '@nuxtjs/cloudinary',
     '@nuxtjs/dotenv',
 
     ['vue-scrollto/nuxt', { duration: 500 }],
@@ -159,15 +168,45 @@ export default {
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
     // https://go.nuxtjs.dev/content
-    '@nuxt/content'
+    '@nuxt/content',
+    '@nuxtjs/sitemap'
   ],
 
+
+  sitemap: {
+    hostname: 'https://andurilpartners.ai',
+    gzip: true
+  },
+
+  buildOptimisations: {
+    profile: 'risky',
+    features: {
+      // use url-loader
+      imageFileLoader: false
+    }
+  },
+  plausible: {
+    domain: 'andurilpartners.ai'
+  },
 
   googleFonts: {
     families: {
       Inter: true
     }
   },
+
+
+  image: {
+    cloudinary: {
+      baseURL: 'https://res.cloudinary.com/www-andurilpartners-ai/image/upload/'
+    }
+  },
+  components: {
+    dirs: [
+      '~/components/', '~/components/main/', '~/components/global/', '~/components/ui/', '~/components/markdown/'
+    ]
+  },
+
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},
 
@@ -190,9 +229,6 @@ export default {
     }
   },
 
-  purgeCSS: {
-    whitelist: ['dark-mode', 'aos-init', 'aos-animate']
-  },
   hooks: {
     'content:file:beforeInsert': (document) => {
       // eslint-disable-next-line
@@ -275,32 +311,13 @@ export default {
     })
   },
 
-  googleAnalytics: {
-    id: 'G-FWFH1CH7FB',
-    autoTracking: {
-      screenview: true
+
+
+  build: {
+    extend(config, ctx) {
     }
   },
-
-  tailwindcss: {
-    jit: true,
-    // add '~tailwind.config` alias
-    exposeConfig: true
-  },
-
-  colorMode: {
-    classSuffix: ''
-  },
-
-  sitemap: {
-    hostname: global.siteUrl,
-    routes() {
-      return getRoutes()
-    }
-  },
-  build: {},
   generate: {
-    fallback: true,
-    devtools: true
+    fallback: true
   }
 }

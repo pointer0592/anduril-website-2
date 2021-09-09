@@ -3,7 +3,7 @@
     <transition enter-active-class='duration-150 ease-out' enter-from-class='opacity-0 scale-95'
                 enter-to-class='opacity-100 scale-100' leave-active-class='duration-100 ease-in'
                 leave-from-class='opacity-100 scale-100' leave-to-class='opacity-0 scale-95'>
-      <div v-if='drawer' v-click-outside='externalClick' class='top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden'>
+      <div v-show='drawer' class='top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden'>
         <div
           class='rounded-lg shadow-md bg-white dark:bg-gray-800 ring-1 ring-black ring-opacity-5 overflow-hidden'>
           <div class='px-2 pt-12 pb-3'>
@@ -33,13 +33,9 @@
 
 <script>
 import { mapGetters, mapMutations } from 'vuex'
-import vClickOutside from 'v-click-outside'
 
 export default {
   name: 'TheMobilePanel',
-  directives: {
-    clickOutside: vClickOutside.directive
-  },
   data() {
     return {
       sectionNames: process.env.navItems
@@ -49,10 +45,6 @@ export default {
     ...mapGetters({ drawer: 'header/getDrawerState' })
   },
   methods: {
-    externalClick(event) {
-      // eslint-disable-next-line no-console
-      console.log('The Mobile Panel Outside Click: ', event)
-    },
     ...mapMutations({ externalClick:  "header/toggle" })
   }
 }

@@ -13,14 +13,18 @@
               data-aos='fade-up'>
               <div class='lg:col-start-1'>
                 <h2 id='features-heading2' class='font-futura font-medium text-orange-500' data-aos='fade-up'>
-                  {{ solution.tagline }}</h2>
+                  {{ solution.tagline }}
+</h2>
                 <p
                   class='font-futura mt-2 text-4xl font-extrabold tracking-wide text-GunMetal dark:text-white tracking-tight'
-                  data-aos='fade-up'>{{ solution.title }}</p>
+                  data-aos='fade-up'>
+{{ solution.title }}
+</p>
                 <div class='border border-b-1 border-orange-50 dark:border-orange-400 mt-4 w-16' />
 
                 <p class='mt-4 text-xl font-semibold text-gray-500 dark:text-gray-200' data-aos='fade-up'>
-                  {{ solution.description }}</p>
+                  {{ solution.description }}
+</p>
 
                 <div v-for='item in solution.body' :key='item.lead'>
                   <p class='mt-4 text-lg text-orange-500 uppercase font-semibold' data-aos='fade-up'>
@@ -72,13 +76,12 @@
                 </div>
                 <div class='relative pl-4 -mr-40 sm:mx-auto sm:max-w-3xl sm:px-0 lg:max-w-none lg:h-full lg:pl-12'
                      data-aos='fade-left'>
-                  <client-only>
-                    <cld-image
-                      :public-id='`/solutions-page/sub-solutions/${solution.bodyImage.src}`'
+<nuxt-img
+                      provider="cloudinary"
+:src='`/solutions-page/sub-solutions/${solution.bodyImage.src}`'
                       class='w-full rounded-xl shadow-xl ring-1 ring-black ring-opacity-5 dark:ring-1 dark:ring-white dark:ring-opacity-5 lg:h-full lg:w-auto lg:max-w-none'
                     />
-                  </client-only>
-                </div>
+</div>
               </div>
             </div>
           </div>

@@ -39,7 +39,7 @@
 <script>
 
 export default {
-  name: 'newsStream',
+  name: 'NewsStream',
   props: {
     newsTitle: {
       type: String,

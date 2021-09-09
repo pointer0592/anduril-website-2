@@ -9,8 +9,9 @@
               class='px-4 sm:px-0 bg-gray-100 overflow-hidden lg:max-w-7xl my-auto  rounded-xl shadow-lg'
               :class="[serviceIdx % 2 === 0 ? 'flex-auto lg:col-start-8' : 'lg:col-start-1', 'lg:row-start-1 lg:col-span-5']"
               data-aos='fade-up'>
-              <v-cloud-image
-                :public-id='`/solutions-page/${solution.heroImage}`'
+              <nuxt-img
+                provider="cloudinary"
+:src='`/solutions-page/${solution.heroImage}`'
                 classes='h-64'
               />
             </div>
@@ -21,10 +22,13 @@
               data-aos='fade-up'>
               <div class='lg:col-start-1'>
                 <h2 id='features-heading2' class='font-futura font-medium text-orange-500' data-aos='fade-up'>
-                  {{ solution.tagline }}</h2>
+                  {{ solution.tagline }}
+</h2>
                 <p
                   class='font-futura mt-2 text-4xl font-extrabold tracking-wide text-GunMetal dark:text-white tracking-tight'
-                  data-aos='fade-up'>{{ solution.title }}</p>
+                  data-aos='fade-up'>
+{{ solution.title }}
+</p>
                 <div class='border border-b-1 border-orange-50 dark:border-orange-400 mt-4 w-16' />
                 <p class='mt-4 text-gray-500 dark:text-gray-200' data-aos='fade-up'>{{ solution.description }}</p>
 
@@ -42,7 +46,7 @@
             <nuxt-link :to='`${solution.path}`'
                        class='inline-flex items-center justify-center border border-transparent text-base font-bold uppercase rounded-0 text-GunMetal dark:text-white hover:text-orange-700 bg-transparent'>
               <span>Learn More</span>
-              <v-icon name='arrow-right' class='h-6 w-6 ml-2' />
+              <arrow-right />
             </nuxt-link>
               </div>
             </div>

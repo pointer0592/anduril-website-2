@@ -3,32 +3,33 @@
     <figure>
       <figcaption v-if='title' class='text-lg font-bold text-GunMetal dark:text-white pb-4'>{{ title }}</figcaption>
 
-      <v-cloud-image
+      <nuxt-img
         v-if='dark'
-        :public-id="imageToggle"
+        provider="cloudinary"
+:src="imageToggle"
         :alt='caption'
         :quality='quality'
-        cloud-crop='fill'
-        :fetch-format='fetchFormat'
+        crop='fill'
+        :format='fetchFormat'
         class='h-full w-full'
-        :cloud-classes='[ hasRing, isRounded ]'
-        cloud-loading='lazy'
-          cloud-placeholder='blur'
+        :class='[ hasRing, isRounded ]'
+        loading='lazy'
         />
-      <v-cloud-image
+      <nuxt-img
         v-else
-        :public-id="`${prePath}${filename}`"
-        :cloud-alt='caption'
-        :cloud-quality='quality'
-        cloud-crop='fill'
-        :fetch-format='fetchFormat'
+        provider="cloudinary"
+:src="`${prePath}${filename}`"
+        :alt='caption'
+        :quality='quality'
+        crop='fill'
+        :format='fetchFormat'
         class='h-full w-full'
-        :cloud-class='[ hasRing, isRounded ]'
-        cloud-loading='lazy'
-          cloud-placeholder='blur'
+        :class='[ hasRing, isRounded ]'
+        loading='lazy'
         />
 
-      <figcaption v-if='caption' class='text-center text-sm italic text-GunMetal dark:text-white'>Source: {{ caption }}
+      <figcaption v-if='caption' class='text-center text-sm italic text-GunMetal dark:text-white'>
+Source: {{ caption }}
       </figcaption>
     </figure>
   </div>
