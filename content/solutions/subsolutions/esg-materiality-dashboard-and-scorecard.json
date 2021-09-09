@@ -9,6 +9,11 @@
     "linkLabel": "",
     "link": ""
   },
+  "bodyImage": {
+   "title": "",
+    "caption": "",
+    "src": "inbox-app-screenshot-1"
+  },
   "tgt": true,
   "parentSolution": "ESG Solutions",
   "prePath": "/solutions/subsolutions/",

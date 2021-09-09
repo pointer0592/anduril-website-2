@@ -38,8 +38,10 @@
                  target='_blank'
                  rel='noopener noreferrer'
                  class='hover:underline text-black text-gray-200 hover:text-gray-300'>
-                {{ personName }}<span v-if='title'>,&nbsp;{{ title }}</span><span v-if='company'>,&nbsp;{{ company
-                }}</span>
+                {{ personName }}<span v-if='title'>,&nbsp;{{ title }}</span><span v-if='company'>
+,&nbsp;{{ company
+                }}
+</span>
               </a>
               <span v-if="personName&&!isAnduril&&bio===''">{{ personName }}</span>
               <span v-if='personTwoName'>&</span>

@@ -1,5 +1,5 @@
 <template>
-  <ArrowRightIcon name='arrow-right' class='ml-2' :class='[height, width]' />
+  <ArrowRightIcon name='arrow-right' class='ml-2 text-orange-500 hover:text-600' :class='[height, width]' />
 </template>
 
 <script>

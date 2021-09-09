@@ -7,7 +7,6 @@
           class='flex-col xl:px-32 lg:px-24 px-4 max-w-full mx-auto m-auto w-screen bg-GunMetal bg-opacity-50'
           :class="[ showNavbar ? 'show-navbar' : 'hide-navbar' ]"
         >
-
           <div class='hidden md:flex md:items-center md:justify-end md:inset-y-0 md:right-0 py-1.5'>
             <div class='inline-flex items-center justify-end pt-3 pb-2 m-auto top-0 md:space-x-5 bg-transparent w-full'>
               <nuxt-link v-for='item in topSectionNames' :key='item.slug' :to="'/' + item.slug"
@@ -29,7 +28,6 @@
               </nuxt-link>
             </div>
             <div class='inline-flex items-center md:hidden'>
-              <theme-toggle-button />
               <the-burger />
             </div>
             <div class='hidden md:inline-flex lg:inline-flex xl:space-x-10 lg:space-x-5 space-x-4 items-center'>

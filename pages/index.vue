@@ -1,16 +1,11 @@
 <template>
   <div>
     <primary-hero
-      hero-img='/hero-images/chess-design'
+      hero-img='/hero-images/landing-hero'
       hero-title='Anduril Partners'
       hero-lead='Think Deeper, See Further, Execute Faster'
       hero-copy='Anduril Partners can help you leverage your data into actionable insights and increase your probability of success through real-time Key Performance Indicators (KPIs)'
       />
-    <stats
-      header='This is the header'
-      lead='This is the lead'
-      :stats='stats'
-    />
     <why-anduril :features="whyAnduril" />
     <esg-cta />
     <grid-list id='esg-resources' :grid-title='exploreTitle' :grid-lead='exploreLead' :grid-items='exploreItems' />

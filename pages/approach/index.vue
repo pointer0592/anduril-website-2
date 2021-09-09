@@ -1,7 +1,7 @@
 <template>
   <div>
     <primary-hero
-      hero-img='/hero-images/approach-design'
+      hero-img='/hero-images/approach-hero'
       hero-title='Our Approach'
       hero-copy='How we work with clients, work with each other and approach our work'
     />

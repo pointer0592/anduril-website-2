@@ -1,7 +1,7 @@
 <template>
   <div>
     <primary-hero
-      hero-img='/hero-images/esg-cover'
+      hero-img='/hero-images/esg-hero'
       hero-title='ESG Resource Center'
     />
     <section-navigation :nav-links='navLinks' />

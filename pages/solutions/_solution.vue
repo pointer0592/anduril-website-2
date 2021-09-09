@@ -1,9 +1,9 @@
 <template>
   <section>
     <primary-hero
-      :hero-img="`/solutions-page/${solution.heroImage}`"
+      :hero-img="`/hero-images/${solution.heroImage}`"
       :hero-title="`${solution.title}`"
-      mix-blend-color='bg-gray-600'
+      mix-blend-color='bg-gray-200'
     />
 
     <solution-section id='anduril-core' :solution='solution' />
@@ -11,7 +11,7 @@
     <solution-card-rows :card-items='solutions'>
       <template slot='title'>
         <h2 class='font-futura text-3xl tracking-tight font-extrabold text-GunMetal dark:text-white sm:text-4xl'>
-          <span class='text-orange-500'>{{ solution.title }}</span>&nbsp;solutions
+          Additional <span class='text-orange-500'>Anduril</span>&nbsp;solutions
         </h2>
       </template>
     </solution-card-rows>

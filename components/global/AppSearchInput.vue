@@ -19,7 +19,7 @@
             type='search'
             autocomplete='off'
             placeholder='Search'
-            class='block w-full pl-10 pr-3 py-2 truncate leading-5 placeholder-gray-300 border border-1 border-GunMetal dark:border-white dark:bg-GunMetal dark:text-white text-GunMetal focus:border-gray-300 rounded-0 focus:outline-none focus:bg-white bg-white'
+            class='block w-full lg:w-1/2 pl-10 pr-3 py-2 truncate leading-5 placeholder-gray-300 border border-1 border-GunMetal dark:border-white dark:bg-GunMetal dark:text-white text-GunMetal focus:border-gray-300 rounded-0 focus:outline-none focus:bg-white bg-white'
             @focus='onFocus'
             @blur='onBlur'
           />
@@ -36,7 +36,7 @@
     >
       <ul
         v-show='focus && (searching || results.length)'
-        class='z-10 absolute w-full flex-1 bg-white dark:bg-GunMetal rounded-0 border border-gray-300 overflow-hidden'
+        class='z-10 absolute w-full lg:w-1/2 flex-1 bg-white dark:bg-GunMetal rounded-0 border border-gray-300 overflow-hidden'
       >
         <li v-if='searching && !results.length' class='px-4 py-2'>
           Searching...
@@ -56,7 +56,7 @@
           >
             <IconChevronRight class='w-3 h-3 mx-1 hidden sm:block' />
             {{ result.title }}
-            <span class='font-base hidden text-orange-500 sm:block ml-4'>from <b>{{ result.category }}</b></span>
+            <span class='font-base hidden text-orange-500 sm:block'>&nbsp;from&nbsp;<span class="font-semibold">{{ result.category }}</span></span>
           </NuxtLink>
           <div class='border-t border-gray-200 dark:border-gray-200'></div>
         </li>

@@ -43,7 +43,7 @@
           </div>
         </transition-group>
     </main-section-header>
-    <main-section-header id='anduril-newsletter' section-title='Anduril Newsletters & Updates' section-lead='Lorem ipsum dolor sit amet,
+    <main-section-header id='anduril-newsletters' section-title='Anduril Newsletters & Updates' section-lead='Lorem ipsum dolor sit amet,
               consectetur adipiscing elit. Sed eget dolor tortor. Phasellus viverra sem non eros vestibulum, in auctor
               sapien commodo. In nisl erat, efficitur et ipsum in, posuere ornare tortor.' :has-line=false :has-top-line=true top-line-color='orange' is-medium-top>
         <transition-group

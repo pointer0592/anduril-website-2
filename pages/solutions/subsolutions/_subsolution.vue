@@ -11,7 +11,7 @@
     <card-rows :card-items='subSolutions'>
       <template slot='title'>
         <h2 class='font-futura text-3xl tracking-tight font-extrabold text-GunMetal dark:text-white sm:text-4xl'>
-          <span class='text-orange-500'>{{ subSolution.area }}</span>&nbsp;solutions
+          Other&nbsp;<span class='text-orange-500'>{{ subSolution.area }}&nbsp;</span>&nbsp;focus areas
         </h2>
       </template>
     </card-rows>

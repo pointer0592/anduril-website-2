@@ -1,14 +1,15 @@
 <template>
 <div>
     <primary-hero
-      hero-img="/hero-images/solutions/kpi-design"
+      hero-img="/hero-images/solutions-hero"
       hero-title='Our Solutions'
     />
 
     <section-navigation :nav-links='navList' />
-    <main-section-header section-title='Our Solutions' section-lead='Core Solutions lead' is-centered has-top-line :has-line=false top-line-color='orange' />
+    <main-section-header section-title='Our Solutions' :section-lead='ourSolutionsLead' is-centered has-top-line :has-line=false top-line-color='orange' />
     <solutions-section id='anduril-core' :solution-items='solutions' />
-    <card-rows id='anduril-solutions' card-title='All Solutions' card-lead='' :card-items='subSolutions' />
+    <card-rows id='anduril-solutions' card-title='All Solution focus areas' card-lead='' :card-items='subSolutions' />
+  <esg-cta />
 </div>
 </template>
 

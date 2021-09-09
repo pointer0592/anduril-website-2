@@ -1,5 +1,5 @@
 {
-  "heroImage": "kpi-solutions",
+  "heroImage": "kpi-design",
   "colorBlend": "bg-gray-200",
   "order": 2,
   "title": "KPI Design",
@@ -18,7 +18,7 @@
   "bodyImage": {
    "title": "Iterative KPI design process",
     "caption": "Anduril Partners",
-    "src": "KPI-design"
+    "src": "400x500-design"
   },
   "quote": {
     "copy": "",

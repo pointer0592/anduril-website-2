@@ -1,5 +1,5 @@
 {
-  "heroImage": "esg-cover",
+  "heroImage": "esg-hero",
   "colorBlend": "bg-gray-200",
   "order": 4,
   "title": "ESG Solutions",
@@ -18,7 +18,7 @@
   "bodyImage": {
    "title": "Sample ESG Dashboard",
     "caption": "Anduril Partners & Equity Data Science (EDS)",
-    "src": "esg-dashboard"
+    "src": "400x500-esg"
   },
   "quote": {
     "copy": "",

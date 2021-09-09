@@ -1,7 +1,7 @@
 <template>
   <section>
     <primary-hero
-      hero-img='/hero-images/team-design'
+      hero-img='/hero-images/about-hero'
       hero-title='About Us'
       hero-copy="We're looking forward to starting a conversation"
     />

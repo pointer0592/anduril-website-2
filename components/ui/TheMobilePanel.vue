@@ -15,7 +15,7 @@
               <div class='' />
               <div v-if='item.dropdown===true' class=''>
                 <nuxt-link v-for='subNav in item.subNavs' :key='subNav.name' :to="subNav.tgt"
-                           class='font-futura block pr-3 pl-6 py-2 rounded-0 text-xs font-semibold dark:text-white dark:text-gray-200 hover:text-orange-500 dark-hover:bg-GunMetal hover:bg-gray-50'>
+                           class='font-futura block pr-3 pl-6 py-2 rounded-0 text-xs font-semibold text-GunMetal dark:text-white dark:text-gray-200 hover:text-orange-500 dark-hover:bg-GunMetal hover:bg-gray-50'>
                   {{ subNav.name }}
                 </nuxt-link>
               </div>

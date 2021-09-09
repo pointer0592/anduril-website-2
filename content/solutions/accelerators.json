@@ -1,5 +1,5 @@
 {
-  "heroImage": "anduril-accelerators",
+  "heroImage": "accelerators-hero",
   "colorBlend": "bg-gray-200",
   "order": 5,
   "title": "Anduril Accelerators",
@@ -18,7 +18,7 @@
   "bodyImage": {
    "title": "title",
     "caption": "caption",
-    "src": "KPI-design"
+    "src": "400x500-accelerators"
   },
   "quote": {
     "copy": "",
