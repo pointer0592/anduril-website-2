@@ -48,7 +48,7 @@
         >
           <NuxtLink
             :to="{
-            name: 'article',
+            name: 'article-slug',
             params: { slug: result.slug !== 'index' ? result.slug : undefined }
           }"
             class='flex px-4 py-2 items-center leading-5 transition ease-in-out duration-150 text-GunMetal hover:bg-gray-50 dark:text-white dark-hover:bg-GunMetalLighter'
@@ -149,7 +149,7 @@ export default {
         this.focusIndex === -1
           ? this.results[0]
           : this.results[this.focusIndex]
-      const path = `/blog/${result.slug !== 'index' ? result.slug : ''}`
+      const path = `/insights/${result.slug !== 'index' ? result.slug : ''}`
       this.$router.push(path)
       // Unfocus the input and reset the query.
       this.$refs.search.blur()
