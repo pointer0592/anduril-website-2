@@ -138,6 +138,8 @@ export default {
   },
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    '~/plugins/url-helpers.js',
+    '~/plugins/vue-dompurify.js',
     { src: '~/plugins/vClickOutside', ssr: false },
     { src: '~/plugins/format-date' },
     { src: '~/plugins/truncate' },
