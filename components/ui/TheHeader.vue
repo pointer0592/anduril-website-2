@@ -4,26 +4,16 @@
     <div class='relative'>
       <div>
         <nav
-          class='flex-col xl:px-32 lg:px-24 px-4 max-w-full mx-auto m-auto w-screen bg-GunMetal bg-opacity-50'
+          class='flex-col xl:px-32 lg:px-24 px-4 max-w-full mx-auto m-auto w-screen bg-GunMetal bg-opacity-50 dark:bg-white dark:bg-opacity-80'
           :class="[ showNavbar ? 'show-navbar' : 'hide-navbar' ]"
         >
-          <div class='hidden md:flex md:items-center md:justify-end md:inset-y-0 md:right-0 py-1.5'>
-            <div class='inline-flex items-center justify-end pt-3 pb-2 m-auto top-0 md:space-x-5 bg-transparent w-full'>
-              <nuxt-link v-for='item in topSectionNames' :key='item.slug' :to="'/' + item.slug"
-                         class='text-white hover:text-orange-500 font-medium text-sm xl:text-base'>
-                {{ item.label }}
-              </nuxt-link>
-            </div>
-            <theme-toggle-button class='ml-5' />
-          </div>
-          <div class='hidden md:block border border-b-1 border-white' />
           <div
-            class='inline-flex items-center justify-between py-3 m-auto top-0 md:space-x-2 bg-transparent w-full'
+            class='inline-flex items-center justify-between py-2 m-auto top-0 md:space-x-2 bg-transparent w-full'
             aria-label='Global'>
             <div class='flex justify-start lg:flex-0'>
               <nuxt-link to='/'>
                 <span class='sr-only'>Anduril</span>
-                <v-icon name='anduril-full' class='h-8 w-auto sm:h-12 text-orange-500 hover:text-white md:text-white md:hover:text-orange-500'
+                <v-icon name='anduril-full' class='h-8 w-auto sm:h-10 text-orange-500 hover:text-orange-600'
                           aria-hidden='true' />
               </nuxt-link>
             </div>
@@ -38,13 +28,13 @@
                     class='group inline-flex items-center text-white font-futura group-hover:text-orange-500 font-bold text-sm xl:text-base uppercase'
                     @click='isMenuOpen = !isMenuOpen'>
                     <span
-                      class='text-white group-hover:text-orange-500 font-futura font-bold text-sm xl:text-base uppercase'
+                      class='group-hover:text-orange-500 font-futura font-bold text-sm xl:text-base uppercase dark:text-GunMetal text-white'
                       :class="[isMenuOpen ? 'text-orange-800' : '']"
                     >
                       {{ item.label }}
                     </span>
                     <v-icon :name='chevronFlip'
-                            class='ml-2 h-5 w-5 text-white group-hover:text-orange-500'
+                            class='ml-2 h-5 w-5 group-hover:text-orange-500 text-white dark:text-GunMetal'
                             :class="[isMenuOpen ? 'text-orange-800' : '']"
                             aria-hidden='true' />
                   </button>
@@ -76,10 +66,11 @@
                   </transition>
                 </div>
                 <nuxt-link v-else :to="'/' + item.slug"
-                           class='font-futura text-white hover:text-orange-500 font-bold text-sm xl:text-base uppercase'>
+                           class='font-futura hover:text-orange-500 font-bold text-sm xl:text-base uppercase dark:text-GunMetal text-white'>
                   {{ item.label }}
                 </nuxt-link>
               </div>
+            <theme-toggle-button class='ml-5' />
             </div>
           </div>
         </nav>
@@ -104,7 +95,6 @@ export default {
       isOpen: false,
       isMenuOpen: false,
       sectionNames: process.env.navItems,
-      topSectionNames: process.env.topNavItems,
       showNavbar: true,
       lastScrollPosition: 0
     }

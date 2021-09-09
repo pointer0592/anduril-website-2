@@ -1,10 +1,10 @@
 <template>
   <div class='flex items-center' @click='toggleDarkMode()'>
   <span
-    class='cursor-pointer rounded-0 inline-flex items-center justify-center bg-transparent text-gray-300 dark:text-yellow-300 dark-hover:text-white hover:text-yellow-300'>
+    class='cursor-pointer rounded-0 inline-flex items-center justify-center bg-transparent text-white dark:text-yellow-300 hover:text-gray-300 dark-hover:text-yellow-400'>
     <component
       :is='themeIcon'
-      class='h-10 w-10 p-2'
+      class='h-6 w-6'
     />
   </span>
   </div>

@@ -5,7 +5,7 @@
                 leave-from-class='opacity-100 scale-100' leave-to-class='opacity-0 scale-95'>
       <div v-show='drawer' class='top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden'>
         <div
-          class='rounded-lg shadow-md bg-white dark:bg-gray-800 ring-1 ring-black ring-opacity-5 overflow-hidden'>
+          class='top-0 z-30 rounded-lg shadow-md bg-white dark:bg-gray-800 ring-1 ring-black ring-opacity-5 overflow-hidden'>
           <div class='px-2 pt-12 pb-3'>
             <div v-for='item in sectionNames' :key='item.slug' class=''>
               <nuxt-link :to="'/' + item.slug"
@@ -33,9 +33,13 @@
 
 <script>
 import { mapGetters, mapMutations } from 'vuex'
+import vClickOutside from 'v-click-outside'
 
 export default {
   name: 'TheMobilePanel',
+  directives: {
+    clickOutside: vClickOutside.directive
+  },
   data() {
     return {
       sectionNames: process.env.navItems
@@ -45,6 +49,9 @@ export default {
     ...mapGetters({ drawer: 'header/getDrawerState' })
   },
   methods: {
+    externalClick(event) {
+      this.drawer = false
+    },
     ...mapMutations({ externalClick:  "header/toggle" })
   }
 }

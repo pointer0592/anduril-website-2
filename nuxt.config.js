@@ -4,9 +4,6 @@ export default {
 
   env: {
     title: 'Anduril Partners',
-    topNavItems: [
-      { label: 'Contact', slug: 'contact' }
-    ],
     navItems: [
       { label: 'Home', slug: '', dropdown: false },
       { label: 'About Us', slug: 'about', dropdown: false },
@@ -37,11 +34,12 @@ export default {
             name: 'Anduril Accelerators',
             tgt: '/solutions/accelerators',
             description: 'Accelerate your growth by excelling in the critical elements that often hamper growth.'
-          }
+          },
         ]
       },
       { label: 'Our Approach', slug: 'approach', dropdown: false },
-      { label: 'Insights', slug: 'insights', dropdown: false }
+      { label: 'Insights', slug: 'insights', dropdown: false },
+      { label: 'Contact', slug: 'contact', dropdown: false }
     ]
   },
 
